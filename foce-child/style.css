@@ -1,0 +1,210 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+/* fleurs qui tournent*/ 
+ .story {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .story h2::before {
+    content: url('./assets/images/sunflower_leaves.png');
+    position: absolute;
+    left: 0;
+    top: 1.8em;
+    z-index: -1;
+  }
+  
+  .story h2::after {
+    content: url('./assets/images/Sunflower.png');
+    position: absolute;
+    left: 0.7em;
+    top: 6em;
+    animation: rotateFlower 5s linear infinite;
+  }
+  
+  .story__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    font-size: 15px;
+    padding-bottom: 2em;
+  }
+  
+  .story__article::before {
+    content: url('./assets/images/hibiscus_leaves.png');
+    position: absolute;
+    left: 50%;
+    top: 8em;
+    z-index: -1;
+  }
+  
+  .story__article::after {
+    content: url('./assets/images/Hibiscus.png');
+    position: absolute;
+    left: calc(50% + 414px);
+    top: 2em;
+    animation: rotateFlower 5s linear infinite;
+  }
+  
+  @keyframes rotateFlower {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .oscar {
+    background-image: url('./assets/images/rectangle.png')!important;
+    background-repeat: no-repeat!important;
+    background-size: 800px 350px!important; /* Taille spécifique de l'image en pixels */
+    position: relative!important; 
+    left:80px!important; /* Déplace l'image de 200 pixels vers la droite */
+    top: 10px!important; /* Ajustement pour remonter la section oscar */
+    padding-bottom: 400px!important; /* Ajoute un espace en bas du conteneur */
+    z-index: 1!important; /* Assurez-vous que la section soit au-dessus des fleurs */
+}
+
+.oscar p {
+    font-family: 'Quicksand', sans-serif!important;
+    font-size: 42px!important;
+    font-weight: 700!important;
+    color: #ffffff!important;
+    text-align: left!important;
+    line-height: 1.2!important; /* Ajustez cette valeur pour obtenir l'espacement désiré entre les lignes */
+    margin-top: 100px!important; /* Descend le paragraphe de 100px */
+    margin-left: 60px!important; /* Décale le paragraphe vers la droite de 40px */
+    position: absolute; /* Positionnement absolu pour ne pas affecter l'image de fond */
+    z-index: 2!important; /* Assurez-vous que le texte soit au-dessus des fleurs */
+}
+
+.oscar-image {
+    content: url('./assets/images/oscarwild.png') !important;
+    position: absolute !important;
+    left: 800px !important; /* Ajustez la position horizontale de l'image à droite de la section .oscar */
+    top: 0px !important; /* Ajustez la position verticale pour aligner avec la section .oscar */
+    width: 300px; /* Spécifiez la largeur souhaitée de l'image */
+    height: auto; /* Gardez la proportion de l'image */
+    z-index: 1; /* Assurez-vous que l'image soit au-dessus des fleurs */
+}
+
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 10em; /* Ajustez au besoin */
+  padding-bottom: 0em;
+  overflow: visible; /* Retirez overflow:hidden pour permettre l'affichage complet des fleurs */
+  z-index: 2; /* Augmentez le z-index pour placer la div au-dessus des fleurs */
+}
+
+.site-footer::before {
+  content: url('./assets/images/Sunflower.png');
+  position: absolute;
+  left: 4em;
+  top: 4em;
+  z-index: 1; /* Assurez-vous que les fleurs restent en arrière-plan */
+}
+
+.site-footer::after {
+  content: url('./assets/images/orchid.png');
+  position: absolute;
+  right: -4em;
+  bottom: -4em;
+  z-index: 1; /* Assurez-vous que les fleurs restent en arrière-plan */
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    padding-top: 16em;
+    padding-bottom: 1em;
+    overflow: hidden;
+  }
+  
+  .footer ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+  }
+  
+  .footer ul li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .footer ul li a {
+    text-decoration: none;
+  }
+  
+  .footer ul::after {
+    content: url("./assets/images/hibiscus_footer.png");
+    position: absolute;
+    left: calc(50% - 323px);
+    bottom: -28.5em;
+    z-index: -1;
+  }
+  
+  
+/*Text hoover anim*/
+
+
+  .story h2 span#text,
+  #studio h2 span#text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .story:hover h2 span#text,
+  #studio:hover h2 span#text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/*Text hoover anim HISTOIRE*/  
+
+#text {
+  position: relative;
+  display: inline-block;
+}
+
+#text::before,
+#text::after {
+  content: attr(data-content); /* Contenu dynamique pour les pseudos-éléments */
+  position: absolute;
+  top: 100%; /* Décalage vers le bas */
+  opacity: 0; /* Initiallement invisible */
+  transition: top 0.5s ease, opacity 0.5s ease; /* Transition pour une apparition fluide */
+}
+
+#text::before {
+  left: 0; /* Décalage vers la gauche pour le mot "histoire" */
+}
+
+#text::after {
+  left: 0; /* Décalage vers la gauche pour le mot "histoire" */
+}
+
+#text:hover::before {
+  top: -10px; /* Déplacement vers le haut pour "histoire" lors du survol */
+  opacity: 1; /* Apparition */
+}
+
+#text:hover::after {
+  top: 10px; /* Déplacement vers le bas pour "histoire" lors du survol */
+  opacity: 1; /* Apparition */
+}
+
