@@ -59,5 +59,24 @@ jQuery(document).ready(function($) {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
+
+    // Ajouter la classe "loaded" au conteneur de la vidéo après un court délai pour déclencher la transition
+setTimeout(function() {
+    document.querySelector('.videolog').classList.add('loaded');
+  }, 500); // Délai en millisecondes, ajustez selon vos besoins
+
+  // Ajouter la classe "loaded" au conteneur du logo après un court délai
+setTimeout(function() {
+    document.querySelector('.videolog').classList.add('loaded');
+}, 500); // Délai en millisecondes, ajustez selon vos besoins
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Sélectionner la section de l'histoire
+    const storySection = document.querySelector('#story');
+
+    // Ajouter la classe "loaded" à la section de l'histoire une fois que la page est chargée
+    storySection.classList.add('loaded');
+});
+
 });
 

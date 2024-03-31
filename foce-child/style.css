@@ -3,7 +3,7 @@
  Theme URI: https://www.koukaki.local
  Author: Studio Koukaki
  Author URI: https://www.koukaki.local
- Template: foce
+ Template: foce-child
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
@@ -220,4 +220,84 @@
   top: 10px; /* Déplacement vers le bas pour "histoire" lors du survol */
   opacity: 1; /* Apparition */
 }
+/*header video*/
+.videolog {
+  position: relative; /* Assurer que les éléments internes positionnés sont positionnés par rapport à celui-ci */
+  display: flex; /* Utiliser Flexbox pour aligner les éléments verticalement */
+  align-items: center; /* Centrer verticalement les éléments dans le conteneur */
+  justify-content: center; /* Centrer horizontalement les éléments dans le conteneur */
+  height: calc(100vh - 350px); /* Hauteur égale à la hauteur de la fenêtre moins 100px pour la marge en bas */
+  margin-bottom: 100px; /* Ajouter une marge en bas pour éviter de couper le contenu */
+}
+
+/* Vidéo */
+.videolog video {
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  top: -100%; /* Positionner la vidéo en dehors du conteneur vers le haut */
+  left: 0; /* Positionner la vidéo à gauche du conteneur */
+  width: 100%; /* Occupera toute la largeur du conteneur */
+  height: 100%; /* Occupera toute la hauteur du conteneur */
+  z-index: -1; /* Placer la vidéo derrière les autres éléments */
+  opacity: 0; /* Cacher la vidéo initialement */
+  transition: opacity 1s ease, top 1s ease; /* Ajouter une transition pour l'opacité et la position */
+}
+
+/* Lorsque la classe "loaded" est ajoutée au conteneur */
+.videolog.loaded video {
+  opacity: 1; /* Afficher la vidéo avec un fondu en transparence */
+  top: 0; /* Faire glisser la vidéo vers le bas pour sa position finale */
+}
+
+
+
+/* Logo */
+.videolog img {
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  bottom: -150px; /* Position initiale du logo en dessous du conteneur */
+  left: 50%; /* Centrer horizontalement le logo */
+  transform: translateX(-50%); /* Centrer horizontalement le logo */
+  width: 50%; /* Ajuster la largeur du logo */
+  opacity: 0; /* Cacher le logo initialement */
+  animation: fadeInSlideUp 1s ease forwards, floatAnimation 6s ease infinite alternate; /* Chainer les animations de fade-in et de glissement vers le haut avec l'animation de flottement */
+}
+
+/* Animation de fade-in et de glissement vers le haut */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0; /* Logo complètement transparent au début */
+    bottom: -150px; /* Position initiale en dessous du conteneur */
+  }
+  to {
+    opacity: 1; /* Logo complètement visible à la fin */
+    bottom: calc(50% - 200px); /* Position finale au centre du conteneur */
+  }
+}
+
+/* Animation de flottement */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(40px) translateX(-50%) rotate(-10deg); /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+  }
+  to {
+    transform: translateY(-20px) translateX(-50%) rotate(10deg); /* Mouvement de flottement vers le haut */
+  }
+}
+
+/* Animation des éléments de l'histoire */
+#story h2::before,
+#story h2::after,
+#story .story__article::before,
+#story .story__article::after {
+  transition: opacity 1s ease, transform 1s ease; /* Ajouter une transition pour l'opacité et la position */
+}
+
+/* Les éléments deviennent opaques et glissent vers le haut */
+#story.loaded h2::before,
+#story.loaded h2::after,
+#story.loaded .story__article::before,
+#story.loaded .story__article::after {
+  opacity: 1; /* Les éléments deviennent opaques */
+  transform: translateY(20px); /* Les éléments glissent vers le haut depuis une position plus basse */
+}
+
 

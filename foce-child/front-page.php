@@ -3,9 +3,6 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="banner fade-in">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
-    </section>
     <section id="story" class="story fade-in">
         <h2><span id="text">L'histoire</span></h2>
         <article id="" class="story__article">
@@ -67,4 +64,5 @@ get_header();
 <?php
 get_footer();
 ?>
+
 
