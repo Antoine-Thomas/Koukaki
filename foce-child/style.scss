@@ -1,0 +1,40 @@
+// Import des fichiers Sass externes
+@import 'fleurs';
+@import 'oscar';
+@import 'footer';
+
+// Définition des variables pour les chemins d'accès aux images
+$image-path: '../assets/images/';
+
+// Définition des variables Sass
+$primary-color: #123456;
+$secondary-color: #789abc;
+$image-path: '../assets/images/';
+
+// Définition des mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration ease-in-out;
+}
+
+@mixin fade-in {
+  opacity: 0;
+  @include transition(opacity, 0.5s);
+}
+
+// Définition des variables pour les dimensions
+$content-width: 960px;
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 30px;
+
+// Définition des variables pour les polices
+$base-font-family: 'Arial', sans-serif;
+$heading-font-family: 'Helvetica', sans-serif;
+$base-font-size: 16px;
+$heading-font-size: 24px;
+
+// Définition des variables pour les chemins d'accès aux images
+$image-path: '../assets/images/';
+
+// Autres variables spécifiques à votre thème
+$custom-variable: valeur;
