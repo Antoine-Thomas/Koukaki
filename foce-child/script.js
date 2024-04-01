@@ -6,15 +6,6 @@ function hoover() {
     document.querySelector('#studio h2').style.transform = 'translateY(0)';
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.swiper-container', {
-        // Configuration de Swiper
-        direction: 'horizontal',
-        loop: true,
-        // Autres options...
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     // Sélectionnez toutes les sections que vous souhaitez animer
     var sections = document.querySelectorAll("section");
@@ -61,22 +52,48 @@ jQuery(document).ready(function($) {
     });
 
     // Ajouter la classe "loaded" au conteneur de la vidéo après un court délai pour déclencher la transition
-setTimeout(function() {
-    document.querySelector('.videolog').classList.add('loaded');
-  }, 500); // Délai en millisecondes, ajustez selon vos besoins
+    setTimeout(function() {
+        document.querySelector('.videolog').classList.add('loaded');
+    }, 500); // Délai en millisecondes, ajustez selon vos besoins
 
-  // Ajouter la classe "loaded" au conteneur du logo après un court délai
-setTimeout(function() {
-    document.querySelector('.videolog').classList.add('loaded');
-}, 500); // Délai en millisecondes, ajustez selon vos besoins
+    // Ajouter la classe "loaded" au conteneur du logo après un court délai
+    setTimeout(function() {
+        document.querySelector('.videolog').classList.add('loaded');
+    }, 500); // Délai en millisecondes, ajustez selon vos besoins
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionner la section de l'histoire
-    const storySection = document.querySelector('#story');
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sélectionner les éléments de l'histoire
+        const h2Before = document.querySelector('#story h2::before');
+        const h2After = document.querySelector('#story h2::after');
+        const storyArticleBefore = document.querySelector('#story .story__article::before');
+        const storyArticleAfter = document.querySelector('#story .story__article::after');
 
-    // Ajouter la classe "loaded" à la section de l'histoire une fois que la page est chargée
-    storySection.classList.add('loaded');
+        // Ajouter la classe "loaded" aux éléments de l'histoire après un court délai
+        setTimeout(function() {
+            h2Before.classList.add('loaded');
+            h2After.classList.add('loaded');
+            storyArticleBefore.classList.add('loaded');
+            storyArticleAfter.classList.add('loaded');
+        }, 500); // Délai en millisecondes, ajustez selon vos besoins
+    });
+
+    // Intégration du script Swiper
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
 });
 
-});
 

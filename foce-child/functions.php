@@ -15,8 +15,10 @@ function theme_enqueue_styles_and_scripts() {
 
      // Enqueue custom JavaScript for fade in effect
      wp_enqueue_script( 'fade-in-script', get_stylesheet_directory_uri() . '/script.js', array( 'jquery' ), '1.0', true );
+}
 
-     add_action( 'wp_enqueue_scripts', 'theme_enqueue_swiper' );
+// Enqueue Swiper CSS and JavaScript
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_swiper' );
 function theme_enqueue_swiper() {
     // Enqueue Swiper CSS
     wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.css' );
@@ -24,10 +26,6 @@ function theme_enqueue_swiper() {
     // Enqueue Swiper JavaScript
     wp_enqueue_script( 'swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.js', array(), '6.8.4', true );
 }
-
-
-}
-
 
 // Get customizer options form parent theme
 if ( get_stylesheet() !== get_template() ) {
