@@ -45,9 +45,10 @@ get_header();
                 </div>
             </div>
         </article>
-        <article id="place" class="fade-in">
+        <article id="lieu" class="fade-in">
             <div>
                 <h3>Le Lieu</h3>
+                
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
         </article>

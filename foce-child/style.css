@@ -301,6 +301,149 @@
 }
 
 
+/* Styles du swiper*/
+
+#story,
+#studio {
+  padding: 100px 0;
+  text-align: center;
+}
+
+#story h2,
+#studio h2 {
+  margin-bottom: 50px;
+}
+
+#story__article {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+#characters {
+  margin-top: 50px;
+}
+
+.swiper-slide {
+  width: 334.333px;
+  height: 400px;
+  transition-duration: 1000ms;
+  margin-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+/*nuages et background */
+
+#lieu {
+  display: flex;
+  background-image: url("./assets/images/bg.png") !important; /* Changement de l'image de fond */
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  position: relative; /* Assurez-vous que la position est relative pour positionner les nuages */
+}
+
+#lieu h3 {
+  background-image: url("./assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+}
+
+#lieu > div {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 6em;
+}
+
+#lieu > div p {
+  padding-left: 5em;
+}
+
+
+#lieu::before,
+#lieu::after {
+  content: ""; /* Contenu vide pour les pseudo-éléments */
+  position: absolute;
+  top: 50%; /* Positionnez les nuages verticalement au milieu */
+  background-repeat: no-repeat;
+  animation-duration: 20s; /* Durée de l'animation */
+  animation-iteration-count: infinite; /* Animation infinie */
+}
+
+#lieu::before {
+  top: 110px;
+  left: 1000px; /* Positionnez le grand nuage à gauche */
+  width: 100%; /* Ajustez la taille du grand nuage */
+  height: 200px; /* Ajustez la taille du grand nuage */
+  background-image: url("./assets/images/big_cloud.png"); /* Ajoutez l'image du grand nuage */
+  filter: blur(10px); /* Ajoute un flou de 10 pixels sur les bords */
+  animation: move-cloud-right 30s linear infinite; /* Utilisation d'une animation unique pour le mouvement */
+}
+
+#lieu::after {
+  top: 250px;
+  right: 400px; /* Positionnez le petit nuage à droite */
+  width: 200px; /* Ajustez la taille du petit nuage */
+  height: 150px; /* Ajustez la taille du petit nuage */
+  background-image: url("./assets/images/little_cloud.png"); /* Ajoutez l'image du petit nuage */
+  filter: blur(10px); /* Ajoute un flou de 10 pixels sur les bords */
+  animation: move-cloud-left 30s linear infinite; /* Utilisation d'une animation unique pour le mouvement */
+}
+
+/* Définissez les animations pour déplacer les nuages */
+@keyframes move-cloud-left {
+  0% { transform: translateX(-50px); } /* Déplacement initial vers la gauche */
+  50% { transform: translateX(-500px); } /* Déplacement vers la gauche */
+  100% { transform: translateX(-50px); } /* Retour à la position initiale */
+}
+
+@keyframes move-cloud-right {
+  0% { transform: translateX(50px); } /* Déplacement initial vers la droite */
+  50% { transform: translateX(-400px); } /* Déplacement vers la droite */
+  100% { transform: translateX(50px); } /* Retour à la position initiale */
+}
+
+
+
+.footer ul::after {
+  content: url("./assets/images/hibiscus_footer.png");
+  position: absolute;
+  left: calc(50% - 323px);
+  bottom: -28.5em;
+  z-index: -1;
+  animation: rotateFlower 5s linear infinite; /* Ajout de l'animation */
+}
+  
+
+
+/* Définition de l'animation */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
 
 
 
