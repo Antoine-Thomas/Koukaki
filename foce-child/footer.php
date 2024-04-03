@@ -9,20 +9,13 @@
  * @package Fleurs_d\'oranger_&_Chats_errants
  */
 
-?>  
-<div id="colophon" class="site-footer"></div>
-<section id="oscar" class="oscar">
-<div>
-<p>Fleurs d’oranger & chats errants <br> est nominé aux Oscars <br> Short Film Animated de 2022 !
-</div>
-<div alt="Oscar Wild Image" id="studio" class="oscar-image"></div>
-</section>
+?>
 
-<footer class="footer" id="footer">
+	<footer id="colophon" class="site-footer hidden">
         <ul>
-            <li><a href="#">Mentions Légales</a></li>
-            <li><a href="#">STUDIO KOUKAKI</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="<?php echo (get_site_url())?>/politique-confidentialite" >Mentions Légales</a></li>
+            <li><a href="<?php echo (get_site_url())?>">STUDIO KOUKAKI</a></li>
+            <li><a href="<?php echo (get_site_url())?>/contact">Contact</a></li>
         </ul>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

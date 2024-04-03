@@ -13,41 +13,46 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-
-    <?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+    
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce-child' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
-    <header id="masthead" class="site-header">
+	<header id="masthead" class="site-header">
         <nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
             <ul>
-                <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
+                <li class="site-title "><a href="<?php echo (get_site_url())?>" rel="home">Fleurs d'oranger & chats errants</a></li>
             </ul>
+
+            <div id="modal" class="modal" aria-controls="primary-menu" aria-expanded="false">
+                <button class="modal__burger modal-open">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <div class="modal__content">
+                    <img class="modal__content--logo" src="<?php echo get_theme_file_uri() . '/assets/images/logo.png'; ?>" alt="">
+                    <ul>
+                        <li class="modal__content--story flower cat"><a href="#story">Histoire</a></li>
+                        <li class="modal__content--characters flower cat"><a href="#characters">Personnages</a></li>
+                        <li class="modal__content--place flower cat"><a href="#place">Lieu</a></li>
+                        <li class="modal__content--studio flower cat"><a href="#studio">Studio Koukaki</a>
+                        </li>
+                    </ul>
+
+                    <div class="modal__content--footer modal-trigger flower cat">
+                        <a href="#">STUDIO KOUKAKI</a></li>
+                    </div>
+
+                </div>
+            </div>
+
         </nav><!-- #site-navigation -->
-    </header><!-- #masthead -->
-
-   <div class="videolog">
-    <img src="http://localhost:10076/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo">
-    <video autoplay loop muted id="video-videolog">
-        <source src="http://localhost:10076/wp-content/themes/foce-child/assets/images/video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-
-
+	</header><!-- #masthead -->
