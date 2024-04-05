@@ -1,58 +1,50 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Fleurs_d\'oranger_&_Chats_errants
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-    
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
-	<header id="masthead" class="site-header">
+    <header id="masthead" class="site-header">
         <nav id="site-navigation" class="main-navigation">
-            <ul>
-                <li class="site-title "><a href="<?php echo (get_site_url())?>" rel="home">Fleurs d'oranger & chats errants</a></li>
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            
+            <ul class="menu">
+                <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
             </ul>
-
-            <div id="modal" class="modal" aria-controls="primary-menu" aria-expanded="false">
-                <button class="modal__burger modal-open">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </button>
-                <div class="modal__content">
-                    <img class="modal__content--logo" src="<?php echo get_theme_file_uri() . '/assets/images/logo.png'; ?>" alt="">
-                    <ul>
-                        <li class="modal__content--story flower cat"><a href="#story">Histoire</a></li>
-                        <li class="modal__content--characters flower cat"><a href="#characters">Personnages</a></li>
-                        <li class="modal__content--place flower cat"><a href="#place">Lieu</a></li>
-                        <li class="modal__content--studio flower cat"><a href="#studio">Studio Koukaki</a>
-                        </li>
-                    </ul>
-
-                    <div class="modal__content--footer modal-trigger flower cat">
-                        <a href="#">STUDIO KOUKAKI</a></li>
-                    </div>
-
-                </div>
+            <!-- Burger menu container to hold all navigation items -->
+            <div class="burger-menu hidden">
+                <ul>
+                    <li><a href="#story">Histoire</a></li>
+                    <li><a href="#characters">Personnages</a></li>
+                    <li><a href="#lieu">Lieu</a></li>
+                    <li><a href="#studio">Studio Koukaki</a></li>
+                </ul>
             </div>
-
         </nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    </header><!-- #masthead -->
+
+    <div class="videolog">
+        <img src="http://localhost:10076/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo">
+        <video autoplay loop muted id="video-videolog">
+            <source src="http://localhost:10076/wp-content/themes/foce-child/assets/images/video.mp4" type="video/mp4" id="video">
+            <img src="http://localhost:10076/wp-content/themes/foce-child/assets/images/banner.png" alt="banner" id="banner">
+        </video>
+    </div>
+</body>
+</html>
+
+
+

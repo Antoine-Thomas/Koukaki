@@ -4,6 +4,562 @@
  Author: Studio Koukaki
  Author URI: https://www.koukaki.local
  Template: foce
- Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+
+
+ /* CSS pour l'effet de fondu */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Contrôle la vitesse de transition */
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+
+/* fleurs qui tournent*/ 
+ .story {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .story h2::before {
+    content: url('./assets/images/sunflower_leaves.png');
+    position: absolute;
+    left: 0;
+    top: 3.5em;
+    z-index: -1;
+    text-align: center; /* Ajoutez cette ligne */
+  }
+  
+  .story h2::after {
+  content: url('./assets/images/Sunflower.png');
+  position: absolute;
+  left: 0.7em; /* Ajustez cette valeur */
+  top: 8em; /* Ajustez cette valeur */
+  animation: rotateFlower 5s linear infinite;
+  transform-origin:center;
+  width: 155px; /* Ajoutez cette ligne */
+  height: 155px; /* Ajoutez cette ligne */
+}
+   .story__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    font-size: 15px;
+    padding-bottom: 2em;
+    margin-top: -40px;
+    padding-right: 80px;
+    
+  }
+  
+  .story__article::before {
+    content: url('./assets/images/hibiscus_leaves.png');
+    position: absolute;
+    left: 50%;
+    top: 18em;
+    z-index: -1;
+  }
+  
+  .story__article::after {
+    content: url('./assets/images/Hibiscus.png');
+    position: absolute;
+    left: calc(50% + 414px);
+    top: 12em;
+    animation: rotateFlower 5s linear infinite;
+  }
+  
+  @keyframes rotateFlower {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .oscar {
+    background-image: url('./assets/images/rectangle.png')!important;
+    background-repeat: no-repeat!important;
+    background-size: 800px 350px!important; /* Taille spécifique de l'image en pixels */
+    position: relative!important; 
+    left:80px!important; /* Déplace l'image de 200 pixels vers la droite */
+    top: 10px!important; /* Ajustement pour remonter la section oscar */
+    padding-bottom: 400px!important; /* Ajoute un espace en bas du conteneur */
+    z-index: 1!important; /* Assurez-vous que la section soit au-dessus des fleurs */
+}
+
+.oscar p {
+    font-family: 'Quicksand', sans-serif!important;
+    font-size: 42px!important;
+    font-weight: 700!important;
+    color: #ffffff!important;
+    text-align: left!important;
+    line-height: 1.2!important; /* Ajustez cette valeur pour obtenir l'espacement désiré entre les lignes */
+    margin-top: 100px!important; /* Descend le paragraphe de 100px */
+    margin-left: 60px!important; /* Décale le paragraphe vers la droite de 40px */
+    position: absolute; /* Positionnement absolu pour ne pas affecter l'image de fond */
+    z-index: 2!important; /* Assurez-vous que le texte soit au-dessus des fleurs */
+}
+
+.oscar-image {
+    content: url('./assets/images/oscarwild.png') !important;
+    position: absolute !important;
+    left: 800px !important; /* Ajustez la position horizontale de l'image à droite de la section .oscar */
+    top: 0px !important; /* Ajustez la position verticale pour aligner avec la section .oscar */
+    width: 300px; /* Spécifiez la largeur souhaitée de l'image */
+    height: auto; /* Gardez la proportion de l'image */
+    z-index: 1; /* Assurez-vous que l'image soit au-dessus des fleurs */
+}
+
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 10em; /* Ajustez au besoin */
+  padding-bottom: 0em;
+  overflow: visible; /* Retirez overflow:hidden pour permettre l'affichage complet des fleurs */
+  z-index: 2; /* Augmentez le z-index pour placer la div au-dessus des fleurs */
+}
+
+.site-footer::before {
+  content: url('./assets/images/Sunflower.png');
+  position: absolute;
+  left: 4em;
+  top: 4em;
+  z-index: 1; /* Assurez-vous que les fleurs restent en arrière-plan */
+}
+
+.site-footer::after {
+  content: url('./assets/images/orchid.png');
+  position: absolute;
+  right: -4em;
+  bottom: -4em;
+  z-index: 1; /* Assurez-vous que les fleurs restent en arrière-plan */
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    padding-top: 16em;
+    padding-bottom: 1em;
+    overflow: hidden;
+  }
+  
+  .footer ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+  }
+  
+  .footer ul li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .footer ul li a {
+    text-decoration: none;
+  }
+  
+  .footer ul::after {
+    content: url("./assets/images/hibiscus_footer.png");
+    position: absolute;
+    left: calc(50% - 323px);
+    bottom: -28.5em;
+    z-index: -1;
+  }
+  
+  
+/*Text hoover anim pour studio koukaki*/
+
+
+
+#studio h2 span#text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+#studio.active h2 span#text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Animation d'apparition du texte pour la section "Histoire" */
+.story h2 span#text {
+  opacity: 1; /* Le texte est visible par défaut */
+  transform: translateY(0); /* Pas de décalage initial */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition d'animation */
+}
+
+/* Animation de disparition du texte pour la section "Histoire" lorsque inactive */
+.story:not(.active) h2 span#text {
+  opacity: 0; /* Le texte devient invisible */
+  transform: translateY(20px); /* Décalage vers le bas */
+}
+
+
+/*Text hoover anim HISTOIRE*/  
+
+#text {
+  position: relative;
+  display: inline-block;
+}
+
+#text::before,
+#text::after {
+  content: attr(data-content); /* Contenu dynamique pour les pseudos-éléments */
+  position: absolute;
+  top: 100%; /* Décalage vers le bas */
+  opacity: 0; /* Initiallement invisible */
+  transition: top 0.5s ease, opacity 0.5s ease; /* Transition pour une apparition fluide */
+}
+
+#text::before {
+  left: 0; /* Décalage vers la gauche pour le mot "histoire" */
+}
+
+#text::after {
+  left: 0; /* Décalage vers la gauche pour le mot "histoire" */
+}
+
+#text.active::before {
+  top: -10px; /* Déplacement vers le haut pour "histoire" lors du survol */
+  opacity: 1; /* Apparition */
+}
+
+#text.active::after {
+  top: 10px; /* Déplacement vers le bas pour "histoire" lors du survol */
+  opacity: 1; /* Apparition */
+}
+
+/*header video*/
+.videolog {
+  position: relative; /* Assurer que les éléments internes positionnés sont positionnés par rapport à celui-ci */
+  display: flex; /* Utiliser Flexbox pour aligner les éléments verticalement */
+  align-items: center; /* Centrer verticalement les éléments dans le conteneur */
+  justify-content: center; /* Centrer horizontalement les éléments dans le conteneur */
+  height: calc(100vh - 100px); /* Hauteur égale à la hauteur de la fenêtre moins 100px pour la marge en bas */
+  margin-bottom: -600px; /* Enlever l'espace en dessous du contenu pour se rapprocher de la section histoire */
+  position: sticky;
+
+}
+
+
+
+/* Vidéo */
+.videolog video {
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  top: -100%; /* Positionner la vidéo en dehors du conteneur vers le haut */
+  left: 0; /* Positionner la vidéo à gauche du conteneur */
+  width: 100%; /* Occupera toute la largeur du conteneur */
+  height: 100%; /* Occupera toute la hauteur du conteneur */
+  z-index: -1; /* Placer la vidéo derrière les autres éléments */
+  opacity: 0; /* Cacher la vidéo initialement */
+  transition: opacity 1s ease, top 1s ease; /* Ajouter une transition pour l'opacité et la position */
+  margin-top: -280px; /* Ajuster la position verticale de la vidéo */
+}
+
+
+/* Lorsque la classe "loaded" est ajoutée au conteneur */
+.videolog.loaded video {
+  opacity: 1; /* Afficher la vidéo avec un fondu en transparence */
+  top: 0; /* Faire glisser la vidéo vers le bas pour sa position finale */
+} 
+
+
+/* Styles pour les écrans de moins de 920px (tablettes et téléphones) */
+@media (max-width: 920px) {
+  /* Masquer la vidéo */
+  .videolog video {
+      display: none;
+  }
+  
+  /* Afficher l'image banner.png */
+  .videolog {
+    
+      background-image: url("http://localhost:10076/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
+      background-repeat: no-repeat; /* Empêcher la répétition de l'image de fond */
+      background-size: contain; /* Adapter l'image pour qu'elle tienne entièrement dans le conteneur */
+      background-position: center; /* Centrer l'image */
+      margin-top: -150px;
+
+  }
+}
+
+
+/* Logo */
+.videolog img {
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  top: calc(50% - 600px); /* Positionner le logo au milieu verticalement moins 100px */
+  left: 50%; /* Centrer horizontalement le logo */
+  transform: translate(-50%, -50%); /* Centrer horizontalement et verticalement */
+  width: 50%; /* Ajuster la largeur du logo */
+  opacity: 0; /* Cacher le logo initialement */
+  animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate; /* Chainer les animations de fade-in et de glissement vers le haut avec l'animation de flottement */
+}
+
+/* Animation de fade-in et de glissement vers le haut */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0; /* Logo complètement transparent au début */
+  }
+  to {
+    opacity: 1; /* Logo complètement visible à la fin */
+  }
+}
+
+/* Animation de flottement */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(20px) translateX(-50%) rotate(-5deg); /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+  }
+  to {
+    transform: translateY(-20px) translateX(-50%) rotate(5deg); /* Mouvement de flottement vers le haut */
+  }
+}
+
+
+
+/* Animation des éléments de l'histoire */
+#story h2::before,
+#story h2::after,
+#story .story__article::before,
+#story .story__article::after {
+  transition: opacity 1s ease, transform 1s ease; /* Ajouter une transition pour l'opacité et la position */
+}
+
+/* Les éléments deviennent opaques et glissent vers le haut */
+#story.loaded h2::before,
+#story.loaded h2::after,
+#story.loaded .story__article::before,
+#story.loaded .story__article::after {
+  opacity: 1; /* Les éléments deviennent opaques */
+  transform: translateY(20px); /* Les éléments glissent vers le haut depuis une position plus basse */
+}
+
+
+/* Styles du swiper*/
+
+#story,
+#studio {
+  padding: 100px 0;
+  text-align: center;
+}
+
+#story h2,
+#studio h2 {
+  margin-bottom: 50px;
+}
+
+#story__article {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+#characters {
+  margin-top: 50px;
+}
+
+.swiper-slide {
+  width: 334.333px;
+  height: 400px;
+  transition-duration: 1000ms;
+  margin-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+
+/* nuages et background */
+#lieu {
+  display: flex;
+  background-image: url("./assets/images/bg.png") !important;
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+#lieu h3 {
+  background-image: url("./assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+}
+
+#lieu > div {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 6em;
+}
+
+#lieu > div p {
+  padding-left: 5em;
+}
+
+.lieu-container {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.place--big_cloud,
+.place--little_cloud {
+  position: absolute;
+  filter: blur(10px);
+  transition: transform 1s ease-in-out;
+  z-index: 9999;
+}
+
+.place--big_cloud {
+  top: 80px;
+  left: calc(100% - 400px); /* Modifiez cette valeur */
+  width: 400px; /* Ajustez la largeur selon vos besoins */
+  height: auto; /* Laissez la hauteur s'ajuster automatiquement */
+  z-index: 9999;
+  transform: translateX(var(--posX, 0));
+}
+
+.place--little_cloud {
+  top: 200px;
+  left: calc(100% - 600px); /* Modifiez cette valeur */
+  width: 200px; /* Ajustez la largeur selon vos besoins */
+  height: auto; /* Laissez la hauteur s'ajuster automatiquement */
+  z-index: 9999;
+  transform: translateX(var(--posX, 0));
+}
+
+
+
+
+.footer ul::after {
+  content: url("./assets/images/hibiscus_footer.png");
+  position: absolute;
+  left: calc(50% - 323px);
+  bottom: -28.5em;
+  z-index: -1;
+  animation: rotateFlower 5s linear infinite; /* Ajout de l'animation */
+}
+  
+
+
+/* Définition de l'animation */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Définition de l'animation */
+
+.burger-menu {
+  display: none;
+}
+
+.menu-toggle {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.menu-toggle .line {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  display: block;
+  margin: 6px auto;
+  transition: background-color 0.3s ease;
+}
+
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.burger-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.burger-menu ul li {
+  margin-bottom: 1rem;
+}
+
+.burger-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.burger-menu.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
