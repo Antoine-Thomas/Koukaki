@@ -7,7 +7,9 @@
  Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-
+ html {
+  text-size-adjust: 100%;
+}
 
  /* CSS pour l'effet de fondu */
 .fade-in {
@@ -85,6 +87,9 @@
     }
   }
 
+
+/* nomination aux oscars */
+
   .oscar {
     background-image: url('./assets/images/rectangle.png')!important;
     background-repeat: no-repeat!important;
@@ -94,30 +99,63 @@
     top: 10px!important; /* Ajustement pour remonter la section oscar */
     padding-bottom: 400px!important; /* Ajoute un espace en bas du conteneur */
     z-index: 1!important; /* Assurez-vous que la section soit au-dessus des fleurs */
+    display: flex;
+    
+}
+
+.oscar {
+  background-image: url('./assets/images/rectangle.png')!important;
+  background-repeat: no-repeat!important;
+  background-size: 800px 350px!important; /* Taille spécifique de l'image en pixels */
+  position: relative!important; 
+  left: 80px!important; /* Déplace l'image de 200 pixels vers la droite */
+  top: 10px!important; /* Ajustement pour remonter la section oscar */
+  padding-bottom: 400px!important; /* Ajoute un espace en bas du conteneur */
+  z-index: 1!important; /* Assurez-vous que la section soit au-dessus des fleurs */
+  display: flex;
 }
 
 .oscar p {
-    font-family: 'Quicksand', sans-serif!important;
-    font-size: 42px!important;
-    font-weight: 700!important;
-    color: #ffffff!important;
-    text-align: left!important;
-    line-height: 1.2!important; /* Ajustez cette valeur pour obtenir l'espacement désiré entre les lignes */
-    margin-top: 100px!important; /* Descend le paragraphe de 100px */
-    margin-left: 60px!important; /* Décale le paragraphe vers la droite de 40px */
-    position: absolute; /* Positionnement absolu pour ne pas affecter l'image de fond */
-    z-index: 2!important; /* Assurez-vous que le texte soit au-dessus des fleurs */
+  font-family: 'Quicksand', sans-serif!important;
+  font-size: 42px!important;
+  font-weight: 700!important;
+  color: #ffffff!important;
+  text-align: left!important;
+  line-height: 1.2!important; /* Ajustez cette valeur pour obtenir l'espacement désiré entre les lignes */
+  margin-top: 100px!important; /* Descend le paragraphe de 100px */
+  margin-left: 60px!important; /* Décale le paragraphe vers la droite de 40px */
+  position: absolute; /* Positionnement absolu pour ne pas affecter l'image de fond */
+  z-index: 2!important; /* Assurez-vous que le texte soit au-dessus des fleurs */
 }
 
 .oscar-image {
-    content: url('./assets/images/oscarwild.png') !important;
-    position: absolute !important;
-    left: 800px !important; /* Ajustez la position horizontale de l'image à droite de la section .oscar */
-    top: 0px !important; /* Ajustez la position verticale pour aligner avec la section .oscar */
-    width: 300px; /* Spécifiez la largeur souhaitée de l'image */
-    height: auto; /* Gardez la proportion de l'image */
-    z-index: 1; /* Assurez-vous que l'image soit au-dessus des fleurs */
+  content: url('./assets/images/oscarwild.png') !important;
+  position: absolute !important;
+  left: 65% !important; /* Ajustez la position horizontale de l'image au centre */
+  top: 50% !important; /* Ajustez la position verticale de l'image au centre */
+  transform: translate(-50%, -50%); /* Centrer l'image */
+  width: 400px; /* Largeur de l'image */
+  height: auto; /* Gardez la proportion de l'image */
+  z-index: 3; /* Assurez-vous que l'image soit au-dessus de la div#colophon */
 }
+
+@media only screen and (min-width: 320px) and (max-width: 920px) {
+  /* Appliquer ces styles uniquement lorsque la largeur de l'écran est comprise entre 320px et 920px */
+
+  .oscar-image {
+      width: 50%; /* Ajustez la largeur de l'image pour s'adapter à la largeur de l'écran */
+      max-width: 400px; /* Limitez la largeur maximale de l'image */
+      margin-right: 300px;
+      margin-top: 200px;
+
+  }
+}
+
+
+
+
+
+
 
 .site-footer {
   position: relative;
@@ -139,9 +177,10 @@
 .site-footer::after {
   content: url('./assets/images/orchid.png');
   position: absolute;
-  right: -4em;
+  right: 4em;
   bottom: -4em;
   z-index: 1; /* Assurez-vous que les fleurs restent en arrière-plan */
+  
 }
 
 .footer {
@@ -175,6 +214,7 @@
     left: calc(50% - 323px);
     bottom: -28.5em;
     z-index: -1;
+    
   }
   
   
@@ -250,7 +290,7 @@
   align-items: center; /* Centrer verticalement les éléments dans le conteneur */
   justify-content: center; /* Centrer horizontalement les éléments dans le conteneur */
   height: calc(100vh - 100px); /* Hauteur égale à la hauteur de la fenêtre moins 100px pour la marge en bas */
-  margin-bottom: -600px; /* Enlever l'espace en dessous du contenu pour se rapprocher de la section histoire */
+  margin-bottom: -350px; /* Enlever l'espace en dessous du contenu pour se rapprocher de la section histoire */
   position: sticky;
 
 }
@@ -267,7 +307,7 @@
   z-index: -1; /* Placer la vidéo derrière les autres éléments */
   opacity: 0; /* Cacher la vidéo initialement */
   transition: opacity 1s ease, top 1s ease; /* Ajouter une transition pour l'opacité et la position */
-  margin-top: -280px; /* Ajuster la position verticale de la vidéo */
+  margin-top: -190px; /* Ajuster la position verticale de la vidéo */
 }
 
 
@@ -285,14 +325,15 @@
       display: none;
   }
   
-  /* Afficher l'image banner.png */
+  /* Afficher l'image banner.png petits ecrans 920px */
   .videolog {
     
-      background-image: url("http://localhost:10076/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
+      background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
       background-repeat: no-repeat; /* Empêcher la répétition de l'image de fond */
       background-size: contain; /* Adapter l'image pour qu'elle tienne entièrement dans le conteneur */
       background-position: center; /* Centrer l'image */
       margin-top: -150px;
+      margin-bottom:0px ; 
 
   }
 }
@@ -301,7 +342,7 @@
 /* Logo */
 .videolog img {
   position: absolute; /* Position absolue par rapport au conteneur parent */
-  top: calc(50% - 600px); /* Positionner le logo au milieu verticalement moins 100px */
+  top: calc(50% - 500px); /* Positionner le logo au milieu verticalement moins 100px */
   left: 50%; /* Centrer horizontalement le logo */
   transform: translate(-50%, -50%); /* Centrer horizontalement et verticalement */
   width: 50%; /* Ajuster la largeur du logo */
@@ -329,6 +370,15 @@
   }
 }
 
+/* Styles pour les écrans de moins de 920px (tablettes et téléphones) */
+@media (max-width: 920px) {
+  /* Réduire la taille du logo */
+  .videolog img {
+    width: 30%; /* Ajuster la largeur du logo à 30% de la largeur du conteneur */
+    top: calc(50% - 100px); /* Réajuster la position verticale du logo */
+  }
+}
+
 
 
 /* Animation des éléments de l'histoire */
@@ -351,10 +401,43 @@
 
 /* Styles du swiper*/
 
+#new-title {
+  margin-left: -20px; /* Déplacer le titre de 20px vers la gauche */
+  background-image: url("C:\\Users\\searc\\Local Sites\\koukaki2\\app\\public\\wp-content\\themes\\foce-child\\assets\\images\\orange_characters_bg.png");
+  margin-right: 650px;
+  background-repeat: no-repeat;
+  padding: 50px; /* Ajoutez un espace autour du texte pour que l'ornement soit visible */
+  color: white; /* Assurez-vous que le texte est lisible sur le fond orange */
+  font-size: 42px; /* Ajustez la taille du texte au besoin */
+  text-align: center; /* Centrez le texte horizontalement */
+}
+
+
+.main-character {
+  /* Styles pour le carrousel principal */
+  width: 1440px; /* Largeur fixe du carrousel */
+  overflow: hidden; /* Masquer les diapositives qui dépassent du conteneur */
+}
+
+.swiper-wrapper {
+  /* Styles pour la div contenant les diapositives */
+  display: flex; /* Utiliser un affichage en ligne pour les diapositives */
+  width: calc(1440px * 3); /* Calculer la largeur de la wrapper pour montrer seulement trois diapositives */
+  transition: transform 0.3s ease; /* Ajouter une transition pour un effet de défilement fluide */
+}
+
+.swiper-slide {
+  /* Styles pour chaque diapositive */
+  flex: 0 0 calc(1440px / 3); /* Calculer la largeur de chaque diapositive pour qu'il y ait toujours trois images visibles */
+  /* Ajoutez d'autres styles nécessaires */
+}
+
+
 #story,
 #studio {
   padding: 100px 0;
   text-align: center;
+  overflow: hidden;
 }
 
 #story h2,
@@ -369,28 +452,10 @@
 }
 
 #characters {
-  margin-top: 50px;
+  margin-top: 50vidpx;
 }
 
-.swiper-slide {
-  width: 334.333px;
-  height: 400px;
-  transition-duration: 1000ms;
-  margin-right: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-}
-
-.swiper-slide figcaption {
-  margin-top: 10px;
-  font-size: 16px;
-}
 
 
 /* nuages et background */
@@ -433,7 +498,7 @@
   position: absolute;
   filter: blur(10px);
   transition: transform 1s ease-in-out;
-  z-index: 9999;
+  z-index: 5;
 }
 
 .place--big_cloud {
@@ -441,16 +506,16 @@
   left: calc(100% - 400px); /* Modifiez cette valeur */
   width: 400px; /* Ajustez la largeur selon vos besoins */
   height: auto; /* Laissez la hauteur s'ajuster automatiquement */
-  z-index: 9999;
+  z-index: 5;
   transform: translateX(var(--posX, 0));
 }
 
 .place--little_cloud {
   top: 200px;
-  left: calc(100% - 600px); /* Modifiez cette valeur */
+  left: calc(100% - 550px); /* Modifiez cette valeur */
   width: 200px; /* Ajustez la largeur selon vos besoins */
   height: auto; /* Laissez la hauteur s'ajuster automatiquement */
-  z-index: 9999;
+  z-index: 5;
   transform: translateX(var(--posX, 0));
 }
 
@@ -464,6 +529,8 @@
   bottom: -28.5em;
   z-index: -1;
   animation: rotateFlower 5s linear infinite; /* Ajout de l'animation */
+
+  
 }
   
 
@@ -478,7 +545,7 @@
   }
 }
 
-/* Définition de l'animation */
+/* Animation du burger-menu */
 
 .burger-menu {
   display: none;
@@ -503,18 +570,6 @@
   display: block;
   margin: 6px auto;
   transition: background-color 0.3s ease;
-}
-
-.menu-toggle.active .line:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.menu-toggle.active .line:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active .line:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
 }
 
 .burger-menu {
@@ -555,11 +610,131 @@
   visibility: hidden;
 }
 
+.menu-toggle.active .line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg); /* Ajustez translateY si nécessaire */
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg); /* Ajustez translateY si nécessaire */
+}
 
 
+.burger-menu.active {
+  display: block; /* Afficher le menu lorsque la classe active est présente */
+  position: fixed; /* Position fixe pour dérouler la présentation sur toute la page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent pour une meilleure lisibilité */
+  transition: all 0.5s ease; /* Animation de transition pour une apparence fluide */
+}
+
+/* Masquer le menu burger et la présentation par défaut */
+.burger-menu, .presentation {
+  display: none;
+}
+
+/* Afficher le menu burger et la présentation lorsque la classe 'show' est ajoutée */
+.burger-menu.show, .presentation.show {
+  display: block;
+}
+
+/* Styles pour le menu burger affiché */
+.burger-menu.show {
+  width: 100%;
+  height: 100%;
+  /* Ajoutez d'autres styles selon vos besoins */
+}
 
 
+/* style.css */
+.site-header {
+  position: relative;
+}
 
+.burger-menu {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em;
+}
 
+.burger-line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  margin: 6px 0;
+  transition: all 0.3s ease-in-out;
+}
 
+.burger-menu.active .burger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2em;
+  text-align: center;
+  max-width: 600px;
+}
+
+.modal-logo {
+  max-width: 200px;
+}
+
+.modal-menu {
+  list-style: none;
+  margin: 2em 0;
+  padding: 0;
+}
+
+.modal-menu li {
+  margin-bottom: 1em;
+}
+
+.modal-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.modal-footer a {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
 

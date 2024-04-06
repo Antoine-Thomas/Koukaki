@@ -1,8 +1,7 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main navigation-active">
+
     <section id="story" class="story fade-in">
         <h2><span id="text">L'histoire</span></h2>
         <article id="" class="story__article">
@@ -18,43 +17,51 @@ get_header();
         $characters_query = new WP_Query($args);
         ?>
         <article id="characters" class="fade-in section">
-            <div class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper">
-                <h3>Les personnages</h3>
-                <!-- Carrousel Swiper -->
-                <div class="swiper-wrapper section">
-                    <?php
-                    // Adresses locales des images avec les noms des personnages
-                    $image_paths = array(
-                        "/wp-content/uploads/2022/06/Jaakuna.png" => "Jaakuna",
-                        "/wp-content/uploads/2022/06/Tenshi.png" => "Tenshi",
-                        "/wp-content/uploads/2022/06/Kawaneko.png" => "Kawaneko",
-                        "/wp-content/uploads/2022/06/Orenjiiro.png" => "Orenjiiro",
-                        "/wp-content/uploads/2022/06/Pinku.png" => "Pinku"
-                    );
-                    
-                    // Boucle à travers les adresses des images avec les noms
-                    foreach ($image_paths as $image_path => $image_name) {
-                        echo '<div class="swiper-slide">';
-                        echo '<figure>';
-                        echo '<img src="' . $image_path . '" />';
-                        echo '<figcaption>' . $image_name . '</figcaption>';
-                        echo '</figure>';
-                        echo '</div>';
-                    }
-                    ?>
+    <div class="characters-carousel">
+        <div class="character-container">
+            <!-- Div de gauche -->
+        </div>
+        <div class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper">
+            <h3 id="new-title">Les personnages</h3>
+                    <!-- Carrousel Swiper -->
+                    <div class="swiper-wrapper section">
+                        <?php
+                        // Adresses locales des images avec les noms des personnages
+                        $image_paths = array(
+                            "/wp-content/uploads/2022/06/Jaakuna.png" => "Jaakuna",
+                            "/wp-content/uploads/2022/06/Tenshi.png" => "Tenshi",
+                            "/wp-content/uploads/2022/06/Kawaneko.png" => "Kawaneko",
+                            "/wp-content/uploads/2022/06/Orenjiiro.png" => "Orenjiiro",
+                            "/wp-content/uploads/2022/06/Pinku.png" => "Pinku"
+                        );
+                        
+                        // Boucle à travers les adresses des images avec les noms
+                        foreach ($image_paths as $image_path => $image_name) {
+                            echo '<div class="swiper-slide">';
+                            echo '<figure>';
+                            echo '<img src="' . $image_path . '" />';
+                            echo '<figcaption>' . $image_name . '</figcaption>';
+                            echo '</figure>';
+                            echo '</div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+                <div class="character-container">
+                    <!-- Div de droite -->
                 </div>
             </div>
         </article>
         <article id="lieu" class="fade-in section">
-    <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
-    <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
-    <div class="lieu-container">
-        <div>
-            <h3>Le Lieu</h3>
-            <p><?php echo get_theme_mod('place'); ?></p>
-        </div>
-    </div>
-</article>
+            <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
+            <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
+            <div class="lieu-container">
+                <div>
+                    <h3>Le Lieu</h3>
+                    <p><?php echo get_theme_mod('place'); ?></p>
+                </div>
+            </div>
+        </article>
     </section>
 
     <section id="studio" class="studio fade-in ">
@@ -66,6 +73,4 @@ get_header();
     </section>
 </main>
 
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>

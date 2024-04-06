@@ -1,14 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionnez toutes les sections que vous souhaitez animer
-    const sections = document.querySelectorAll("section");
-    // Sélectionnez le texte "histoire"
-    const histoireText = document.getElementById("text");
-    // Sélectionnez l'élément pour la vidéo
-    const videoEl = document.querySelector('.videolog');
-    // Sélectionnez le bouton de basculement du menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    // Sélectionnez le menu déroulant
-    const burgerMenu = document.querySelector('.burger-menu');
+   const sections = document.querySelectorAll("section");
+   const histoireText = document.getElementById("text");
+   const videoEl = document.querySelector('.videolog');
+   const menuToggle = document.querySelector('.menu-toggle');
+   const burgerMenu = document.querySelector('.burger-menu');
+   const modal = document.querySelector('.modal');
+
+    
 
     // Ajoutez la classe "active" pour faire apparaître le texte au chargement de la page
     histoireText.classList.add("active");
@@ -23,10 +21,36 @@ document.addEventListener("DOMContentLoaded", function() {
         videoEl.classList.add('loaded');
     }, 500); // Délai en millisecondes, ajustez selon vos besoins
 
-    // Gérer l'affichage du menu déroulant
-    menuToggle.addEventListener('click', function() {
-        burgerMenu.classList.toggle('hidden'); // Affiche ou cache le menu déroulant en pleine page
+    // Fonction pour afficher/masquer le menu burger
+    function toggleBurgerMenu() {
+        // Ajoutez ou supprimez la classe 'active' au menu-toggle
+        menuToggle.classList.toggle('active');
+
+        // Ajoutez ou supprimez la classe 'show' au burger-menu
+        burgerMenu.classList.toggle('show');
+
+        // Ajoutez ou supprimez la classe 'show' à la présentation
+        if (presentation) {
+            presentation.classList.toggle('show');
+        }
+    }
+
+    // Ajoutez un gestionnaire d'événement pour le clic sur le bouton de menu burger
+    menuToggle.addEventListener('click', toggleBurgerMenu);
+
+    burgerMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
+        modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
     });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            burgerMenu.classList.remove('active');
+            modal.style.display = 'none';
+        }
+    });
+
+    // ... Le reste de votre code ...
 
     // Gérer l'animation des sections avec l'Intersection Observer
     function animatedTitle(entry) {
@@ -131,23 +155,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-
-
-      function moveCloudsByScroll() {
+    function moveCloudsByScroll() {
         const lieu = document.getElementById("lieu");
         const rootElement = document.documentElement;
-      
+
         let scrollPosition = window.scrollY - lieu.offsetTop;
         let cloudPosition = Math.round(scrollPosition / 2);
-      
+
         if (cloudPosition >= 0 && cloudPosition <= 600) {
-          rootElement.style.setProperty("--posX", `-${cloudPosition}px`);
+            rootElement.style.setProperty("--posX", `-${cloudPosition}px`);
         }
-      }
-      
-      window.addEventListener('scroll', moveCloudsByScroll);
-    
-    
+    }
+
+    window.addEventListener('scroll', moveCloudsByScroll);
 });
 
 // Gérer l'animation de l'opacité des éléments avec classe "fade-in"
