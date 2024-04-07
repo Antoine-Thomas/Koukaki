@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 el: ".swiper-pagination",
             },
             autoplay: {
-                delay: 5000,
+                delay: 3000,
                 disableOnInteraction: false,
             },
         });
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Gérer l'animation de l'opacité des éléments avec classe "fade-in"
 jQuery(document).ready(function($) {
     $('.fade-in').each(function() {
-        $(this).css('opacity', 1).delay(1000).animate({
+        $(this).css('opacity', 1).delay(8000).animate({
             opacity: 1
         }, 1000);
     });
