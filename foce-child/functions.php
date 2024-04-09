@@ -4,6 +4,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles_and_scripts' );
 function theme_enqueue_styles_and_scripts() {
     // Enqueue parent style
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+   
     
     // Enqueue child style
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), wp_get_theme()->get('Version') );
@@ -14,9 +15,16 @@ function theme_enqueue_styles_and_scripts() {
     // Enqueue custom JavaScript for fade in effect
     wp_enqueue_script( 'fade-in-script', get_stylesheet_directory_uri() . '/script.js', array( 'jquery' ), '1.0', true );
 
-  // Enqueue Parallax script
-   wp_enqueue_script( 'parallax-js', 'https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js', array(), '2.0.0', true );
-   
+    
+    
+    
+
+ // Enqueue Parallax script in the footer
+add_action('wp_footer', 'enqueue_parallax_script');
+function enqueue_parallax_script() {
+    wp_enqueue_script('parallax-js', 'https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js', array(), '3.1.0', true);
+}
+
 
     
     // Enqueue Swiper CSS and JavaScript

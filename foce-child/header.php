@@ -13,7 +13,7 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
-    <header id="masthead" class="site-header">
+    <div id="masthead" class="site-header">
         <nav id="site-navigation" class="main-navigation">
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" title="Menu">
                 <span class="line"></span>
@@ -26,20 +26,34 @@
             </ul>
 
             <!-- Burger menu container to hold all navigation items -->
-            <div class="modal">
-                <div class="modal-content">
-                    <div class="burger-menu">
-                        <ul>
-                            <li class="burger-menu-story"><a href="#story">Histoire</a></li>
-                            <li class="burger-menu-characters"><a href="#characters">Personnages</a></li>
-                            <li class="burger-menu-lieu"><a href="#lieu">Lieu</a></li>
-                            <li class="burger-menu-studio"><a href="#studio">Studio Koukaki</a></li>
+            <div class="burger-menu-container" style="display: none;">
+                <header id="masthead" class="site-header">
+                    <nav id="site-navigation" class="main-navigation">
+                        <ul class="menu nav-menu">
+                            <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Fleurs d'oranger &amp; chats errants</a></li>
                         </ul>
+                    </nav>
+
+                    <div class="menu-header menu nav-menu site-title">
+                        <div class="logo-small">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <img src="http://localhost:10083/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo-small" class="fade-in">
+                            </a>
+                        </div>
+                        <button class="close-menu">&#10005;</button>
                     </div>
-                </div>
+                    <nav class="menu-nav">
+                        <ul>
+                            <li class="menu-item"><a href="#story">Histoire</a></li>
+                            <li class="menu-item"><a href="#characters">Personnages</a></li>
+                            <li class="menu-item"><a href="#lieu">Lieu</a></li>
+                            <li class="menu-item"><a href="#studio">Studio Koukaki</a></li>
+                        </ul>
+                    </nav>
+                </header>
             </div>
-        </nav><!-- #site-navigation -->
-    </header><!-- #masthead -->
+        </nav>
+    </div>
 
     <div class="videolog fade-in">
         <video autoplay loop muted id="video-videolog">
@@ -53,5 +67,4 @@
         </div>
     </div>
 </div>
-
 

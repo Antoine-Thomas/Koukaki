@@ -24,7 +24,7 @@
         <section class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper">
             <h3 id="new-title">Les personnages</h3>
                     <!-- Carrousel Swiper -->
-                    <div class="swiper-wrapper section">
+                    <div class="swiper-wrapper ">
                         <?php
                         // Adresses locales des images avec les noms des personnages
                         $image_paths = array(

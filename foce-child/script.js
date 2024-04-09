@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const histoireText = document.getElementById("text");
     const videoEl = document.querySelector('.videolog');
     const menuToggle = document.querySelector('.menu-toggle');
-    const burgerMenu = document.querySelector('.burger-menu');
-    const modal = document.querySelector('.modal');
+    const burgerMenu = document.querySelector('.burger-menu-container');
+    const closeMenu = document.querySelector('.close-menu');
     const logo = document.getElementById('logo'); // Sélectionner l'élément du logo
 
     // Initialiser la position initiale du logo
@@ -36,23 +36,42 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ajouter la classe "loaded" à la vidéo après un court délai
     setTimeout(() => videoEl.classList.add('loaded'), 500);
 
+    // Variable pour suivre le clic sur le menu toggle
+    let menuToggleClicked = false;
+
     // Fonction pour afficher/masquer le menu burger
-    function toggleBurgerMenu() {
-        menuToggle.classList.toggle('active');
-        burgerMenu.classList.toggle('show');
+function toggleBurgerMenu() {
+    // Récupérer le conteneur du menu burger
+    const burgerMenuContainer = document.querySelector('.burger-menu-container');
+
+    // Si le menu burger est caché, l'afficher ; sinon, le cacher
+    if (burgerMenuContainer.style.display === 'none' || burgerMenuContainer.style.display === '') {
+        burgerMenuContainer.style.display = 'block';
+        menuToggle.classList.add('active');
+        // Ajouter les styles spécifiés à la classe .burger-menu-container lorsque le menu est ouvert
+        burgerMenuContainer.classList.add('active');
+    } else {
+        burgerMenuContainer.style.display = 'none';
+        menuToggle.classList.remove('active');
+        // Supprimer les styles spécifiés de la classe .burger-menu-container lorsque le menu est fermé
+        burgerMenuContainer.classList.remove('active');
     }
+    // Mettre à jour le statut du clic sur le menu toggle
+    menuToggleClicked = true;
+}
+
 
     // Gestionnaires d'événements pour le menu burger
     menuToggle.addEventListener('click', toggleBurgerMenu);
-    burgerMenu.addEventListener('click', function() {
-        this.classList.toggle('active');
-        modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
-    });
+    closeMenu.addEventListener('click', toggleBurgerMenu);
     window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            burgerMenu.classList.remove('active');
-            modal.style.display = 'none';
+        // Si le clic est en dehors du menu burger et que le menu toggle n'a pas été cliqué, cacher le menu burger
+        if (event.target !== burgerMenu && !menuToggleClicked) {
+            burgerMenu.style.display = 'none';
+            menuToggle.classList.remove('active');
         }
+        // Réinitialiser le statut du clic sur le menu toggle
+        menuToggleClicked = false;
     });
 
     // Fonction pour animer le titre de la section "Histoire"
@@ -177,47 +196,3 @@ jQuery(document).ready(function($) {
     });
 });
 
-// Initialiser Parallax pour l'arrière-plan du corps (ou tout autre élément que vous souhaitez utiliser)
-const parallaxInstance = new Parallax(document.body);
-
-// Parcourir les sections et ajouter l'effet de parallaxe aux éléments correspondants
-const sections = document.querySelectorAll("section");
-const parallaxElements = document.querySelectorAll(".parallax-element");
-
-// Fonction pour activer l'effet de parallaxe sur les éléments
-function activateParallax() {
-    parallaxElements.forEach(element => {
-        element.classList.add("parallax-active");
-    });
-}
-
-// Fonction pour désactiver l'effet de parallaxe sur les éléments
-function deactivateParallax() {
-    parallaxElements.forEach(element => {
-        element.classList.remove("parallax-active");
-    });
-}
-
-// Activer l'effet de parallaxe par défaut
-activateParallax();
-
-// Écouter les événements de survol des sections
-sections.forEach(section => {
-    section.addEventListener("mouseenter", deactivateParallax);
-    section.addEventListener("mouseleave", activateParallax);
-});
-
-sections.forEach(function(section) {
-    const parallaxElement = section.querySelector(".parallax-element");
-    if (parallaxElement) {
-        // Ajouter l'élément au contrôleur Parallax
-        parallaxInstance.add(parallaxElement, {
-            scalarX: 10,
-            scalarY: 10
-        });
-    }
-});
-
-
-
-                

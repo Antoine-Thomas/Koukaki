@@ -238,7 +238,7 @@ div#page.site {
   .oscar-image {
     width: 100%!important; /* Largeur de la div égale à la largeur de l'image */
    
-    position: relative; /* Position relative pour permettre le déplacement */
+position: relative; /* Position relative pour permettre le déplacement */
     align-self: center; /* Centrer verticalement la div */
   }
 }
@@ -268,12 +268,15 @@ div#page.site {
   left: 4em;
   top: 4em;
   z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
+  animation: rotateFlower 10s linear infinite;
 }
+
 
 
 .site-container {
   overflow: hidden;
   position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus soient positionnés par rapport à ce conteneur */
+  overflow: hidden;
 }
 
 .site-footer::after {
@@ -281,6 +284,7 @@ div#page.site {
   position: absolute;
   right: -4em;
   bottom: -4em;
+  animation: rotateFlower 10s linear infinite;
   z-index: -9999; /* Assurez-vous que les fleurs restent en arrière-plan */
 }
 
@@ -459,7 +463,7 @@ div#page.site {
   z-index: -1; /* Placer la vidéo derrière les autres éléments */
   opacity: 0; /* Cacher la vidéo initialement */
   transition: opacity 1s ease, top 1s ease; /* Ajouter une transition pour l'opacité et la position */
-  margin-top: -190px; /* Ajuster la position verticale de la vidéo */
+  margin-top: -150px; /* Ajuster la position verticale de la vidéo */
 }
 
 
@@ -770,18 +774,18 @@ div#page.site {
 .burger-menu {
   display: none;
 }
-
 .menu-toggle {
   display: block;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: absolute; /* Changez "absolute" par "fixed" */
+  top: 0px; /* Ajustez cette valeur selon la position verticale souhaitée */
+  right: 700px; /* Ajustez cette valeur selon la position horizontale souhaitée */
   z-index: 1000;
   cursor: pointer;
   background-color: transparent;
   border: none;
   padding: 0;
 }
+
 
 .menu-toggle .line {
   width: 30px;
@@ -793,7 +797,7 @@ div#page.site {
 }
 
 .burger-menu {
-  position: fixed;
+ 
   top: 0;
   left: 0;
   width: 100%;
@@ -830,8 +834,17 @@ div#page.site {
   visibility: hidden;
 }
 
+.menu-toggle .line {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  display: block;
+  margin: 6px auto;
+  transition: all 0.3s ease; /* Ajoutez une transition pour une animation en douceur */
+}
+
 .menu-toggle.active .line:nth-child(1) {
-  transform: translateY(9px) rotate(45deg); /* Ajustez translateY si nécessaire */
+  transform: translateY(9px) rotate(45deg);
 }
 
 .menu-toggle.active .line:nth-child(2) {
@@ -839,155 +852,227 @@ div#page.site {
 }
 
 .menu-toggle.active .line:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg); /* Ajustez translateY si nécessaire */
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-
-.burger-menu.active {
-  display: block; /* Afficher le menu lorsque la classe active est présente */
-  position: fixed; /* Position fixe pour dérouler la présentation sur toute la page */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent pour une meilleure lisibilité */
-  transition: all 0.5s ease; /* Animation de transition pour une apparence fluide */
-}
-
-/* Masquer le menu burger et la présentation par défaut */
-.burger-menu, .presentation {
-  display: none;
-}
-
-/* Afficher le menu burger et la présentation lorsque la classe 'show' est ajoutée */
-.burger-menu.show, .presentation.show {
-  display: block;
-}
-
-/* Styles pour le menu burger affiché */
-.burger-menu.show {
-  width: 100%;
-  height: 100%;
-  /* Ajoutez d'autres styles selon vos besoins */
+.burger-menu-container.active .menu-nav ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 
 /* Styles pour la navigation dans le thème enfant */
 
 #masthead .main-navigation {
+    position:fixed;
     z-index: 1000;
     background-color: #FFD5A2;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 80px; /* Hauteur de la barre de navigation */
+    width: 1440px;
+
 }
 
-#masthead .main-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+
+
+#masthead .main-navigation .nav-menu {
+  display: flex; /* Conteneur flexible pour les liens de navigation */
+  justify-content: center; /* Centre les liens de navigation */
+  width: 100%; /* Occupe toute la largeur disponible */
+  
 }
 
-#masthead .main-navigation ul li {
-    margin: 0;
-}
-
-#masthead .main-navigation ul li a {
-    display: block;
-    padding: 15px; /* Espacement à l'intérieur de chaque élément du menu */
-    text-decoration: none;
-    color: #000; /* Couleur du texte */
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: color 0.3s ease; /* Transition de couleur au survol */
+#masthead .main-navigation .nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Affiche les liens de navigation en ligne */
+  
+  
 }
 
 #masthead .main-navigation ul li a:hover {
-    color: #FF5733; /* Couleur du texte au survol */
+  color: #000000; /* Couleur du texte au survol */
+  text-shadow: 0 0 10px #FF5733; /* Ajouter un halo autour du texte */
 }
 
 
-.burger-menu {
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.5em;
+#masthead .main-navigation .menu-item {
+display: flex;
+flex-direction: column;
+font-size:64px ;
+top: 300px;
+justify-content: center; /* Centrer verticalement */
+align-items: center; /* Centrer horizontalement */
+margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
+  }
+
+
+#masthead .main-navigation .menu-toggle {
+  position: fixed; /* Positionnement fixe pour le bouton de menu burger */
+  z-index: 1000;
+  background-color: #FFD5A2;
+  height: 80px; /* Hauteur de la barre de navigation */
 }
 
-.burger-line {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  margin: 6px 0;
-  transition: all 0.3s ease-in-out;
-}
 
-.burger-menu.active .burger-line:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.burger-menu.active .burger-line:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.active .burger-line:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-.modal {
+/* Menu burger */
+.burger-menu-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 552px;
+  width: 1440px;
+  height: 935px;
+  background-color: #FFF5E9;
   display: none;
-  justify-content: center;
-  align-items: center;
   z-index: 999;
+  overflow: hidden;
+ 
 }
 
-.modal-content {
-  background-color: #fff;
-  padding: 2em;
-  text-align: center;
-  max-width: 600px;
+#logo-small {
+  width: 148px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.modal-logo {
-  max-width: 200px;
+.burger-menu-container .menu-nav::before {
+  content: url('./assets/images/orchid.png');
+  position: absolute;
+  left: -60px; /* Ajustez cette valeur selon votre mise en page */
+  top: 15%; /* Ajustez cette valeur selon votre mise en page */
+  width: 173px;
+  height: 169px;
+  animation: rotateRandomFlower 10s linear infinite;
+  transform-origin: center; /* Définir l'origine de la transformation au centre */
 }
 
-.modal-menu {
-  list-style: none;
-  margin: 2em 0;
-  padding: 0;
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg); /* Commencer avec une rotation de 0 degrés */
+  }
+  100% {
+    transform: rotate(360deg); /* Terminer avec une rotation de 360 degrés */
+  }
 }
 
-.modal-menu li {
-  margin-bottom: 1em;
+
+.burger-menu-container .menu-nav::after {
+  content: url('./assets/images/Sunflower.png');
+  position: absolute;
+  left: 70%; /* Ajustez cette valeur selon votre mise en page */
+  top: 30%; /* Ajustez cette valeur selon votre mise en page */
+  width: 155px; /* Ajustez cette ligne si nécessaire */
+  height: 155px; /* Ajustez cette ligne si nécessaire */
+  animation: rotateFlowerSunflower 5s linear infinite;
+  transform-origin: center;
 }
 
-.modal-menu a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2em;
+@keyframes rotateFlowerSunflower {
+  0% {
+    transform: rotate(0deg); /* Commencez avec une rotation de 0 degrés */
+  }
+  100% {
+    transform: rotate(360deg); /* Terminez avec une rotation de 360 degrés */
+  }
 }
 
-.modal-footer a {
-  display: inline-block;
-  padding: 0.5em 1em;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
+
+.burger-menu-container::before {
+  content: url('./assets/images/random_flower.png');
+  position: absolute;
+  left: 92%; /* Ajustez cette valeur selon votre mise en page */
+  top: 40%; /* Ajustez cette valeur selon votre mise en page */
+  width: 203px;
+  height: 203px; /* Ajustez la taille de la fleur selon vos besoins */
+  animation: rotateRandomFlower 10s linear infinite;
+  z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
+  transform: scale(0.5) rotate(0deg); /* Appliquer à la fois l'échelle et la rotation */
+}
+
+@keyframes rotateRandomFlower {
+  0% {
+    transform: scale(0.5) rotate(0deg); /* Commencer avec une échelle de 0.5 et une rotation de 0 degrés */
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg); /* Terminer avec une échelle de 0.5 et une rotation de 360 degrés */
+  }
+}
+
+
+ .burger-menu-container::after {
+  content: url('./assets/images/flower.png');
+  position: absolute;
+  right: 77%; /* Ajustez cette valeur selon votre mise en page */
+  bottom: 30%; /* Ajustez cette valeur selon votre mise en page */
+  width: 109px;
+  height: 109px;
+  animation: rotateRandomFlowerAfter 10s linear infinite;
+  z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
+}
+
+
+.burger-menu-container .menu-nav  ::after{
+  content: url("./assets/images/hibiscus_footer.png");
+  position: absolute;
+  left:80% ;
+  animation: rotateFlower 5s linear infinite;
+  bottom: -25.5em;
+  
+}
+
+
+
+
+
+
+
+/* le reste des fleurs qui tournent */
+
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#studio h2::before {
+  content: url('./assets/images/random_flower.png');
+  position: absolute;
+  left: -1em;
+  top: 0;
+  width: 203px;
+  height: 203px;
+  animation: rotateRandomFlower 10s linear infinite;
+}
+
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#studio h2::after {
+  content: url('./assets/images/flower.png');
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
+  width: 109px;
+  height: 109px;
+  animation: rotateRandomFlowerAfter 10s linear infinite;
 }
 
 /* Ajoutez vos propriétés CSS pour l'effet de parallaxe ici */
@@ -997,7 +1082,8 @@ div#page.site {
 }
 
 .parallax-element.active {
-  transform: translateY(-20%); /* Déplacez l'élément à sa position initiale lorsqu'il est dans la vue */
+  transform: translateY(-10%); /* Déplacez l'élément à sa position initiale lorsqu'il est dans la vue */
 }
+
 
 
