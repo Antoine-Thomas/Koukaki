@@ -38,16 +38,23 @@
                         <div class="logo-small">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                                 <img src="http://localhost:10083/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo-small" class="fade-in">
+                                
                             </a>
                         </div>
                         <button class="close-menu">&#10005;</button>
                     </div>
                     <nav class="menu-nav">
+                              <div class="jaakuna"></div>
+                              <div class="kawaneko"></div>
+                              <div class="orenjiiro"></div>
+                              <div class="hibiscus-footer"></div>
+                              <a class="studiok" href="#">STUDIO KOUKAKI</a>
                         <ul>
                             <li class="menu-item"><a href="#story">Histoire</a></li>
                             <li class="menu-item"><a href="#characters">Personnages</a></li>
                             <li class="menu-item"><a href="#lieu">Lieu</a></li>
                             <li class="menu-item"><a href="#studio">Studio Koukaki</a></li>
+                            <a class="studiok" href="#">STUDIO KOUKAKI</a>
                         </ul>
                     </nav>
                 </header>

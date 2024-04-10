@@ -177,6 +177,7 @@ div#page.site {
   padding-bottom: 400px!important; /* Ajoute un espace en bas du conteneur */
   z-index: 1!important; /* Assurez-vous que la section soit au-dessus des fleurs */
   display: flex;
+  overflow: hidden;
 }
 
 .oscar p {
@@ -237,8 +238,7 @@ div#page.site {
 
   .oscar-image {
     width: 100%!important; /* Largeur de la div égale à la largeur de l'image */
-   
-position: relative; /* Position relative pour permettre le déplacement */
+     position: relative; /* Position relative pour permettre le déplacement */
     align-self: center; /* Centrer verticalement la div */
   }
 }
@@ -252,23 +252,31 @@ position: relative; /* Position relative pour permettre le déplacement */
 
 
   /* Styles fleur footer  */
-
-.site-footer {
-  position: relative;
-  display: flex;
-  padding-top: 10em; /* Ajustez au besoin */
-  padding-bottom: 0em;
-  overflow: visible; /* Retirez overflow:hidden pour permettre l'affichage complet des fleurs */
-  z-index: 2; /* Augmentez le z-index pour placer la div au-dessus des fleurs */
-}
+ 
+  
+ 
+  
+  .site-footer {
+    position: relative;
+    display: flex;
+    padding-top: 10em; /* Ajustez au besoin */
+    padding-bottom: 0em;
+    overflow: hidden; /* Permet à l'élément de déborder */
+    direction: ltr; /* Change la direction du texte de gauche à droite */
+    z-index: 2; /* Augmentez le z-index pour placer la div au-dessus des fleurs */
+    width: 100%; /* Ajoutez une largeur fixe */
+    height: 200px;
+  }
+  
 
 .site-footer::before {
   content: url('./assets/images/Sunflower.png');
   position: absolute;
   left: 4em;
-  top: 4em;
+  top: 3em;
   z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
   animation: rotateFlower 10s linear infinite;
+
 }
 
 
@@ -283,7 +291,7 @@ position: relative; /* Position relative pour permettre le déplacement */
   content: url('./assets/images/orchid.png');
   position: absolute;
   right: -4em;
-  bottom: -4em;
+  bottom: 20px;
   animation: rotateFlower 10s linear infinite;
   z-index: -9999; /* Assurez-vous que les fleurs restent en arrière-plan */
 }
@@ -404,7 +412,7 @@ position: relative; /* Position relative pour permettre le déplacement */
 }
 
 
-/*Text hoover anim HISTOIRE*/  
+
 
 #text {
   position: relative;
@@ -437,6 +445,14 @@ position: relative; /* Position relative pour permettre le déplacement */
   top: 10px; /* Déplacement vers le bas pour "histoire" lors du survol */
   opacity: 1; /* Apparition */
 }
+
+/* Animation d'apparition des titres "Le Lieu" et "Les personnages" */
+h3 #text {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 
 
 
@@ -513,7 +529,7 @@ position: relative; /* Position relative pour permettre le déplacement */
 /* Logo */
 .videolog img {
   position: absolute; /* Position absolue par rapport au conteneur parent */
-  top: calc(50% - 500px); /* Positionner le logo au milieu verticalement moins 100px */
+  top: calc(60% - 500px); /* Positionner le logo au milieu verticalement moins 100px */
   left: 50%; /* Centrer horizontalement le logo */
   transform: translate(-50%, -50%); /* Centrer horizontalement et verticalement */
   width: 50%; /* Ajuster la largeur du logo */
@@ -933,8 +949,10 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   display: none;
   z-index: 999;
   overflow: hidden;
- 
-}
+  
+ }
+
+
 
 #logo-small {
   width: 148px;
@@ -944,23 +962,63 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   transform: translate(-50%, -50%);
 }
 
+.burger-menu-container .studiok {
+  position: absolute; /* Position absolue par rapport au conteneur parent */
+  bottom: -400px; /* Placer en bas du conteneur parent */
+  left: 50%; /* Placer au milieu horizontalement */
+  transform: translateX(-50%); /* Ajuster pour centrer horizontalement */
+  font-size: 14px; /* Taille de police */
+  color: #000000; /* Couleur du texte */
+  text-decoration: none; /* Pas de soulignement */
+}
+
+.burger-menu-container .hibiscus-footer {
+  position: absolute; /* Position absolue pour l'élément après */
+  right: -300px; /* Ajustez la position horizontale */
+  bottom: -800px; /* Ajustez la position verticale */
+  width: 600px; /* Largeur de l'image */
+  height: 600px; /* Hauteur de l'image */
+  background-image: url("./assets/images/hibiscus_footer.png"); /* Chemin de l'image */
+  background-size: contain; /* Ajustez la taille de l'image */
+  background-repeat: no-repeat; /* Pas de répétition de l'image */
+  animation: rotateFlower 5s linear infinite; /* Animation de rotation */
+  transform-origin: center center; /* Origine de la transformation */
+  z-index: 2; /* Z-index pour la superposition */
+}
+
+@keyframes rotateFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
 .burger-menu-container .menu-nav::before {
   content: url('./assets/images/orchid.png');
   position: absolute;
-  left: -60px; /* Ajustez cette valeur selon votre mise en page */
-  top: 15%; /* Ajustez cette valeur selon votre mise en page */
+  left: -60px;
+  top: 15%;
   width: 173px;
   height: 169px;
   animation: rotateRandomFlower 10s linear infinite;
-  transform-origin: center; /* Définir l'origine de la transformation au centre */
+  transform-origin: center;
 }
 
 @keyframes rotateRandomFlower {
   0% {
-    transform: rotate(0deg); /* Commencer avec une rotation de 0 degrés */
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg); /* Terminer avec une rotation de 360 degrés */
+    transform: rotate(360deg);
   }
 }
 
@@ -968,71 +1026,64 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
 .burger-menu-container .menu-nav::after {
   content: url('./assets/images/Sunflower.png');
   position: absolute;
-  left: 70%; /* Ajustez cette valeur selon votre mise en page */
-  top: 30%; /* Ajustez cette valeur selon votre mise en page */
-  width: 155px; /* Ajustez cette ligne si nécessaire */
-  height: 155px; /* Ajustez cette ligne si nécessaire */
+  left: 70%;
+  top: 30%;
+  width: 155px;
+  height: 155px;
   animation: rotateFlowerSunflower 5s linear infinite;
   transform-origin: center;
+  z-index: 1;
 }
 
 @keyframes rotateFlowerSunflower {
   0% {
-    transform: rotate(0deg); /* Commencez avec une rotation de 0 degrés */
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg); /* Terminez avec une rotation de 360 degrés */
+    transform: rotate(360deg);
   }
 }
-
 
 .burger-menu-container::before {
   content: url('./assets/images/random_flower.png');
   position: absolute;
-  left: 92%; /* Ajustez cette valeur selon votre mise en page */
-  top: 40%; /* Ajustez cette valeur selon votre mise en page */
+  left: 92%;
+  top: 40%;
   width: 203px;
-  height: 203px; /* Ajustez la taille de la fleur selon vos besoins */
-  animation: rotateRandomFlower 10s linear infinite;
-  z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
-  transform: scale(0.5) rotate(0deg); /* Appliquer à la fois l'échelle et la rotation */
+  height: 203px;
+  animation: rotateRandomFlowerBefore 10s linear infinite;
+  z-index: 0;
+  transform: scale(0.5) rotate(0deg);
 }
 
-@keyframes rotateRandomFlower {
+@keyframes rotateRandomFlowerBefore {
   0% {
-    transform: scale(0.5) rotate(0deg); /* Commencer avec une échelle de 0.5 et une rotation de 0 degrés */
+    transform: scale(0.5) rotate(0deg);
   }
   100% {
-    transform: scale(0.5) rotate(360deg); /* Terminer avec une échelle de 0.5 et une rotation de 360 degrés */
+    transform: scale(0.5) rotate(360deg);
   }
 }
 
-
- .burger-menu-container::after {
+.burger-menu-container::after {
   content: url('./assets/images/flower.png');
   position: absolute;
-  right: 77%; /* Ajustez cette valeur selon votre mise en page */
-  bottom: 30%; /* Ajustez cette valeur selon votre mise en page */
+  right: 77%;
+  bottom: 30%;
   width: 109px;
   height: 109px;
   animation: rotateRandomFlowerAfter 10s linear infinite;
-  z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
+  z-index: 0;
 }
 
-
-.burger-menu-container .menu-nav  ::after{
-  content: url("./assets/images/hibiscus_footer.png");
-  position: absolute;
-  left:80% ;
-  animation: rotateFlower 5s linear infinite;
-  bottom: -25.5em;
-  
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
-
-
-
-
 
 
 /* le reste des fleurs qui tournent */
@@ -1072,8 +1123,74 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   top: 1.2em;
   width: 109px;
   height: 109px;
-  animation: rotateRandomFlowerAfter 10s linear infinite;
+  animation: rotateRandomFlowerAfter 2s linear infinite;
 }
+
+
+/* Pour l'image Jaakuna-1.png */
+.burger-menu-container .menu-nav .jaakuna {
+  content: url('./assets/images/Jaakuna-1.png');
+  position: absolute;
+  left: 1000px;
+  top: 550px;
+  width: 150px;
+  height: 150px;
+  animation: ChatfloatSwingAnimationJaakuna 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Pour l'image Kawaneko.png */
+.burger-menu-container .menu-nav .kawaneko {
+  content: url('./assets/images/Kawaneko.png');
+  position: absolute;
+  left: 20%;
+  top: 70%;
+  width: 110px;
+  height: 110px;
+  animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Pour l'image Orenjiiro-1.png */
+.burger-menu-container .menu-nav .orenjiiro {
+  content: url('./assets/images/Orenjiiro-1.png');
+  position: absolute;
+  left: 5%;
+  top: 800px;
+  width: 110px;
+  height: 110px;
+  animation: ChatfloatSwingAnimationOrenjiiro 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes ChatfloatSwingAnimationJaakuna {
+  0%, 100% {
+    transform: translateY(10px) rotate(10deg); /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg); /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+
+@keyframes ChatfloatSwingAnimationKawaneko {
+  0%, 100% {
+    transform: translateY(5px) rotate(5deg); /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-5px) rotate(-5deg); /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+
+@keyframes ChatfloatSwingAnimationOrenjiiro {
+  0%, 100% {
+    transform: translateY(15px) rotate(-30deg); /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-15px) rotate(15deg); /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+
+
 
 /* Ajoutez vos propriétés CSS pour l'effet de parallaxe ici */
 .parallax-element {
@@ -1084,6 +1201,5 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
 .parallax-element.active {
   transform: translateY(-10%); /* Déplacez l'élément à sa position initiale lorsqu'il est dans la vue */
 }
-
 
 

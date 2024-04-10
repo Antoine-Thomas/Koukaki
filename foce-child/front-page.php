@@ -54,7 +54,7 @@
             <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
             <div class="lieu-container">
                 <div>
-                    <h3>Le Lieu</h3>
+                    <h3 id="lelieu">Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
             </div>
