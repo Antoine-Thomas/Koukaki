@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeMenu = document.querySelector('.close-menu');
     const logo = document.getElementById('logo'); // Sélectionner l'élément du logo
 
-   
     // Initialiser la position initiale du logo
     let logoInitialTop = 120;
     let logoScrollDistance = 0;
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fonction pour mettre à jour la position du logo lors du défilement
     function updateLogoPosition() {
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        const maxScrollDistance = 180; // Distance maximale de défilement du logo (100 pixels)
+        const maxScrollDistance =180; // Distance maximale de défilement du logo (100 pixels)
 
         if (scrollPosition <= maxScrollDistance) {
             logoScrollDistance = scrollPosition;
@@ -145,7 +144,7 @@ function toggleBurgerMenu() {
             slidesPerView: "auto",
             coverflowEffect: {
                 rotate: 50,
-                stretch: 320,
+                stretch: 0,
                 depth: 100,
                 modifier: 1,
                 slideShadows: false,
@@ -172,11 +171,17 @@ function toggleBurgerMenu() {
     }
     window.addEventListener('scroll', moveCloudsByScroll);
 
- // Ajoutez une classe "active" au menu burger pour le rendre visible
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.burger-menu-container').classList.toggle('active');
-  });
-  
+    // Fonction pour animer le logo au chargement de la page
+    function animateLogoOnLoad() {
+        // Définir la position initiale du logo en bas de la fenêtre
+        logo.style.transform = 'translateY(100vh)';
+
+        // Après un court délai, animer le déplacement du logo vers sa position initiale
+        setTimeout(() => {
+            logo.style.transition = 'transform 1s ease-out';
+            logo.style.transform = 'translateY(0)';
+        }, 500); // Délai de 500 millisecondes (ajustez selon vos besoins)
+    }
 
     // Appeler la fonction pour animer le logo au chargement de la page
     animateLogoOnLoad();
