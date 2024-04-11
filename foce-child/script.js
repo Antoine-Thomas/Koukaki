@@ -6,25 +6,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const burgerMenu = document.querySelector('.burger-menu-container');
     const closeMenu = document.querySelector('.close-menu');
-    const logo = document.getElementById('logo'); // Sélectionner l'élément du logo
+    const logo = document.getElementById('logo');
+
+    // Fonction pour réinitialiser l'animation du titre de la section "Histoire"
+    function resetHistoryTitleAnimation() {
+        histoireText.style.opacity = "0";
+        histoireText.style.transform = "translateY(20px)";
+    }
+
+    // Fonction pour animer le titre de la section "Histoire"
+    function animateHistoryTitle() {
+        histoireText.style.opacity = "1";
+        histoireText.style.transform = "translateY(0)";
+    }
 
     // Initialiser la position initiale du logo
-    let logoInitialTop = 120;
+    let logoInitialTop = 100;
     let logoScrollDistance = 0;
 
     // Fonction pour mettre à jour la position du logo lors du défilement
     function updateLogoPosition() {
-        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        const maxScrollDistance =180; // Distance maximale de défilement du logo (100 pixels)
+    const screenWidth = window.innerWidth; // Obtient la largeur de l'écran
 
-        if (scrollPosition <= maxScrollDistance) {
-            logoScrollDistance = scrollPosition;
-            logo.style.top = `${logoInitialTop + logoScrollDistance}px`;
-        } else {
-            logoScrollDistance = maxScrollDistance;
-            logo.style.top = `${logoInitialTop + maxScrollDistance}px`;
-        }
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const maxScrollDistance = 180;
+    let logoPosition;
+
+    if (screenWidth <= 920 && screenWidth > 360) {
+        logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
+    } else if (screenWidth <= 360) {
+        logoPosition = Math.min(scrollPosition, maxScrollDistance / 3); // Ajuste cette valeur pour maintenir le logo à l'écran
+    } else {
+        logoPosition = Math.min(scrollPosition, maxScrollDistance);
     }
+
+    logo.style.top = `${logoInitialTop + logoPosition}px`;
+}
+
 
     // Gestionnaire d'événement pour le défilement
     window.addEventListener('scroll', updateLogoPosition);
@@ -40,77 +58,39 @@ document.addEventListener("DOMContentLoaded", function() {
     let menuToggleClicked = false;
 
     // Fonction pour afficher/masquer le menu burger
-function toggleBurgerMenu() {
-    // Récupérer le conteneur du menu burger
-    const burgerMenuContainer = document.querySelector('.burger-menu-container');
+    function toggleBurgerMenu() {
+        const burgerMenuContainer = document.querySelector('.burger-menu-container');
 
-    // Si le menu burger est caché, l'afficher ; sinon, le cacher
-    if (burgerMenuContainer.style.display === 'none' || burgerMenuContainer.style.display === '') {
-        burgerMenuContainer.style.display = 'block';
-        menuToggle.classList.add('active');
-        // Ajouter les styles spécifiés à la classe .burger-menu-container lorsque le menu est ouvert
-        burgerMenuContainer.classList.add('active');
-    } else {
-        burgerMenuContainer.style.display = 'none';
-        menuToggle.classList.remove('active');
-        // Supprimer les styles spécifiés de la classe .burger-menu-container lorsque le menu est fermé
-        burgerMenuContainer.classList.remove('active');
+        if (burgerMenuContainer.style.display === 'none' || burgerMenuContainer.style.display === '') {
+            burgerMenuContainer.style.display = 'block';
+            burgerMenuContainer.classList.add('active');
+            menuToggle.classList.add('active');
+        } else {
+            burgerMenuContainer.style.display = 'none';
+            burgerMenuContainer.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+        menuToggleClicked = true;
     }
-    // Mettre à jour le statut du clic sur le menu toggle
-    menuToggleClicked = true;
-}
-
 
     // Gestionnaires d'événements pour le menu burger
     menuToggle.addEventListener('click', toggleBurgerMenu);
     closeMenu.addEventListener('click', toggleBurgerMenu);
     window.addEventListener('click', function(event) {
-        // Si le clic est en dehors du menu burger et que le menu toggle n'a pas été cliqué, cacher le menu burger
         if (event.target !== burgerMenu && !menuToggleClicked) {
             burgerMenu.style.display = 'none';
             menuToggle.classList.remove('active');
         }
-        // Réinitialiser le statut du clic sur le menu toggle
         menuToggleClicked = false;
     });
-
-    // Fonction pour animer le titre de la section "Histoire"
-    function animatedTitle(entry) {
-        if (entry && entry.target) {
-            let h2 = entry.target.querySelector('#story h2 span#text');
-            if (h2) {
-                h2.style.opacity = '1';
-                h2.style.transform = 'translateY(0)';
-            }
-        }
-    }
-
-    // Fonction pour gérer le fondu des sections
-    const fadeInSections = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                entry.target.classList.remove('fade-out');
-                animatedTitle(entry);
-            } else {
-                entry.target.classList.add('fade-in');
-            }
-        });
-    }
-
-    // Observer les changements de visibilité des sections
-    const sectionObserver = new IntersectionObserver(fadeInSections, {
-        root: null,
-        threshold: 0.3
-    });
-    sections.forEach(section => sectionObserver.observe(section));
 
     // Fonction pour détecter la section visible
     function detectVisibleSection() {
         let visibleSection = null;
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
+            if (isVisible) {
                 visibleSection = section;
             }
         });
@@ -122,8 +102,12 @@ function toggleBurgerMenu() {
         const activeSection = detectVisibleSection();
         sections.forEach(section => section.classList.remove('active'));
         if (activeSection) {
-            animatedTitle(activeSection);
             activeSection.classList.add('active');
+            if (activeSection.id === "story") {
+                animateHistoryTitle();
+            } else {
+                resetHistoryTitleAnimation();
+            }
         }
     }
 
@@ -173,17 +157,14 @@ function toggleBurgerMenu() {
 
     // Fonction pour animer le logo au chargement de la page
     function animateLogoOnLoad() {
-        // Définir la position initiale du logo en bas de la fenêtre
         logo.style.transform = 'translateY(100vh)';
 
-        // Après un court délai, animer le déplacement du logo vers sa position initiale
         setTimeout(() => {
             logo.style.transition = 'transform 1s ease-out';
             logo.style.transform = 'translateY(0)';
-        }, 500); // Délai de 500 millisecondes (ajustez selon vos besoins)
+        }, 500);
     }
 
-    // Appeler la fonction pour animer le logo au chargement de la page
     animateLogoOnLoad();
 });
 

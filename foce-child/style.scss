@@ -9,7 +9,6 @@ $image-path: '../assets/images/';
 // Définition des variables Sass
 $primary-color: #123456;
 $secondary-color: #789abc;
-$image-path: '../assets/images/';
 
 // Définition des mixins
 @mixin transition($property, $duration) {
@@ -33,8 +32,6 @@ $heading-font-family: 'Helvetica', sans-serif;
 $base-font-size: 16px;
 $heading-font-size: 24px;
 
-// Définition des variables pour les chemins d'accès aux images
-$image-path: '../assets/images/';
-
 // Autres variables spécifiques à votre thème
 $custom-variable: valeur;
+

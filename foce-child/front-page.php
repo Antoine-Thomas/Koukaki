@@ -2,7 +2,7 @@
 
 <main id="primary" class="site-main navigation-active">
 
-    <section id="story" class="story fade-in parallax-element">
+    <section id="story" class="story fade-in">
         <h2><span id="text">L'histoire</span></h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
@@ -16,7 +16,7 @@
         );
         $characters_query = new WP_Query($args);
         ?>
-        <article id="characters" class="fade-in section">
+        <article id="characters" class="fade-in">
     <div class="characters-carousel">
         <div class="character-container">
             <!-- Div de gauche -->
@@ -54,7 +54,7 @@
             <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
             <div class="lieu-container">
                 <div>
-                    <h3 id="lelieu">Le Lieu</h3>
+                    <h3> <span id="lelieu">Le Lieu </span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
             </div>

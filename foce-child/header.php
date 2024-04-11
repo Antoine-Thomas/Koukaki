@@ -21,12 +21,12 @@
                 <span class="line"></span>
             </button>
 
-            <ul class="menu">
+            <ul class="menu fade-in">
                 <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
             </ul>
 
             <!-- Burger menu container to hold all navigation items -->
-            <div class="burger-menu-container" style="display: none;">
+            <div class="burger-menu-container fade-in" >
                 <header id="masthead" class="site-header">
                     <nav id="site-navigation" class="main-navigation">
                         <ul class="menu nav-menu">
@@ -41,14 +41,14 @@
                                 
                             </a>
                         </div>
-                        <button class="close-menu">&#10005;</button>
+                        <button class="close-menu ">&#10005;</button>
                     </div>
                     <nav class="menu-nav">
                               <div class="jaakuna"></div>
                               <div class="kawaneko"></div>
                               <div class="orenjiiro"></div>
                               <div class="hibiscus-footer"></div>
-                              <a class="studiok" href="#">STUDIO KOUKAKI</a>
+                              
                         <ul>
                             <li class="menu-item"><a href="#story">Histoire</a></li>
                             <li class="menu-item"><a href="#characters">Personnages</a></li>

@@ -20,14 +20,17 @@ div#page.site {
 }
 
  /* CSS pour l'effet de fondu */
-.fade-in {
+ .fade-in {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Contrôle la vitesse de transition */
+  transition: opacity 2s ease; /* Durée et type de transition */
 }
 
 .fade-in.active {
   opacity: 1;
+  
 }
+
+
 
 
 /* fleurs qui tournent*/ 
@@ -57,6 +60,7 @@ div#page.site {
   width: 155px; /* Ajoutez cette ligne */
   height: 155px; /* Ajoutez cette ligne */
 }
+
    .story__article {
     display: flex;
     flex-direction: column;
@@ -100,6 +104,7 @@ div#page.site {
     padding: 100px 0;
     text-align: center;
     overflow: hidden;
+    bottom: 60px;
   }
   
   #story h2,
@@ -253,9 +258,6 @@ div#page.site {
 
   /* Styles fleur footer  */
  
-  
- 
-  
   .site-footer {
     position: relative;
     display: flex;
@@ -278,8 +280,6 @@ div#page.site {
   animation: rotateFlower 10s linear infinite;
 
 }
-
-
 
 .site-container {
   overflow: hidden;
@@ -358,7 +358,6 @@ div#page.site {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-
 #studio.active h2 span#text {
     opacity: 1;
     transform: translateY(0);
@@ -385,8 +384,7 @@ div#page.site {
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* Réduire le fond et l'élargir */
+ /* Réduire le fond et l'élargir */
   #studio {
     padding: 0px; /* Réduire le padding autour du conteneur */
     background-size: 500px; /* Ajuster la taille du fond */
@@ -394,25 +392,36 @@ div#page.site {
 }
 
 
+/* Animation pour la section "Histoire" */
 
 
-
-
-/* Animation d'apparition du texte pour la section "Histoire" */
 .story h2 span#text {
-  opacity: 1; /* Le texte est visible par défaut */
-  transform: translateY(0); /* Pas de décalage initial */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Transition d'animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Animation de disparition du texte pour la section "Histoire" lorsque inactive */
-.story:not(.active) h2 span#text {
-  opacity: 0; /* Le texte devient invisible */
-  transform: translateY(20px); /* Décalage vers le bas */
+.story.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+#text {
+  position: relative;
+  display: inline-block;
+}
 
+/* Animation pour la section "Studio" */
+#studio h2 span#text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
+#studio.active h2 span#text {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 #text {
   position: relative;
@@ -444,6 +453,14 @@ div#page.site {
 #text.active::after {
   top: 10px; /* Déplacement vers le bas pour "histoire" lors du survol */
   opacity: 1; /* Apparition */
+}
+
+/* Suppression des animations ::before et ::after lorsque la section n'est pas active */
+.story:not(.active) #text::before,
+.story:not(.active) #text::after {
+  opacity: 0 !important;
+  top: 100% !important;
+  transition: none !important;
 }
 
 /* Animation d'apparition des titres "Le Lieu" et "Les personnages" */
@@ -496,17 +513,13 @@ h3 #text {
   .videolog video {
       display: none;
   }
-  
-
-
   /* Afficher l'image banner.png petits ecrans 920px */
   .videolog {
-    
-      background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
+     background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
       background-repeat: no-repeat; /* Empêcher la répétition de l'image de fond */
       background-size: contain; /* Adapter l'image pour qu'elle tienne entièrement dans le conteneur */
       background-position: center; /* Centrer l'image */
-      margin-top: -280px;
+      margin-top: -200px;
       margin-bottom:-350px ; 
 
   }
@@ -520,8 +533,8 @@ h3 #text {
     background-repeat: no-repeat; /* Empêcher la répétition de l'image de fond */
     background-size: contain; /* Adapter l'image pour qu'elle tienne entièrement dans le conteneur */
     background-position: center; /* Centrer l'image */
-    margin-top: -430px; /* Ajuster la marge supérieure pour aligner l'image avec la navigation */
-    margin-bottom: -500px; /* Ajuster la marge inférieure si nécessaire */
+    margin-top: -350px; /* Ajuster la marge supérieure pour aligner l'image avec la navigation */
+    margin-bottom: -380px; /* Ajuster la marge inférieure si nécessaire */
   }
 }
 
@@ -942,6 +955,7 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
 .burger-menu-container {
   position: fixed;
   top: 0px;
+  left: 0;
   left: 552px;
   width: 1440px;
   height: 935px;
@@ -949,16 +963,42 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   display: none;
   z-index: 999;
   overflow: hidden;
-  
- }
+  opacity: 0; /* Commencez avec une opacité de 0 pour le fondu */
+  transition: opacity 1s ease-in-out; /* Durée de transition plus longue */
+  }
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
+.burger-menu-container.active {
+  display: block; /* Affichage du menu lorsqu'il est actif */
+  opacity: 1; /* Changement d'opacité lorsqu'il devient actif */
+}
+
+.burger-menu-container .menu-nav  {
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out forwards;
+  animation-delay: 0.5s; /* Délai de 0,5 seconde avant l'animation */
+}
 
 #logo-small {
   width: 148px;
   position: absolute;
   top: 40%;
   left: 50%;
+  animation: fadeInAnimation 2s ease-in-out forwards;
   transform: translate(-50%, -50%);
 }
 
@@ -995,13 +1035,6 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   }
 }
 
-
-
-
-
-
-
-
 .burger-menu-container .menu-nav::before {
   content: url('./assets/images/orchid.png');
   position: absolute;
@@ -1009,7 +1042,7 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   top: 15%;
   width: 173px;
   height: 169px;
-  animation: rotateRandomFlower 10s linear infinite;
+  animation: rotateRandomFlower 10s linear infinite !important;
   transform-origin: center;
 }
 
@@ -1051,7 +1084,7 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   top: 40%;
   width: 203px;
   height: 203px;
-  animation: rotateRandomFlowerBefore 10s linear infinite;
+  animation: rotateRandomFlowerBefore 10s linear infinite, fadeInAnimation 2s ease-in-out forwards; /* Ajout de la première animation */
   z-index: 0;
   transform: scale(0.5) rotate(0deg);
 }
@@ -1072,7 +1105,7 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   bottom: 30%;
   width: 109px;
   height: 109px;
-  animation: rotateRandomFlowerAfter 10s linear infinite;
+  animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important; /* Ajout de plusieurs animations */
   z-index: 0;
 }
 
@@ -1084,6 +1117,7 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
     transform: rotate(360deg);
   }
 }
+
 
 
 /* le reste des fleurs qui tournent */
@@ -1202,4 +1236,72 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   transform: translateY(-10%); /* Déplacez l'élément à sa position initiale lorsqu'il est dans la vue */
 }
 
+@media screen and (max-width: 920px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    order: 2; /* Placer le menu hamburger en dernier dans la colonne */
+  }
+
+  .menu {
+    display: none; /* Masquer le menu déroulant par défaut */
+    position: absolute;
+    right:20%; /* Centrer le menu déroulant horizontalement */
+    width: 100%; /* Occupera toute la largeur */
+  }
+
+  .burger-menu-container {
+    width: 920px;
+    left: 0%;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+.menu-toggle {
+    display: block; /* Afficher le menu hamburger pour les écrans de 920px */
+    left: 90%
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .menu-item a {
+    font-size: 38px; /* Définir la taille de la police à 14px */
+    z-index: 999;
+  }
+  .studiok {
+    z-index: 999; /* Définir le z-index à 999 */
+  }
+.nav-container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-toggle {
+  order: 2; /* Placer le menu hamburger en dernier dans la colonne */
+}
+
+.menu {
+  display: none; /* Masquer le menu déroulant par défaut */
+  position: absolute;
+  right:20%; /* Centrer le menu déroulant horizontalement */
+  width: 100%; /* Occupera toute la largeur */
+}
+
+.burger-menu-container {
+  width: 360px;
+  left: 0%;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+.menu-toggle {
+  display: block; /* Afficher le menu hamburger pour les écrans de 920px */
+  left: 90%
+}
+}
 
