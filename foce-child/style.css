@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
@@ -7,669 +8,417 @@
  Description: Thème enfant à l'occasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+@keyframes SectionParallax {
+  from {
+    opacity: 0;
+    transform: translateY(180px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* CSS pour l'effet de fondu */
+/* fleurs qui tournent*/
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Styles pour les écrans de 920px */
+/* Styles pour les écrans de 360px */
+/* nomination aux oscars */
+/*  style 920px */
+/* Styles pour les écrans de 360px */
+/* Section #oscar */
+/* Section #lieu */
+/* Styles fleur footer  */
+/* Styles fleur footer pour les écrans de 360px */
+/* Footer */
+/*Text hoover anim pour studio koukaki*/
+/* Styles pour les écrans de 471px et moins */
+/* Réduire le fond et l'élargir */
+/* Animation pour la section "Histoire" */
+/* Animation pour la section "Studio" */
+/* Suppression des animations ::before et ::after lorsque la section n'est pas active */
+/* Animation d'apparition des titres "Le Lieu" et "Les personnages" */
+/*header video*/
+/* Vidéo */
+/* Lorsque la classe "loaded" est ajoutée au conteneur */
+/* Styles pour les écrans de moins de 920px (tablettes et téléphones) */
+/* Afficher l'image banner.png petits ecrans 920px */
+/* Styles pour les écrans de 360px */
+/* Afficher l'image banner.png */
+/* Logo */
+/* Animation de fade-in et de glissement vers le haut */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    /* Logo complètement transparent au début */
+  }
+  to {
+    opacity: 1;
+    /* Logo complètement visible à la fin */
+  }
+}
+/* Animation de flottement */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(20px) translateX(-50%) rotate(-5deg);
+    /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+  }
+  to {
+    transform: translateY(-20px) translateX(-50%) rotate(5deg);
+    /* Mouvement de flottement vers le haut */
+  }
+}
+/* Styles pour les écrans de moins de 920px (tablettes et téléphones) */
+/* Réduire la taille du logo */
+/* Styles pour les écrans de moins de 360px */
+/* Réduire la taille du logo */
+/* Animation des éléments de l'histoire */
+/* Les éléments deviennent opaques et glissent vers le haut */
+/* titre personnage*/
+/* Styles du swiper*/
+/* Styles du swiper pour les écrans de 360px */
+/*  lieu et background */
+/* Styles pour les écrans de 920px */
+/* valeur des nuages */
+/* Styles pour les écrans de 360px */
+/* Définition de l'animation */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Animation du burger-menu */
+/* Styles pour la navigation dans le thème enfant */
+/* Menu burger */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotateFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateFlowerSunflower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerBefore {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* le reste des fleurs qui tournent */
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Pour l'image Jaakuna-1.png */
+/* Pour l'image Kawaneko.png */
+/* Pour l'image Orenjiiro-1.png */
+@keyframes ChatfloatSwingAnimationJaakuna {
+  0%, 100% {
+    transform: translateY(10px) rotate(10deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+@keyframes ChatfloatSwingAnimationKawaneko {
+  0%, 100% {
+    transform: translateY(5px) rotate(5deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-5px) rotate(-5deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+@keyframes ChatfloatSwingAnimationOrenjiiro {
+  0%, 100% {
+    transform: translateY(15px) rotate(-30deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-15px) rotate(15deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+/* Ajoutez vos propriétés CSS pour l'effet de parallaxe ici */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+}
 
- html {
-  text-size-adjust: 100%;
+section {
+  opacity: 1;
+  transform: translateY(0);
+  animation: SectionParallax 0.3s linear;
 }
+
+#text {
+  position: relative;
+  display: inline-block;
+  position: relative;
+  display: inline-block;
+  position: relative;
+  display: inline-block;
+}
+#text::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  left: 0;
+}
+#text::after {
+  content: attr(data-content);
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  left: 0;
+}
+
 .main {
-  position: relative; 
+  position: relative;
 }
+
 div#page.site {
-  /* Assurez-vous que le contenu ne dépasse pas les limites de la page */
   overflow: hidden;
 }
 
- /* CSS pour l'effet de fondu */
- .fade-in {
+.fade-in {
   opacity: 0;
-  transition: opacity 2s ease; /* Durée et type de transition */
+  transition: opacity 2s ease;
 }
 
 .fade-in.active {
   opacity: 1;
-  
 }
 
-
-
-
-/* fleurs qui tournent*/ 
- .story {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .story h2::before {
-    content: url('./assets/images/sunflower_leaves.png');
-    position: absolute;
-    left: 0;
-    top: 3.5em;
-    z-index: -1;
-    text-align: center; /* Ajoutez cette ligne */
-  }
-  
-  .story h2::after {
-  content: url('./assets/images/Sunflower.png');
-  position: absolute;
-  left: 0.7em; /* Ajustez cette valeur */
-  top: 8em; /* Ajustez cette valeur */
-  animation: rotateFlower 5s linear infinite;
-  transform-origin:center;
-  width: 155px; /* Ajoutez cette ligne */
-  height: 155px; /* Ajoutez cette ligne */
-}
-
-   .story__article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 60%;
-    font-size: 15px;
-    padding-bottom: 2em;
-    margin-top: -40px;
-    padding-right: 80px;
-    
-  }
-  
-  .story__article::before {
-    content: url('./assets/images/hibiscus_leaves.png');
-    position: absolute;
-    left: 50%;
-    top: 18em;
-    z-index: -1;
-  }
-  
-  .story__article::after {
-    content: url('./assets/images/Hibiscus.png');
-    position: absolute;
-    left: calc(50% + 414px);
-    top: 12em;
-    animation: rotateFlower 5s linear infinite;
-  }
-  
-  @keyframes rotateFlower {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  #story,
-  #studio {
-    padding: 100px 0;
-    text-align: center;
-    overflow: hidden;
-    bottom: 60px;
-  }
-  
-  #story h2,
-  #studio h2 {
-    margin-bottom: 50px;
-  }
-  
-  #story__article {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 18px;
-  }
-  
- 
-/* Styles pour les écrans de 920px */
-@media only screen and (max-width: 920px) {
-  .story h2::before {
-    top: 5em; /* Réajuster la position verticale des feuilles */
-    z-index: auto;
-    display: none;
-  }
-
-  .story h2::after {
-    width: 100px; /* Réduire la taille de la fleur */
-    height: 100px; /* Réduire la taille de la fleur */
-    top: 4em; /* Réajuster la position verticale de la fleur */
-    display: none;
-  }
-
-  .story__article {
-    width: 60%; /* Ajuster la largeur du conteneur de l'article */
-    font-size: 14px; /* Réduire la taille de la police */
-    padding-bottom: 1em; /* Réduire l'espacement en bas */
-    margin-top: -20px; /* Réajuster la marge supérieure */
-    padding-right: 40px; /* Réduire le rembourrage à droite */
-    padding-left: 40px;
-  }
-
-  .story__article::before {
-   top: auto;
-   left: 24em;
-   display: none;
-  }
-
-  .story__article::after {
-    left: calc(50% + 214px); /* Réajuster la position horizontale de la fleur */
-    top: 9em; /* Réajuster la position verticale de la fleur */
-    width: 50px; /* Réduire la taille de la fleur */
-    height: 50px; /* Réduire la taille de la fleur */
-    display: none;
-  }
-}
-
-/* Styles pour les écrans de 360px */
-@media (max-width: 360px) {
-  .story__article {
-    width: 100%; /* Ajuster la largeur du conteneur de l'article */
-    font-size: 14px; /* Réduire la taille de la police */
-    padding-bottom:-1em; /* Réduire l'espacement en bas */
-    margin-top: -20px; /* Réajuster la marge supérieure */
-    padding-right: 40px; /* Réduire le rembourrage à droite */
-    padding-left: 40px; /* Ajouter un rembourrage à gauche */
-  }
-}
-
-/* nomination aux oscars */
-
-.oscar {
-  background-image: url('./assets/images/rectangle.png')!important;
-  background-repeat: no-repeat!important;
-  background-size: 800px 350px!important; /* Taille spécifique de l'image en pixels */
-  position: relative!important; 
-  left: 0px!important; /* Déplace l'image de 200 pixels vers la droite */
-  top: 10px!important; /* Ajustement pour remonter la section oscar */
-  padding-bottom: 400px!important; /* Ajoute un espace en bas du conteneur */
-  z-index: 1!important; /* Assurez-vous que la section soit au-dessus des fleurs */
+.story {
+  position: relative;
   display: flex;
-  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
 }
-
-.oscar p {
-  font-family: 'Quicksand', sans-serif!important;
-  font-size: 42px!important;
-  font-weight: 700!important;
-  color: #ffffff!important;
-  text-align: left!important;
-  line-height: 1.2!important; /* Ajustez cette valeur pour obtenir l'espacement désiré entre les lignes */
-  margin-top: 100px!important; /* Descend le paragraphe de 100px */
-  margin-left: 60px!important; /* Décale le paragraphe vers la droite de 40px */
-  position: absolute; /* Positionnement absolu pour ne pas affecter l'image de fond */
-  z-index: 2!important; /* Assurez-vous que le texte soit au-dessus des fleurs */
-}
-
-.oscar-image {
-  content: url('./assets/images/oscarwild.png') !important;
-  position: absolute !important;
-  left: 65% !important; /* Ajustez la position horizontale de l'image au centre */
-  top: 50% !important; /* Ajustez la position verticale de l'image au centre */
-  transform: translate(-50%, -50%); /* Centrer l'image */
-  width: 400px; /* Largeur de l'image */
-  height: auto; /* Gardez la proportion de l'image */
-  z-index: 3; /* Assurez-vous que l'image soit au-dessus de la div#colophon */
-}
-
-@media only screen and  (max-width: 920px) {
-  /*  style 920px */
-
-  .oscar-image {
-      width: 50%; /* Ajustez la largeur de l'image pour s'adapter à la largeur de l'écran */
-      max-width: 400px; /* Limitez la largeur maximale de l'image */
-      margin-right: 300px;
-      margin-top: 200px;
-
-  }
-}
-
-/* Styles pour les écrans de 360px */
-@media only screen and (max-width: 360px) {
-  /* Section #oscar */
-  .oscar {
-    background-size: contain!important;
-    left: 20px!important; /* Ajuster la position vers la gauche */
-    top: 5px!important; /* Ajuster la position vers le haut */
-    padding-bottom: 200px!important; /* Réduire l'espace en bas */
-    display: flex; /* Utiliser flexbox pour le positionnement */
-    width: calc(100% - 40px); /* Ajuster la largeur de la section */
-    max-width: 320px; /* Limitez la largeur maximale de la section */
-    overflow: hidden; /* Masquer le débordement des éléments internes */
-  }
-
-  .oscar p {
-    font-size: 16px!important; /* Réduire légèrement la taille de la police */
-    margin-top: 30px!important; /* Réduire l'espace en haut */
-    margin-left: 20px!important; /* Réduire la marge à gauche */
-  }
-
-  .oscar-image {
-    width: 100%!important; /* Largeur de la div égale à la largeur de l'image */
-     position: relative; /* Position relative pour permettre le déplacement */
-    align-self: center; /* Centrer verticalement la div */
-  }
-}
-
-  /* Section #lieu */
-  #lieu > div {
-    margin-top: 20px!important; /* Déplacer le contenu vers le bas */
-    padding-left: 20px!important; /* Réduire le décalage à gauche */
-  }
-
-
-
-  /* Styles fleur footer  */
- 
-  .site-footer {
-    position: relative;
-    display: flex;
-    padding-top: 10em; /* Ajustez au besoin */
-    padding-bottom: 0em;
-    overflow: hidden; /* Permet à l'élément de déborder */
-    direction: ltr; /* Change la direction du texte de gauche à droite */
-    z-index: 2; /* Augmentez le z-index pour placer la div au-dessus des fleurs */
-    width: 100%; /* Ajoutez une largeur fixe */
-    height: 200px;
-  }
-  
-
-.site-footer::before {
-  content: url('./assets/images/Sunflower.png');
+.story h2::before {
+  content: url("./assets/images/sunflower_leaves.png");
   position: absolute;
-  left: 4em;
-  top: 3em;
-  z-index: -1; /* Assurez-vous que les fleurs restent en arrière-plan */
-  animation: rotateFlower 10s linear infinite;
-
+  left: 0;
+  top: 3.5em;
+  z-index: -1;
+  text-align: center;
 }
-
-.site-container {
-  overflow: hidden;
-  position: relative; /* Assurez-vous que la position est relative pour que les éléments absolus soient positionnés par rapport à ce conteneur */
-  overflow: hidden;
-}
-
-.site-footer::after {
-  content: url('./assets/images/orchid.png');
+.story h2::after {
+  content: url("./assets/images/Sunflower.png");
   position: absolute;
-  right: -4em;
-  bottom: 20px;
-  animation: rotateFlower 10s linear infinite;
-  z-index: -9999; /* Assurez-vous que les fleurs restent en arrière-plan */
+  left: 0.7em;
+  top: 8em;
+  animation: rotateFlower 5s linear infinite;
+  transform-origin: center;
+  width: 155px;
+  height: 155px;
 }
-
-
-.footer {
-    position: relative;
-    display: flex;
-    padding-top: 16em;
-    padding-bottom: 1em;
-    overflow: hidden;
-  }
-  
-  .footer ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100%;
-    list-style-type: none;
-  }
-  
-  .footer ul li {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .footer ul li a {
-    text-decoration: none;
-  }
-  
-  .footer ul::after {
-    content: url("./assets/images/hibiscus_footer.png");
-    position: absolute;
-    left: calc(50% - 323px);
-    bottom: -28.5em;
-    z-index: -1;
-    
-  }
-
-/* Styles fleur footer pour les écrans de 360px */
-@media only screen and (max-width: 360px) {
-  /* Footer */
-  .site-footer::before {
-    left: 2em; /* Ajuster la position horizontale de la première fleur */
-    top: 1em; /* Ajuster la position verticale de la première fleur */
-  }
-
-  .site-footer::after {
-    right: -6em; /* Ajuster la position horizontale de la deuxième fleur */
-    bottom: 5em; /* Ajuster la position verticale de la deuxième fleur */
-  }
-
-  .footer ul::after {
-    left: calc(50% - 170px); /* Ajuster la position horizontale de l'image de fond */
-    bottom: -14em; /* Ajuster la position verticale de l'image de fond */
-  }
-}
- 
-  
-/*Text hoover anim pour studio koukaki*/
-#studio h2 span#text {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#studio.active h2 span#text {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* Styles pour les écrans de 471px et moins */
-@media only screen and (max-width: 471px) {
-  #studio h2 {
-    padding: 20px; /* Réduire le padding autour du texte */
-  }
-
-  #studio h2 span#text {
-    display: inline-block; /* Afficher le texte en ligne */
-    max-width: 100%; /* Limiter la largeur du texte pour qu'il reste en ligne */
-    padding: 0; /* Retirer le padding autour du texte */
-    opacity: 0;
-    transform: translateY(10px); /* Ajustez la valeur de translation Y */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Réduisez la durée de la transition */
-    font-size: 28px; /* Réduire la taille de la police pour s'adapter aux petits écrans */
-  }
-
-  #studio.active h2 span#text {
-    opacity: 1;
-    transform: translateY(0);
-  }
- /* Réduire le fond et l'élargir */
-  #studio {
-    padding: 0px; /* Réduire le padding autour du conteneur */
-    background-size: 500px; /* Ajuster la taille du fond */
-  }
-}
-
-
-/* Animation pour la section "Histoire" */
-
-
 .story h2 span#text {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
-.story.active h2 span#text {
-  opacity: 1;
-  transform: translateY(0);
+.story:not(.active) #text::before {
+  opacity: 0 !important;
+  top: 100% !important;
+  transition: none !important;
 }
-
-#text {
-  position: relative;
-  display: inline-block;
-}
-
-/* Animation pour la section "Studio" */
-#studio h2 span#text {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#studio.active h2 span#text {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#text {
-  position: relative;
-  display: inline-block;
-}
-
-#text::before,
-#text::after {
-  content: attr(data-content); /* Contenu dynamique pour les pseudos-éléments */
-  position: absolute;
-  top: 100%; /* Décalage vers le bas */
-  opacity: 0; /* Initiallement invisible */
-  transition: top 0.5s ease, opacity 0.5s ease; /* Transition pour une apparition fluide */
-}
-
-#text::before {
-  left: 0; /* Décalage vers la gauche pour le mot "histoire" */
-}
-
-#text::after {
-  left: 0; /* Décalage vers la gauche pour le mot "histoire" */
-}
-
-#text.active::before {
-  top: -10px; /* Déplacement vers le haut pour "histoire" lors du survol */
-  opacity: 1; /* Apparition */
-}
-
-#text.active::after {
-  top: 10px; /* Déplacement vers le bas pour "histoire" lors du survol */
-  opacity: 1; /* Apparition */
-}
-
-/* Suppression des animations ::before et ::after lorsque la section n'est pas active */
-.story:not(.active) #text::before,
 .story:not(.active) #text::after {
   opacity: 0 !important;
   top: 100% !important;
   transition: none !important;
 }
 
-/* Animation d'apparition des titres "Le Lieu" et "Les personnages" */
-h3 #text {
-  opacity: 1;
+.story__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  font-size: 15px;
+  padding-bottom: 2em;
+  margin-top: -40px;
+  padding-right: 80px;
+}
+.story__article::before {
+  content: url("./assets/images/hibiscus_leaves.png");
+  position: absolute;
+  left: 50%;
+  top: 18em;
+  z-index: -1;
+}
+.story__article::after {
+  content: url("./assets/images/Hibiscus.png");
+  position: absolute;
+  left: calc(50% + 414px);
+  top: 12em;
+  animation: rotateFlower 5s linear infinite;
+}
+
+#story {
+  padding: 100px 0;
+  text-align: center;
+  overflow: hidden;
+  bottom: 60px;
+}
+#story h2 {
+  margin-bottom: 50px;
+}
+#story h2::before {
+  transition: opacity 1s ease, transform 1s ease;
+}
+#story h2::after {
+  transition: opacity 1s ease, transform 1s ease;
+}
+#story .story__article::before {
+  transition: opacity 1s ease, transform 1s ease;
+}
+#story .story__article::after {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#studio {
+  padding: 100px 0;
+  text-align: center;
+  overflow: hidden;
+  bottom: 60px;
+}
+#studio h2 {
+  margin-bottom: 50px;
+}
+#studio h2 span#text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
-
-
-
-
-/*header video*/
-.videolog {
-  position: relative; /* Assurer que les éléments internes positionnés sont positionnés par rapport à celui-ci */
-  display: flex; /* Utiliser Flexbox pour aligner les éléments verticalement */
-  align-items: center; /* Centrer verticalement les éléments dans le conteneur */
-  justify-content: center; /* Centrer horizontalement les éléments dans le conteneur */
-  height: calc(100vh - 100px); /* Hauteur égale à la hauteur de la fenêtre moins 100px pour la marge en bas */
-  margin-bottom: -350px; /* Enlever l'espace en dessous du contenu pour se rapprocher de la section histoire */
-  position: sticky;
-
+#studio h2::before {
+  content: url("./assets/images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+  width: 203px;
+  height: 203px;
+  animation: rotateRandomFlower 10s linear infinite;
+}
+#studio h2::after {
+  content: url("./assets/images/flower.png");
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
+  width: 109px;
+  height: 109px;
+  animation: rotateRandomFlowerAfter 2s linear infinite;
 }
 
-/* Vidéo */
-.videolog video {
-  position: absolute; /* Position absolue par rapport au conteneur parent */
-  top: -100%; /* Positionner la vidéo en dehors du conteneur vers le haut */
-  left: 0; /* Positionner la vidéo à gauche du conteneur */
-  width: 100%; /* Occupera toute la largeur du conteneur */
-  height: 100%; /* Occupera toute la hauteur du conteneur */
-  z-index: -1; /* Placer la vidéo derrière les autres éléments */
-  opacity: 0; /* Cacher la vidéo initialement */
-  transition: opacity 1s ease, top 1s ease; /* Ajouter une transition pour l'opacité et la position */
-  margin-top: -150px; /* Ajuster la position verticale de la vidéo */
+#story__article {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
 }
 
-
-/* Lorsque la classe "loaded" est ajoutée au conteneur */
-.videolog.loaded video {
-  opacity: 1; /* Afficher la vidéo avec un fondu en transparence */
-  top: 0; /* Faire glisser la vidéo vers le bas pour sa position finale */
-} 
-
-
-/* Styles pour les écrans de moins de 920px (tablettes et téléphones) */
-@media (max-width: 920px) {
-  
-  .videolog video {
-      display: none;
-  }
-  /* Afficher l'image banner.png petits ecrans 920px */
-  .videolog {
-     background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
-      background-repeat: no-repeat; /* Empêcher la répétition de l'image de fond */
-      background-size: contain; /* Adapter l'image pour qu'elle tienne entièrement dans le conteneur */
-      background-position: center; /* Centrer l'image */
-      margin-top: -200px;
-      margin-bottom:-350px ; 
-
-  }
-} 
-
-/* Styles pour les écrans de 360px */
-@media (max-width: 360px) {
-  /* Afficher l'image banner.png */
-  .videolog {
-    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png"); /* Adresse relative à partir du fichier CSS */
-    background-repeat: no-repeat; /* Empêcher la répétition de l'image de fond */
-    background-size: contain; /* Adapter l'image pour qu'elle tienne entièrement dans le conteneur */
-    background-position: center; /* Centrer l'image */
-    margin-top: -350px; /* Ajuster la marge supérieure pour aligner l'image avec la navigation */
-    margin-bottom: -380px; /* Ajuster la marge inférieure si nécessaire */
-  }
+.oscar {
+  background-image: url("./assets/images/rectangle.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 800px 350px !important;
+  position: relative !important;
+  left: 0px !important;
+  top: 10px !important;
+  padding-bottom: 400px !important;
+  z-index: 1 !important;
+  display: flex;
+  overflow: hidden;
+}
+.oscar p {
+  font-family: "Quicksand", sans-serif !important;
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+  line-height: 1.2 !important;
+  margin-top: 100px !important;
+  margin-left: 60px !important;
+  position: absolute;
+  z-index: 2 !important;
 }
 
-
-/* Logo */
-.videolog img {
-  position: absolute; /* Position absolue par rapport au conteneur parent */
-  top: calc(60% - 500px); /* Positionner le logo au milieu verticalement moins 100px */
-  left: 50%; /* Centrer horizontalement le logo */
-  transform: translate(-50%, -50%); /* Centrer horizontalement et verticalement */
-  width: 50%; /* Ajuster la largeur du logo */
-  opacity: 0; /* Cacher le logo initialement */
-  animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate; /* Chainer les animations de fade-in et de glissement vers le haut avec l'animation de flottement */
+.oscar-image {
+  content: url("./assets/images/oscarwild.png") !important;
+  position: absolute !important;
+  left: 65% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: auto;
+  z-index: 3;
 }
-
-/* Animation de fade-in et de glissement vers le haut */
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0; /* Logo complètement transparent au début */
-  }
-  to {
-    opacity: 1; /* Logo complètement visible à la fin */
-  }
-}
-
-/* Animation de flottement */
-@keyframes floatAnimation {
-  from {
-    transform: translateY(20px) translateX(-50%) rotate(-5deg); /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
-  }
-  to {
-    transform: translateY(-20px) translateX(-50%) rotate(5deg); /* Mouvement de flottement vers le haut */
-  }
-}
-
-/* Styles pour les écrans de moins de 920px (tablettes et téléphones) */
-@media (max-width: 920px) {
-  /* Réduire la taille du logo */
-  .videolog img {
-    width: 30%; /* Ajuster la largeur du logo à 30% de la largeur du conteneur */
-    top: calc(50% - 100px); /* Réajuster la position verticale du logo */
-  }
-}
-
-/* Styles pour les écrans de moins de 360px */
-@media (max-width: 360px) {
-  /* Réduire la taille du logo */
-  .videolog img {
-    width: 40%; /* Ajuster la largeur du logo à 20% de la largeur du conteneur */
-    top: calc(50% - 50px); /* Réajuster la position verticale du logo */
-  }
-}
-
-
-/* Animation des éléments de l'histoire */
-#story h2::before,
-#story h2::after,
-#story .story__article::before,
-#story .story__article::after {
-  transition: opacity 1s ease, transform 1s ease; /* Ajouter une transition pour l'opacité et la position */
-}
-
-/* Les éléments deviennent opaques et glissent vers le haut */
-#story.loaded h2::before,
-#story.loaded h2::after,
-#story.loaded .story__article::before,
-#story.loaded .story__article::after {
-  opacity: 1; /* Les éléments deviennent opaques */
-  transform: translateY(20px); /* Les éléments glissent vers le haut depuis une position plus basse */
-}
-
-
-/* titre personnage*/
-
-#new-title {
-  flex: auto;
-  background-image: url("C:\\Users\\searc\\Local Sites\\koukaki2\\app\\public\\wp-content\\themes\\foce-child\\assets\\images\\orange_characters_bg.png");
-  margin-right: 380px;
-  background-repeat: no-repeat;
-  padding: 50px; /* Ajoutez un espace autour du texte pour que l'ornement soit visible */
-  color: white; /* Assurez-vous que le texte est lisible sur le fond orange */
-  font-size: 42px; /* Ajustez la taille du texte au besoin */
-  text-align: center; /* Centrez le texte horizontalement */
-  overflow: hidden; /* Masquer les diapositives qui dépassent du conteneur */
-}
-
-@media only screen and (max-width: 360px) {
-  #new-title {
-    font-size: 24px; /* Réduire la taille du texte pour les petits écrans */
-    padding: 20px; /* Réduire l'espace autour du texte */
-    margin-right: 20px;
-  }
-}
-
-/* Styles du swiper*/
-
-.main-character {
-  /* Styles pour le carrousel principal */
-  width: 1440px; /* Largeur fixe du carrousel */
-  overflow: hidden; /* Masquer les diapositives qui dépassent du conteneur */
-
-}
-
-.swiper-wrapper {
-  /* Styles pour la div contenant les diapositives */
-  display: flex; /* Utiliser un affichage en ligne pour les diapositives */
-  width: calc(1440px * 3); /* Calculer la largeur de la wrapper pour montrer seulement trois diapositives */
-  transition: transform 0.3s ease; /* Ajouter une transition pour un effet de défilement fluide */
-}
-
-.swiper-slide {
-  /* Styles pour chaque diapositive */
-  flex: 0 0 calc(1440px / 3); /* Calculer la largeur de chaque diapositive pour qu'il y ait toujours trois images visibles */
-  /* Ajoutez d'autres styles nécessaires */
-}
-/* Styles du swiper pour les écrans de 360px */
-
-@media only screen and (max-width: 360px) {
-  .main-character {
-    /* Largeur du carrousel principal ajustée à 100% */
-    width: 360px;
-  }
-
-  .swiper-wrapper {
-    /* Largeur de la div contenant les diapositives ajustée à 300% pour montrer seulement trois diapositives */
-    width: calc(100% * 3);
-  }
-
-  .swiper-slide {
-    /* Largeur de chaque diapositive ajustée à 33.33% pour qu'il y ait toujours trois images visibles */
-    flex: 0 0 calc(100% / 3);
-  }
-}
-
-/*  lieu et background */
 
 #lieu {
   display: flex;
@@ -680,13 +429,9 @@ h3 #text {
   position: relative;
   overflow: hidden;
 }
-
-#lieu h3 {
-  background-image: url("./assets/images/orange_place_bg.png");
-  margin-bottom: -1em;
-}
-
 #lieu > div {
+  margin-top: 20px !important;
+  padding-left: 20px !important;
   max-width: 580px;
   display: flex;
   flex-direction: column;
@@ -694,139 +439,222 @@ h3 #text {
   align-items: flex-start;
   margin-left: 6em;
 }
-
 #lieu > div p {
   padding-left: 5em;
 }
+#lieu h3 {
+  background-image: url("./assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+}
 
-.lieu-container {
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 10em;
+  padding-bottom: 0em;
+  overflow: hidden;
+  direction: ltr;
+  z-index: 2;
+  width: 100%;
+  height: 200px;
+}
+.site-footer::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 3em;
+  z-index: -1;
+  animation: rotateFlower 10s linear infinite;
+}
+.site-footer::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -4em;
+  bottom: 20px;
+  animation: rotateFlower 10s linear infinite;
+  z-index: -9999;
+}
+
+.site-container {
+  overflow: hidden;
   position: relative;
   overflow: hidden;
 }
-/* Styles pour les écrans de 920px */
-@media only screen and (max-width: 920px) {
-  #lieu > div {
-    margin: 0 auto; /* Centrer le contenu */
-    margin-top: 80px; /* Déplacer le contenu vers le bas de 40px */
-    padding-left: 40px; /* Ajouter un décalage de 40px au paragraphe */
-  }
+
+.footer {
+  position: relative;
+  display: flex;
+  padding-top: 16em;
+  padding-bottom: 1em;
+  overflow: hidden;
 }
-
-/* valeur des nuages */
-
-.place--big_cloud,
-.place--little_cloud {
-  position: absolute;
-  filter: blur(10px);
-  transition: transform 1s ease-in-out;
-  z-index: 5;
+.footer ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  list-style-type: none;
 }
-
-
-
-.place--big_cloud {
-  top: 80px;
-  left: calc(100% - 400px); /* Modifiez cette valeur */
-  width: 400px; /* Ajustez la largeur selon vos besoins */
-  height: auto; /* Laissez la hauteur s'ajuster automatiquement */
-  z-index: 5;
-  transform: translateX(var(--posX, 0));
+.footer ul li {
+  flex: 1;
+  text-align: center;
 }
-
-.place--little_cloud {
-  top: 200px;
-  left: calc(100% - 550px); /* Modifiez cette valeur */
-  width: 200px; /* Ajustez la largeur selon vos besoins */
-  height: auto; /* Laissez la hauteur s'ajuster automatiquement */
-  z-index: 5;
-  transform: translateX(var(--posX, 0));
+.footer ul li a {
+  text-decoration: none;
 }
-
-/* Styles pour les écrans de 360px */
-
-@media only screen and (max-width: 360px) {
-  #lieu {
-    min-height: auto; /* Ajuster la hauteur minimale en auto pour que le contenu détermine la hauteur */
-  }
-
-  #lieu > div {
-    margin: 0 auto; /* Centrer le contenu */
-    margin-top: 80px; /* Déplacer le contenu vers le bas */
-    padding-left: 20px; /* Réduire le décalage du paragraphe */
-  }
-
-  #lieu h3 {
-    margin-bottom: 0; /* Supprimer la marge inférieure pour le titre */
-  }
-
-  #lieu > div p {
-    padding-left: 0px; /* Réduire le décalage du paragraphe */
-    font-size: 14px; /* Réduire la taille de la police */
-  }
-
-  .place--big_cloud {
-    width: 100px; /* Réduire la largeur du grand nuage */
-    top: 40px; /* Ajuster la position verticale */
-    left: calc(100% - 200px); /* Réduire la position horizontale */
-  }
-
-  .place--little_cloud {
-    width: 80px; /* Réduire la largeur du petit nuage */
-    top: 120px; /* Ajuster la position verticale */
-    left: calc(100% - 50px); /* Réduire la position horizontale */
-  }
-}
-
 .footer ul::after {
   content: url("./assets/images/hibiscus_footer.png");
   position: absolute;
   left: calc(50% - 323px);
   bottom: -28.5em;
   z-index: -1;
-  animation: rotateFlower 5s linear infinite; /* Ajout de l'animation */
-
-  
-}
-  
-/* Définition de l'animation */
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  content: url("./assets/images/hibiscus_footer.png");
+  position: absolute;
+  left: calc(50% - 323px);
+  bottom: -28.5em;
+  z-index: -1;
+  animation: rotateFlower 5s linear infinite;
 }
 
-/* Animation du burger-menu */
+#studio.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#text.active::before {
+  top: -10px;
+  opacity: 1;
+}
+#text.active::after {
+  top: 10px;
+  opacity: 1;
+}
+
+h3 #text {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.videolog {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  margin-bottom: -350px;
+  position: sticky;
+}
+.videolog video {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1s ease, top 1s ease;
+  margin-top: -150px;
+}
+.videolog img {
+  position: absolute;
+  top: calc(60% - 500px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  opacity: 0;
+  animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate;
+}
+
+.videolog.loaded video {
+  opacity: 1;
+  top: 50px;
+}
+
+#story.loaded h2::before {
+  opacity: 1;
+  transform: translateY(20px);
+}
+#story.loaded h2::after {
+  opacity: 1;
+  transform: translateY(20px);
+}
+#story.loaded .story__article::before {
+  opacity: 1;
+  transform: translateY(20px);
+}
+#story.loaded .story__article::after {
+  opacity: 1;
+  transform: translateY(20px);
+}
+
+#character-title {
+  right: 120px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#character-title.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-character {
+  width: 1440px;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  width: 4320px;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide {
+  flex: 0 0 480px;
+}
+
+.lieu-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.place--big_cloud {
+  position: absolute;
+  filter: blur(10px);
+  transition: transform 1s ease-in-out;
+  z-index: 5;
+  top: 80px;
+  left: calc(100% - 400px);
+  width: 400px;
+  height: auto;
+  z-index: 5;
+  transform: translateX(var(--posX, 0));
+}
+
+.place--little_cloud {
+  position: absolute;
+  filter: blur(10px);
+  transition: transform 1s ease-in-out;
+  z-index: 5;
+  top: 200px;
+  left: calc(100% - 550px);
+  width: 200px;
+  height: auto;
+  z-index: 5;
+  transform: translateX(var(--posX, 0));
+}
 
 .burger-menu {
   display: none;
-}
-.menu-toggle {
-  display: block;
-  position: absolute; /* Changez "absolute" par "fixed" */
-  top: 0px; /* Ajustez cette valeur selon la position verticale souhaitée */
-  right: 700px; /* Ajustez cette valeur selon la position horizontale souhaitée */
-  z-index: 1000;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-}
-
-
-.menu-toggle .line {
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  display: block;
-  margin: 6px auto;
-  transition: background-color 0.3s ease;
-}
-
-.burger-menu {
- 
   top: 0;
   left: 0;
   width: 100%;
@@ -840,22 +668,45 @@ h3 #text {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
 .burger-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-
 .burger-menu ul li {
   margin-bottom: 1rem;
 }
-
 .burger-menu ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
+}
+
+.menu-toggle {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 700px;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.menu-toggle .line {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  display: block;
+  margin: 6px auto;
+  transition: background-color 0.3s ease;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  display: block;
+  margin: 6px auto;
+  transition: all 0.3s ease;
 }
 
 .burger-menu.hidden {
@@ -863,27 +714,20 @@ h3 #text {
   visibility: hidden;
 }
 
-.menu-toggle .line {
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  display: block;
-  margin: 6px auto;
-  transition: all 0.3s ease; /* Ajoutez une transition pour une animation en douceur */
-}
-
 .menu-toggle.active .line:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
-
 .menu-toggle.active .line:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.active .line:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+.burger-menu-container.active {
+  display: block;
+  opacity: 1;
+}
 .burger-menu-container.active .menu-nav ul {
   display: flex;
   flex-direction: column;
@@ -891,97 +735,64 @@ h3 #text {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  height: 100%;
 }
-
-
-/* Styles pour la navigation dans le thème enfant */
 
 #masthead .main-navigation {
-    position:fixed;
-    z-index: 1000;
-    background-color: #FFD5A2;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px; /* Hauteur de la barre de navigation */
-    width: 1440px;
-
+  position: fixed;
+  z-index: 1000;
+  background-color: #FFD5A2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  width: 1440px;
 }
-
-
-
 #masthead .main-navigation .nav-menu {
-  display: flex; /* Conteneur flexible pour les liens de navigation */
-  justify-content: center; /* Centre les liens de navigation */
-  width: 100%; /* Occupe toute la largeur disponible */
-  
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-
 #masthead .main-navigation .nav-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Affiche les liens de navigation en ligne */
-  
-  
+  display: flex;
 }
-
 #masthead .main-navigation ul li a:hover {
-  color: #000000; /* Couleur du texte au survol */
-  text-shadow: 0 0 10px #FF5733; /* Ajouter un halo autour du texte */
+  color: #000000;
+  text-shadow: 0 0 10px #FF5733;
 }
-
-
 #masthead .main-navigation .menu-item {
-display: flex;
-flex-direction: column;
-font-size:64px ;
-top: 300px;
-justify-content: center; /* Centrer verticalement */
-align-items: center; /* Centrer horizontalement */
-margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
-  }
-
-
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  top: 300px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
 #masthead .main-navigation .menu-toggle {
-  position: fixed; /* Positionnement fixe pour le bouton de menu burger */
+  position: fixed;
   z-index: 1000;
   background-color: #FFD5A2;
-  height: 80px; /* Hauteur de la barre de navigation */
+  height: 80px;
 }
 
-
-/* Menu burger */
 .burger-menu-container {
   position: fixed;
   top: 0px;
-  left: 0;
-  left: 552px;
+  left: 436px;
   width: 1440px;
-  height: 935px;
+  height: 1200px;
   background-color: #FFF5E9;
   display: none;
   z-index: 999;
   overflow: hidden;
-  opacity: 0; /* Commencez avec une opacité de 0 pour le fondu */
-  transition: opacity 1s ease-in-out; /* Durée de transition plus longue */
-  }
-  @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
-
-
-.burger-menu-container.active {
-  display: block; /* Affichage du menu lorsqu'il est actif */
-  opacity: 1; /* Changement d'opacité lorsqu'il devient actif */
-}
-
-.burger-menu-container .menu-nav  {
+.burger-menu-container .menu-nav {
   display: flex;
   flex-direction: column;
   font-size: 64px;
@@ -990,7 +801,101 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   margin-bottom: 10px;
   opacity: 0;
   animation: fadeInAnimation 2s ease-in-out forwards;
-  animation-delay: 0.5s; /* Délai de 0,5 seconde avant l'animation */
+  animation-delay: 0.5s;
+}
+.burger-menu-container .menu-nav::before {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  left: -60px;
+  top: 15%;
+  width: 173px;
+  height: 169px;
+  animation: rotateRandomFlower 10s linear infinite !important;
+  transform-origin: center;
+}
+.burger-menu-container .menu-nav::after {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  width: 155px;
+  height: 155px;
+  animation: rotateFlowerSunflower 5s linear infinite;
+  transform-origin: center;
+  z-index: 1;
+}
+.burger-menu-container .menu-nav .jaakuna {
+  content: url("./assets/images/Jaakuna-1.png");
+  position: absolute;
+  left: 1000px;
+  top: 550px;
+  width: 150px;
+  height: 150px;
+  animation: ChatfloatSwingAnimationJaakuna 2s ease-in-out infinite;
+  transform-origin: center;
+}
+.burger-menu-container .menu-nav .kawaneko {
+  content: url("./assets/images/Kawaneko.png");
+  position: absolute;
+  left: 20%;
+  top: 70%;
+  width: 110px;
+  height: 110px;
+  animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
+  transform-origin: center;
+}
+.burger-menu-container .menu-nav .orenjiiro {
+  content: url("./assets/images/Orenjiiro-1.png");
+  position: absolute;
+  left: 5%;
+  top: 800px;
+  width: 110px;
+  height: 110px;
+  animation: ChatfloatSwingAnimationOrenjiiro 2s ease-in-out infinite;
+  transform-origin: center;
+}
+.burger-menu-container .studiok {
+  position: absolute;
+  bottom: -400px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+}
+.burger-menu-container .hibiscus-footer {
+  position: absolute;
+  right: -300px;
+  bottom: -800px;
+  width: 600px;
+  height: 600px;
+  background-image: url("./assets/images/hibiscus_footer.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotateFlower 5s linear infinite;
+  transform-origin: center center;
+  z-index: 2;
+}
+.burger-menu-container::before {
+  content: url("./assets/images/random_flower.png");
+  position: absolute;
+  left: 92%;
+  top: 40%;
+  width: 203px;
+  height: 203px;
+  animation: rotateRandomFlowerBefore 10s linear infinite, fadeInAnimation 2s ease-in-out forwards;
+  z-index: 0;
+  transform: scale(0.5) rotate(0deg);
+}
+.burger-menu-container::after {
+  content: url("./assets/images/flower.png");
+  position: absolute;
+  right: 77%;
+  bottom: 30%;
+  width: 109px;
+  height: 109px;
+  animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important;
+  z-index: 0;
 }
 
 #logo-small {
@@ -1002,306 +907,245 @@ margin-bottom: 10px; /* Ajouter de l'espace entre les éléments */
   transform: translate(-50%, -50%);
 }
 
-.burger-menu-container .studiok {
-  position: absolute; /* Position absolue par rapport au conteneur parent */
-  bottom: -400px; /* Placer en bas du conteneur parent */
-  left: 50%; /* Placer au milieu horizontalement */
-  transform: translateX(-50%); /* Ajuster pour centrer horizontalement */
-  font-size: 14px; /* Taille de police */
-  color: #000000; /* Couleur du texte */
-  text-decoration: none; /* Pas de soulignement */
-}
-
-.burger-menu-container .hibiscus-footer {
-  position: absolute; /* Position absolue pour l'élément après */
-  right: -300px; /* Ajustez la position horizontale */
-  bottom: -800px; /* Ajustez la position verticale */
-  width: 600px; /* Largeur de l'image */
-  height: 600px; /* Hauteur de l'image */
-  background-image: url("./assets/images/hibiscus_footer.png"); /* Chemin de l'image */
-  background-size: contain; /* Ajustez la taille de l'image */
-  background-repeat: no-repeat; /* Pas de répétition de l'image */
-  animation: rotateFlower 5s linear infinite; /* Animation de rotation */
-  transform-origin: center center; /* Origine de la transformation */
-  z-index: 2; /* Z-index pour la superposition */
-}
-
-@keyframes rotateFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.burger-menu-container .menu-nav::before {
-  content: url('./assets/images/orchid.png');
-  position: absolute;
-  left: -60px;
-  top: 15%;
-  width: 173px;
-  height: 169px;
-  animation: rotateRandomFlower 10s linear infinite !important;
-  transform-origin: center;
-}
-
-@keyframes rotateRandomFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-.burger-menu-container .menu-nav::after {
-  content: url('./assets/images/Sunflower.png');
-  position: absolute;
-  left: 70%;
-  top: 30%;
-  width: 155px;
-  height: 155px;
-  animation: rotateFlowerSunflower 5s linear infinite;
-  transform-origin: center;
-  z-index: 1;
-}
-
-@keyframes rotateFlowerSunflower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.burger-menu-container::before {
-  content: url('./assets/images/random_flower.png');
-  position: absolute;
-  left: 92%;
-  top: 40%;
-  width: 203px;
-  height: 203px;
-  animation: rotateRandomFlowerBefore 10s linear infinite, fadeInAnimation 2s ease-in-out forwards; /* Ajout de la première animation */
-  z-index: 0;
-  transform: scale(0.5) rotate(0deg);
-}
-
-@keyframes rotateRandomFlowerBefore {
-  0% {
-    transform: scale(0.5) rotate(0deg);
-  }
-  100% {
-    transform: scale(0.5) rotate(360deg);
-  }
-}
-
-.burger-menu-container::after {
-  content: url('./assets/images/flower.png');
-  position: absolute;
-  right: 77%;
-  bottom: 30%;
-  width: 109px;
-  height: 109px;
-  animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important; /* Ajout de plusieurs animations */
-  z-index: 0;
-}
-
-@keyframes rotateRandomFlowerAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-/* le reste des fleurs qui tournent */
-
-@keyframes rotateRandomFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-#studio h2::before {
-  content: url('./assets/images/random_flower.png');
-  position: absolute;
-  left: -1em;
-  top: 0;
-  width: 203px;
-  height: 203px;
-  animation: rotateRandomFlower 10s linear infinite;
-}
-
-@keyframes rotateRandomFlowerAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-#studio h2::after {
-  content: url('./assets/images/flower.png');
-  position: absolute;
-  right: 1em;
-  top: 1.2em;
-  width: 109px;
-  height: 109px;
-  animation: rotateRandomFlowerAfter 2s linear infinite;
-}
-
-
-/* Pour l'image Jaakuna-1.png */
-.burger-menu-container .menu-nav .jaakuna {
-  content: url('./assets/images/Jaakuna-1.png');
-  position: absolute;
-  left: 1000px;
-  top: 550px;
-  width: 150px;
-  height: 150px;
-  animation: ChatfloatSwingAnimationJaakuna 2s ease-in-out infinite;
-  transform-origin: center;
-}
-
-/* Pour l'image Kawaneko.png */
-.burger-menu-container .menu-nav .kawaneko {
-  content: url('./assets/images/Kawaneko.png');
-  position: absolute;
-  left: 20%;
-  top: 70%;
-  width: 110px;
-  height: 110px;
-  animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
-  transform-origin: center;
-}
-
-/* Pour l'image Orenjiiro-1.png */
-.burger-menu-container .menu-nav .orenjiiro {
-  content: url('./assets/images/Orenjiiro-1.png');
-  position: absolute;
-  left: 5%;
-  top: 800px;
-  width: 110px;
-  height: 110px;
-  animation: ChatfloatSwingAnimationOrenjiiro 2s ease-in-out infinite;
-  transform-origin: center;
-}
-
-@keyframes ChatfloatSwingAnimationJaakuna {
-  0%, 100% {
-    transform: translateY(10px) rotate(10deg); /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-10px) rotate(15deg); /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-
-@keyframes ChatfloatSwingAnimationKawaneko {
-  0%, 100% {
-    transform: translateY(5px) rotate(5deg); /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-5px) rotate(-5deg); /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-
-@keyframes ChatfloatSwingAnimationOrenjiiro {
-  0%, 100% {
-    transform: translateY(15px) rotate(-30deg); /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-15px) rotate(15deg); /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-
-
-
-/* Ajoutez vos propriétés CSS pour l'effet de parallaxe ici */
 .parallax-element {
   transform: translateY(0%);
-  transition: transform 0.3s ease-in-out; /* Ajoutez une transition pour l'effet de parallaxe */
+  transition: transform 0.3s ease-in-out;
 }
 
 .parallax-element.active {
-  transform: translateY(-10%); /* Déplacez l'élément à sa position initiale lorsqu'il est dans la vue */
+  transform: translateY(-10%);
 }
 
+@media only screen and (max-width: 920px) {
+  .story h2::before {
+    top: 5em;
+    z-index: auto;
+    display: none;
+  }
+  .story h2::after {
+    width: 100px;
+    height: 100px;
+    top: 4em;
+    display: none;
+  }
+  .story__article {
+    width: 60%;
+    font-size: 14px;
+    padding-bottom: 1em;
+    margin-top: -20px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .story__article::before {
+    top: auto;
+    left: 24em;
+    display: none;
+  }
+  .story__article::after {
+    left: calc(50% + 214px);
+    top: 9em;
+    width: 50px;
+    height: 50px;
+    display: none;
+  }
+  .oscar-image {
+    width: 50%;
+    max-width: 400px;
+    margin-right: 300px;
+    margin-top: 200px;
+  }
+  #lieu > div {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-left: 40px;
+  }
+}
+@media (max-width: 360px) {
+  .story__article {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: -1em;
+    margin-top: -20px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .videolog {
+    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -350px;
+    margin-bottom: -380px;
+  }
+  .videolog img {
+    width: 40%;
+    top: calc(50% - 50px);
+  }
+}
+@media only screen and (max-width: 360px) {
+  .oscar {
+    background-size: contain !important;
+    left: 20px !important;
+    top: 5px !important;
+    padding-bottom: 200px !important;
+    display: flex;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    overflow: hidden;
+  }
+  .oscar p {
+    font-size: 16px !important;
+    margin-top: 30px !important;
+    margin-left: 20px !important;
+  }
+  .oscar-image {
+    width: 100% !important;
+    position: relative;
+    align-self: center;
+  }
+  .site-footer::before {
+    left: 2em;
+    top: 1em;
+  }
+  .site-footer::after {
+    right: -6em;
+    bottom: 5em;
+  }
+  .footer ul::after {
+    left: calc(50% - 170px);
+    bottom: -14em;
+  }
+  #new-title {
+    font-size: 24px;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  .main-character {
+    width: 360px;
+  }
+  .swiper-wrapper {
+    width: 300%;
+  }
+  .swiper-slide {
+    flex: 0 0 33.3333333333%;
+  }
+  #lieu {
+    min-height: 0;
+  }
+  #lieu > div {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-left: 20px;
+  }
+  #lieu > div p {
+    padding-left: 0px;
+    font-size: 14px;
+  }
+  #lieu h3 {
+    margin-bottom: 0;
+  }
+  .place--big_cloud {
+    width: 100px;
+    top: 40px;
+    left: calc(100% - 200px);
+  }
+  .place--little_cloud {
+    width: 80px;
+    top: 120px;
+    left: calc(100% - 50px);
+  }
+}
+@media only screen and (max-width: 471px) {
+  #studio {
+    padding: 0px;
+    background-size: 500px;
+  }
+  #studio h2 {
+    padding: 20px;
+  }
+  #studio h2 span#text {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 28px;
+  }
+  #studio.active h2 span#text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 920px) {
+  .videolog {
+    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -200px;
+    margin-bottom: -350px;
+  }
+  .videolog video {
+    display: none;
+  }
+  .videolog img {
+    width: 30%;
+    top: calc(50% - 100px);
+  }
+}
 @media screen and (max-width: 920px) {
   .nav-container {
     flex-direction: column;
     align-items: center;
   }
-
   .menu-toggle {
-    order: 2; /* Placer le menu hamburger en dernier dans la colonne */
+    order: 2;
+    display: block;
+    left: 90%;
   }
-
   .menu {
-    display: none; /* Masquer le menu déroulant par défaut */
+    display: none;
     position: absolute;
-    right:20%; /* Centrer le menu déroulant horizontalement */
-    width: 100%; /* Occupera toute la largeur */
+    right: 20%;
+    width: 100%;
   }
-
+  .menu li {
+    margin: 10px 0;
+  }
   .burger-menu-container {
     width: 920px;
     left: 0%;
   }
-
-  .menu li {
-    margin: 10px 0;
-  }
-.menu-toggle {
-    display: block; /* Afficher le menu hamburger pour les écrans de 920px */
-    left: 90%
-  }
 }
-
 @media screen and (max-width: 360px) {
   .menu-item a {
-    font-size: 38px; /* Définir la taille de la police à 14px */
+    font-size: 38px;
     z-index: 999;
   }
   .studiok {
-    z-index: 999; /* Définir le z-index à 999 */
+    z-index: 999;
   }
-.nav-container {
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu-toggle {
-  order: 2; /* Placer le menu hamburger en dernier dans la colonne */
-}
-
-.menu {
-  display: none; /* Masquer le menu déroulant par défaut */
-  position: absolute;
-  right:20%; /* Centrer le menu déroulant horizontalement */
-  width: 100%; /* Occupera toute la largeur */
-}
-
-.burger-menu-container {
-  width: 360px;
-  left: 0%;
-}
-
-.menu li {
-  margin: 10px 0;
-}
-.menu-toggle {
-  display: block; /* Afficher le menu hamburger pour les écrans de 920px */
-  left: 90%
-}
-}
-
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 20%;
+    width: 100%;
+  }
+  .menu li {
+    margin: 10px 0;
+  }
+  .burger-menu-container {
+    width: 360px;
+    left: 0%;
+  }
+}/*# sourceMappingURL=style.css.map */

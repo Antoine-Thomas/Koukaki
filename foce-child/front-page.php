@@ -22,7 +22,7 @@
             <!-- Div de gauche -->
         </div>
         <section class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper">
-            <h3 id="new-title">Les personnages</h3>
+        <h3> <span id="character-title" class="fade-in">Les personnages</span></h3>
                     <!-- Carrousel Swiper -->
                     <div class="swiper-wrapper ">
                         <?php

@@ -26,23 +26,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fonction pour mettre à jour la position du logo lors du défilement
     function updateLogoPosition() {
-    const screenWidth = window.innerWidth; // Obtient la largeur de l'écran
+        const screenWidth = window.innerWidth; // Obtient la largeur de l'écran
 
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const maxScrollDistance = 180;
-    let logoPosition;
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const maxScrollDistance = 180;
+        let logoPosition;
 
-    if (screenWidth <= 920 && screenWidth > 360) {
-        logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
-    } else if (screenWidth <= 360) {
-        logoPosition = Math.min(scrollPosition, maxScrollDistance / 3); // Ajuste cette valeur pour maintenir le logo à l'écran
-    } else {
-        logoPosition = Math.min(scrollPosition, maxScrollDistance);
+        if (screenWidth <= 920 && screenWidth > 360) {
+            logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
+        } else if (screenWidth <= 360) {
+            logoPosition = Math.min(scrollPosition, maxScrollDistance / 3); // Ajuste cette valeur pour maintenir le logo à l'écran
+        } else {
+            logoPosition = Math.min(scrollPosition, maxScrollDistance);
+        }
+
+        logo.style.top = `${logoInitialTop + logoPosition}px`;
     }
-
-    logo.style.top = `${logoInitialTop + logoPosition}px`;
-}
-
 
     // Gestionnaire d'événement pour le défilement
     window.addEventListener('scroll', updateLogoPosition);
@@ -91,16 +90,17 @@ document.addEventListener("DOMContentLoaded", function() {
             const rect = section.getBoundingClientRect();
             const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
             if (isVisible) {
-                visibleSection = section;
+                section.classList.add("active");
+                } else { section.classList.remove("active")   
             }
         });
-        return visibleSection;
+       
     }
 
     // Fonction pour mettre à jour la classe "active" sur la section visible
     function updateActiveSection() {
         const activeSection = detectVisibleSection();
-        sections.forEach(section => section.classList.remove('active'));
+        /*sections.forEach(section => section.classList.remove('active'));
         if (activeSection) {
             activeSection.classList.add('active');
             if (activeSection.id === "story") {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 resetHistoryTitleAnimation();
             }
-        }
+        }*/
     }
 
     // Gestionnaire d'événement pour le défilement et la mise à jour de la section active
@@ -176,4 +176,3 @@ jQuery(document).ready(function($) {
         }, 1000);
     });
 });
-

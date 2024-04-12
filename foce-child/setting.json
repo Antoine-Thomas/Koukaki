@@ -1,0 +1,4 @@
+"sassCompile.useSingleQuotes": true,
+"sassCompile.includePath": ["styles"],
+"sassCompile.excludePath": ["/node_modules"],
+"sassCompile.autoCompile": false,
