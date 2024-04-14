@@ -4,7 +4,7 @@
 
     <section id="story" class="story fade-in">
         <h2><span id="text">L'histoire</span></h2>
-        <article id="" class="story__article">
+        <article id="conte" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <?php
@@ -16,15 +16,15 @@
         );
         $characters_query = new WP_Query($args);
         ?>
-        <article id="characters" class="fade-in">
+        <article id="characters">
     <div class="characters-carousel">
         <div class="character-container">
             <!-- Div de gauche -->
         </div>
-        <section class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper">
-        <h3> <span id="character-title" class="fade-in">Les personnages</span></h3>
+        <section id="character-section" class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper fade-in">
+        <h3> <span id="character-title" >Les personnages</span></h3>
                     <!-- Carrousel Swiper -->
-                    <div class="swiper-wrapper ">
+                    <div class="swiper-wrapper">
                         <?php
                         // Adresses locales des images avec les noms des personnages
                         $image_paths = array(
@@ -46,22 +46,23 @@
                         }
                         ?>
                     </div>
-        </section>
+        
                 
         </article>
-        <article id="lieu" class="fade-in section">
+       
+        <article id="lieu" >
             <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
             <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
             <div class="lieu-container">
                 <div>
-                    <h3> <span id="lelieu">Le Lieu </span></h3>
+                    <h3> <span class="endroit" id="lelieu">Le Lieu </span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
             </div>
         </article>
     </section>
 
-    <section id="studio" class="studio fade-in parallax-element ">
+    <section id="studio" class="studio fade-in  ">
         <h2><span id="text">Studio Koukaki</span></h2>
         <div>
             <p>Acteur majeur de l'animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>

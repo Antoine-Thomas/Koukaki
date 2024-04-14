@@ -5,7 +5,6 @@ function theme_enqueue_styles_and_scripts() {
     // Enqueue parent style
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
    
-    
     // Enqueue child style
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), wp_get_theme()->get('Version') );
 
@@ -15,23 +14,18 @@ function theme_enqueue_styles_and_scripts() {
     // Enqueue custom JavaScript for fade in effect
     wp_enqueue_script( 'fade-in-script', get_stylesheet_directory_uri() . '/script.js', array( 'jquery' ), '1.0', true );
 
-    
-    
-    
-
- // Enqueue Parallax script in the footer
-add_action('wp_footer', 'enqueue_parallax_script');
-function enqueue_parallax_script() {
+    // Enqueue Parallax script in the footer
     wp_enqueue_script('parallax-js', 'https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js', array(), '3.1.0', true);
-}
 
-
-    
     // Enqueue Swiper CSS and JavaScript
     wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.css' );
     wp_enqueue_script( 'swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.js', array(), '6.8.4', true );
     wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js', array(), false, true );
+
+    // Enqueue compiled Sass file
+    wp_enqueue_style( 'child-sass', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
 }
+
 
 // Get customizer options from parent theme
 if ( get_stylesheet() !== get_template() ) {

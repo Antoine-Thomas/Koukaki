@@ -1,124 +1,151 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionner les éléments nécessaires
+// Attend que le DOM soit chargé avant d'exécuter le script
+document.addEventListener("DOMContentLoaded", function () {
+    // Sélectionne les différentes sections de la page
     const sections = document.querySelectorAll("section");
+    // Sélectionne le texte de l'histoire
     const histoireText = document.getElementById("text");
+    // Sélectionne la vidéo du court-métrage
     const videoEl = document.querySelector('.videolog');
+    // Sélectionne le bouton de menu hamburger
     const menuToggle = document.querySelector('.menu-toggle');
+    // Sélectionne le menu hamburger
     const burgerMenu = document.querySelector('.burger-menu-container');
+    // Sélectionne le bouton de fermeture du menu
     const closeMenu = document.querySelector('.close-menu');
+    // Sélectionne le logo du site
     const logo = document.getElementById('logo');
+    // Sélectionne le titre des personnages
+    const characterTitle = document.getElementById("character-title");
+    // Sélectionne le titre du lieu
+    const locationTitle = document.getElementById("lelieu");
+    // Sélectionne le conteneur du lieu
+    const locationContainer = document.getElementById("lelieu");
 
-    // Fonction pour réinitialiser l'animation du titre de la section "Histoire"
-    function resetHistoryTitleAnimation() {
-        histoireText.style.opacity = "0";
-        histoireText.style.transform = "translateY(20px)";
+    // Fonction pour réinitialiser l'animation des titres
+    function resetTitleAnimation(titleElement) {
+        titleElement.style.opacity = "0";
+        titleElement.style.transform = "translateY(20px)";
     }
 
-    // Fonction pour animer le titre de la section "Histoire"
-    function animateHistoryTitle() {
-        histoireText.style.opacity = "1";
-        histoireText.style.transform = "translateY(0)";
+    // Fonction pour animer les titres
+    function animateTitle(titleElement) {
+        titleElement.style.opacity = "1";
+        titleElement.style.transform = "translateY(0)";
     }
 
-    // Initialiser la position initiale du logo
-    let logoInitialTop = 100;
-    let logoScrollDistance = 0;
-
-    // Fonction pour mettre à jour la position du logo lors du défilement
+    // Fonction pour mettre à jour la position du logo en fonction du défilement de la page
     function updateLogoPosition() {
-        const screenWidth = window.innerWidth; // Obtient la largeur de l'écran
-
+        // Obtient la largeur de l'écran
+        const screenWidth = window.innerWidth;
+        // Obtient la position de défilement de la page
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        // Définit la distance maximale de défilement
         const maxScrollDistance = 180;
+        // Calcul de la position du logo en fonction de la largeur de l'écran et de la position de défilement
         let logoPosition;
 
         if (screenWidth <= 920 && screenWidth > 360) {
             logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
         } else if (screenWidth <= 360) {
-            logoPosition = Math.min(scrollPosition, maxScrollDistance / 3); // Ajuste cette valeur pour maintenir le logo à l'écran
+            logoPosition = Math.min(scrollPosition, maxScrollDistance / 3);
         } else {
             logoPosition = Math.min(scrollPosition, maxScrollDistance);
         }
 
-        logo.style.top = `${logoInitialTop + logoPosition}px`;
+        // Définit la position du logo en fonction du défilement de la page
+        logo.style.top = `${150 + logoPosition}px`;
     }
 
-    // Gestionnaire d'événement pour le défilement
+    // Écoute les événements de défilement de la page pour mettre à jour la position du logo
     window.addEventListener('scroll', updateLogoPosition);
 
-    // Initialiser l'état des éléments
-    histoireText.classList.add("active");
-    sections.forEach(section => section.classList.add("fade-in", "active"));
-
-    // Ajouter la classe "loaded" à la vidéo après un court délai
+    // Ajoute une classe 'loaded' à la vidéo après un délai pour activer les styles CSS
     setTimeout(() => videoEl.classList.add('loaded'), 500);
 
-    // Variable pour suivre le clic sur le menu toggle
+    // Initialise la variable menuToggleClicked à false
     let menuToggleClicked = false;
 
-    // Fonction pour afficher/masquer le menu burger
-    function toggleBurgerMenu() {
-        const burgerMenuContainer = document.querySelector('.burger-menu-container');
-
-        if (burgerMenuContainer.style.display === 'none' || burgerMenuContainer.style.display === '') {
-            burgerMenuContainer.style.display = 'block';
-            burgerMenuContainer.classList.add('active');
-            menuToggle.classList.add('active');
-        } else {
-            burgerMenuContainer.style.display = 'none';
-            burgerMenuContainer.classList.remove('active');
-            menuToggle.classList.remove('active');
-        }
-        menuToggleClicked = true;
-    }
-
-    // Gestionnaires d'événements pour le menu burger
-    menuToggle.addEventListener('click', toggleBurgerMenu);
-    closeMenu.addEventListener('click', toggleBurgerMenu);
-    window.addEventListener('click', function(event) {
-        if (event.target !== burgerMenu && !menuToggleClicked) {
-            burgerMenu.style.display = 'none';
-            menuToggle.classList.remove('active');
-        }
-        menuToggleClicked = false;
+    // Fonction pour basculer l'affichage du menu hamburger
+    menuToggle.addEventListener('click', function() {
+        burgerMenu.classList.toggle('active'); // Ajoute ou supprime la classe 'active' pour ouvrir ou fermer le menu
+        menuToggleClicked = true; // Définit menuToggleClicked à true lorsque le menu est ouvert par le clic sur le menu toggle
     });
 
-    // Fonction pour détecter la section visible
+    // Fonction pour fermer le menu hamburger
+    closeMenu.addEventListener('click', function() {
+        burgerMenu.classList.remove('active'); // Supprime la classe 'active' pour fermer le menu
+        menuToggleClicked = false; // Définit menuToggleClicked à false lorsque le menu est fermé par le clic sur le bouton de fermeture
+    });
+
+    // Fonction pour fermer le menu hamburger lors du clic en dehors du menu
+    window.addEventListener('click', function(event) {
+        if (event.target !== burgerMenu && !menuToggleClicked) {
+            burgerMenu.classList.remove('active'); // Supprime la classe 'active' pour fermer le menu si l'événement de clic se produit en dehors du menu
+        }
+        menuToggleClicked = false; // Réinitialise menuToggleClicked à false après chaque clic sur la fenêtre
+    });
+
+    // Fonction pour détecter quelle section de la page est visible lors du défilement
     function detectVisibleSection() {
-        let visibleSection = null;
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
             const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
+
             if (isVisible) {
+                // Ajoute une classe 'active' à la section visible
                 section.classList.add("active");
-                } else { section.classList.remove("active")   
+                if (section.id === "character-section") {
+                    animateTitle(characterTitle); // Anime le titre des personnages
+                } else if (section.id === "lelieu") {
+                    animateTitle(locationTitle); // Anime le titre du lieu
+                    locationContainer.classList.add("active"); // Ajoute la classe 'active' au conteneur du lieu
+                } else if (section.id === "story") {
+                    animateTitle(histoireText); // Anime le texte de l'histoire
+                }
+            } else {
+                // Supprime la classe 'active' de la section non visible
+                section.classList.remove("active");
+                if (section.id === "character-section") {
+                    resetTitleAnimation(characterTitle); // Réinitialise l'animation du titre des personnages
+                } else if (section.id === "lelieu") {
+                    resetTitleAnimation(locationTitle); // Réinitialise l'animation du titre du lieu
+                } else if (section.id === "story") {
+                    resetTitleAnimation(histoireText); // Réinitialise l'animation du texte de l'histoire
+                }
             }
         });
-       
-    }
 
-    // Fonction pour mettre à jour la classe "active" sur la section visible
-    function updateActiveSection() {
-        const activeSection = detectVisibleSection();
-        /*sections.forEach(section => section.classList.remove('active'));
-        if (activeSection) {
-            activeSection.classList.add('active');
-            if (activeSection.id === "story") {
-                animateHistoryTitle();
+        // Fonction pour détecter la visibilité de la section du lieu
+        const lieuArticle = document.getElementById("lieu");
+
+        function detectVisibleLieuSection() {
+            const rect = lieuArticle.getBoundingClientRect();
+            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
+
+            if (isVisible) {
+                lieuArticle.classList.add("active");
+                animateTitle(locationTitle);
+                locationContainer.classList.add("active");
             } else {
-                resetHistoryTitleAnimation();
+                lieuArticle.classList.remove("active");
+                resetTitleAnimation(locationTitle);
+                locationContainer.classList.remove("active");
             }
-        }*/
+        }
+
+        // Écoute les événements de défilement de la page pour détecter la visibilité de la section du lieu
+        window.addEventListener('scroll', detectVisibleLieuSection);
+
+        // Supprime la classe 'active' du conteneur du lieu si la section du lieu n'est pas visible
+        if (!locationContainer.classList.contains("active")) {
+            locationContainer.classList.remove("active");
+        }
     }
 
-    // Gestionnaire d'événement pour le défilement et la mise à jour de la section active
-    window.addEventListener('scroll', function() {
-        updateActiveSection();
-        moveCloudsByScroll();
-    });
-    updateActiveSection();
+    // Écoute les événements de défilement de la page pour détecter la visibilité des sections
+    window.addEventListener('scroll', detectVisibleSection);
 
-    // Initialiser le carrousel Swiper
+    // Initialise le carrousel des personnages avec l'effet Cover Flow de SwiperJS
     const swiperEl = document.querySelector('.mySwiper');
     if (swiperEl) {
         new Swiper(".mySwiper", {
@@ -143,36 +170,42 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Fonction pour déplacer les nuages en fonction du défilement
+    // Fonction pour déplacer les nuages en fonction du défilement de la page
     function moveCloudsByScroll() {
-        const lieu = document.getElementById("lieu");
+        const lieu = document.getElementById("lelieu");
         const rootElement = document.documentElement;
         let scrollPosition = window.scrollY - lieu.offsetTop;
         let cloudPosition = Math.round(scrollPosition / 2);
-        if (cloudPosition >= 0 && cloudPosition <= 600) {
+        if (cloudPosition >= 1 && cloudPosition <= 1000) {
             rootElement.style.setProperty("--posX", `-${cloudPosition}px`);
         }
     }
+
+    // Écoute les événements de défilement de la page pour déplacer les nuages
     window.addEventListener('scroll', moveCloudsByScroll);
 
-    // Fonction pour animer le logo au chargement de la page
+    // Fonction pour animer le logo lors du chargement de la page
     function animateLogoOnLoad() {
         logo.style.transform = 'translateY(100vh)';
-
         setTimeout(() => {
             logo.style.transition = 'transform 1s ease-out';
             logo.style.transform = 'translateY(0)';
         }, 500);
     }
 
+    // Anime le logo lors du chargement de la page
     animateLogoOnLoad();
 });
 
-// Gérer l'animation de l'opacité des éléments avec classe "fade-in"
-jQuery(document).ready(function($) {
-    $('.fade-in').each(function() {
+// Fonction jQuery pour animer les éléments avec la classe 'fade-in'
+jQuery(document).ready(function ($) {
+    $('.fade-in').each(function () {
         $(this).css('opacity', 1).delay(8000).animate({
             opacity: 1
         }, 1000);
     });
 });
+
+
+
+

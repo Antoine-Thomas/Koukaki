@@ -1,0 +1,280 @@
+// Mixins
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($name, $duration, $iteration, $timing-function) {
+  animation: $name $duration $iteration $timing-function;
+}
+
+@mixin transform-origin($x, $y) {
+  transform-origin: $x $y;
+}
+
+@mixin background-image($url, $repeat, $size) {
+  background-image: url($url);
+  background-repeat: $repeat;
+  background-size: $size;
+}
+
+@mixin position($position, $top, $right, $bottom, $left, $z-index) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+@mixin parallax-element($translateY) {
+  transform: translateY($translateY);
+  transition: transform 0.3s ease-in-out;
+
+  &.active {
+    transform: translateY(-10%);
+  }
+}
+
+// Variables
+$color_1: #ffffff;
+$color_2: white;
+$color_3: #000000;
+$font-family_1: 'Quicksand', sans-serif;
+$background-color_1: transparent;
+$background-color_2: #000;
+$background-color_3: rgba(0, 0, 0, 0.8);
+$background-color_4: #FFD5A2;
+$background-color_5: #FFF5E9;
+
+
+
+
+
+
+
+
+// Keyframes
+@keyframes SectionParallax {
+	from {
+		opacity: 0;
+		transform: translateY(180px);
+		transition: opacity 0.5s ease, transform 1s ease;
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+/* CSS pour l'effet de fondu */
+/* fleurs qui tournent*/
+@keyframes rotateFlower {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fadeInSlideUp {
+	from {
+		opacity: 0;
+/* Logo complètement transparent au début */
+	}
+	to {
+		opacity: 1;
+/* Logo complètement visible à la fin */
+	}
+}
+/* Animation de flottement */
+@keyframes floatAnimation {
+	from {
+		transform: translateY(20px) translateX(-50%) rotate(-5deg);
+/* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+	}
+	to {
+		transform: translateY(-20px) translateX(-50%) rotate(5deg);
+/* Mouvement de flottement vers le haut */
+	}
+}
+
+@keyframes rotateFlower {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* Animation du burger-menu */
+/* Styles pour la navigation dans le thème enfant */
+/* Menu burger */
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes rotateFlower {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateRandomFlower {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateFlowerSunflower {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateRandomFlowerBefore {
+	0% {
+		transform: scale(0.5) rotate(0deg);
+	}
+	100% {
+		transform: scale(0.5) rotate(360deg);
+	}
+}
+@keyframes rotateRandomFlowerAfter {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+/* le reste des fleurs qui tournent */
+@keyframes rotateRandomFlower {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateRandomFlowerAfter {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+/* Pour l'image Jaakuna-1.png */
+/* Pour l'image Kawaneko.png */
+/* Pour l'image Orenjiiro-1.png */
+@keyframes ChatfloatSwingAnimationJaakuna {
+	0%,100% {
+		transform: translateY(10px) rotate(10deg);
+/* Ajuster la translation et la rotation de départ */
+	}
+	50% {
+		transform: translateY(-10px) rotate(15deg);
+/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+	}
+}
+@keyframes ChatfloatSwingAnimationKawaneko {
+	0%,100% {
+		transform: translateY(5px) rotate(5deg);
+/* Ajuster la translation et la rotation de départ */
+	}
+	50% {
+		transform: translateY(-5px) rotate(-5deg);
+/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+	}
+}
+@keyframes ChatfloatSwingAnimationOrenjiiro {
+	0%,100% {
+		transform: translateY(15px) rotate(-30deg);
+/* Ajuster la translation et la rotation de départ */
+	}
+	50% {
+		transform: translateY(-15px) rotate(15deg);
+/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+	}
+}
+
+
+
+@mixin fadeInAnimation {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@mixin fadeInBeforeAfter {
+    &::before, &::after {
+        top: -10px;
+        opacity: 1;
+    }
+}
+
+@mixin fadeOutAnimation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+@mixin slideInFromBottom {
+    @keyframes slideInFromBottom {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+// Animation pour la section "Studio"
+#studio.active {
+    h2 {
+        span#text {
+            @include fadeInAnimation;
+        }
+    }
+    @include fadeInBeforeAfter;
+}
+
+#text.active {
+    @include fadeInBeforeAfter;
+}
+
+span#text {
+    @include fadeOutAnimation;
+}
+
+// Animation pour la section "Story"
+.story.active {
+    h2 {
+        span#text {
+            @include fadeInAnimation;
+        }
+    }
+    @include fadeInBeforeAfter;
+}
+
+#text.active {
+    @include fadeInBeforeAfter;
+}
+
+span#text {
+    @include fadeOutAnimation;
+}
+

@@ -1,0 +1,425 @@
+@charset "UTF-8";
+@keyframes SectionParallax {
+  from {
+    opacity: 0;
+    transform: translateY(180px);
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* CSS pour l'effet de fondu */
+/* fleurs qui tournent*/
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    /* Logo complètement transparent au début */
+  }
+  to {
+    opacity: 1;
+    /* Logo complètement visible à la fin */
+  }
+}
+/* Animation de flottement */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(20px) translateX(-50%) rotate(-5deg);
+    /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+  }
+  to {
+    transform: translateY(-20px) translateX(-50%) rotate(5deg);
+    /* Mouvement de flottement vers le haut */
+  }
+}
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Animation du burger-menu */
+/* Styles pour la navigation dans le thème enfant */
+/* Menu burger */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotateFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateFlowerSunflower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerBefore {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* le reste des fleurs qui tournent */
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Pour l'image Jaakuna-1.png */
+/* Pour l'image Kawaneko.png */
+/* Pour l'image Orenjiiro-1.png */
+@keyframes ChatfloatSwingAnimationJaakuna {
+  0%, 100% {
+    transform: translateY(10px) rotate(10deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+@keyframes ChatfloatSwingAnimationKawaneko {
+  0%, 100% {
+    transform: translateY(5px) rotate(5deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-5px) rotate(-5deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+@keyframes ChatfloatSwingAnimationOrenjiiro {
+  0%, 100% {
+    transform: translateY(15px) rotate(-30deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-15px) rotate(15deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+#studio.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+#studio.active::before, #studio.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#text.active::before, #text.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.story.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.story.active::before, .story.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#text.active::before, #text.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media only screen and (max-width: 920px) {
+  .story h2::before {
+    top: 5em;
+    z-index: auto;
+    display: none;
+  }
+  .story h2::after {
+    width: 100px;
+    height: 100px;
+    top: 4em;
+    display: none;
+  }
+  .story__article {
+    width: 60%;
+    font-size: 14px;
+    padding-bottom: 1em;
+    margin-top: -20px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .story__article::before {
+    top: auto;
+    left: 24em;
+    display: none;
+  }
+  .story__article::after {
+    left: calc(50% + 214px);
+    top: 9em;
+    width: 50px;
+    height: 50px;
+    display: none;
+  }
+  .oscar-image {
+    width: 50%;
+    max-width: 400px;
+    margin-right: 300px;
+    margin-top: 200px;
+  }
+  #lieu > div {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-left: 40px;
+  }
+}
+@media (max-width: 360px) {
+  .story__article {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: -1em;
+    margin-top: -20px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .videolog {
+    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -350px;
+    margin-bottom: -380px;
+  }
+  .videolog img {
+    width: 40%;
+    top: calc(50% - 50px);
+  }
+}
+@media only screen and (max-width: 360px) {
+  .oscar {
+    background-size: contain !important;
+    left: 20px !important;
+    top: 5px !important;
+    padding-bottom: 200px !important;
+    display: flex;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    overflow: hidden;
+  }
+  .oscar p {
+    font-size: 16px !important;
+    margin-top: 30px !important;
+    margin-left: 20px !important;
+  }
+  .oscar-image {
+    width: 100% !important;
+    position: relative;
+    align-self: center;
+  }
+  .site-footer::before {
+    left: 2em;
+    top: 1em;
+  }
+  .site-footer::after {
+    right: -6em;
+    bottom: 5em;
+  }
+  .footer ul::after {
+    left: calc(50% - 170px);
+    bottom: -14em;
+  }
+  #new-title {
+    font-size: 24px;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  .main-character {
+    width: 360px;
+  }
+  .swiper-wrapper {
+    width: 300%;
+  }
+  .swiper-slide {
+    flex: 0 0 33.3333333333%;
+  }
+  #lieu {
+    min-height: 0;
+  }
+  #lieu > div {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-left: 20px;
+  }
+  #lieu > div p {
+    padding-left: 0px;
+    font-size: 14px;
+  }
+  #lieu h3 {
+    margin-bottom: 0;
+  }
+  .place--big_cloud {
+    width: 100px;
+    top: 40px;
+    left: calc(100% - 200px);
+  }
+  .place--little_cloud {
+    width: 80px;
+    top: 120px;
+    left: calc(100% - 50px);
+  }
+}
+@media only screen and (max-width: 471px) {
+  #studio {
+    padding: 0px;
+    background-size: 500px;
+  }
+  #studio h2 {
+    padding: 20px;
+  }
+  #studio h2 span#text {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 28px;
+  }
+  #studio.active h2 span#text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 920px) {
+  .videolog {
+    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -200px;
+    margin-bottom: -350px;
+  }
+  .videolog video {
+    display: none;
+  }
+  .videolog img {
+    width: 30%;
+    top: calc(50% - 100px);
+  }
+}
+@media screen and (max-width: 920px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 20%;
+    width: 100%;
+  }
+  .menu li {
+    margin: 10px 0;
+  }
+  .burger-menu-container {
+    width: 920px;
+    left: 0%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .menu-item a {
+    font-size: 38px;
+    z-index: 999;
+  }
+  .studiok {
+    z-index: 999;
+  }
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 20%;
+    width: 100%;
+  }
+  .menu li {
+    margin: 10px 0;
+  }
+  .burger-menu-container {
+    width: 360px;
+    left: 0%;
+  }
+}/*# sourceMappingURL=responsive.css.map */
