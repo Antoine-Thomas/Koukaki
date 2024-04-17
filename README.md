@@ -1,3 +1,5 @@
+![Logo du Studio Koukaki](https://github.com/Antoine-Thomas/Koukaki/blob/main/foce-child/assets/images/logo.png)
+
 Bienvenue dans le projet Studio Koukaki!
 
 Ce projet contient des fichiers importants pour le site web du Studio Koukaki. Pour des informations détaillées sur l'utilisation et la configuration du projet, veuillez vous référer au fichier README.md.
@@ -32,10 +34,7 @@ Avant de commencer à travailler sur le projet, assurez-vous d'avoir les éléme
 
 ---
 
-![Aperçu du site web](assets/screenshot.png)
-
----
+Pour accéder au site web du Studio Koukaki, veuillez visiter : [www.koukaki.searching-murphy.com](https://www.koukaki.searching-murphy.com/)
 
 Pour des instructions détaillées sur l'utilisation, veuillez consulter le fichier README.md.
 
-[README](README.md)
