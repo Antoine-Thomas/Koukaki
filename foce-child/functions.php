@@ -24,6 +24,8 @@ function theme_enqueue_styles_and_scripts() {
 
     // Enqueue compiled Sass file
     wp_enqueue_style( 'child-sass', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+    wp_enqueue_style( 'burger-style', get_stylesheet_directory_uri() . '/burger.css', array(), filemtime( get_stylesheet_directory() . '/burger.css' ) );
+    wp_enqueue_style( 'responsive-style', get_stylesheet_directory_uri() . '/responsive.css', array(), filemtime( get_stylesheet_directory() . '/responsive.css' ) );
 }
 
 

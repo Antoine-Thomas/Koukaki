@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const locationTitle = document.getElementById("lelieu");
     // Sélectionne le conteneur du lieu
     const locationContainer = document.getElementById("lelieu");
+    const lieuArticle = document.getElementById("lieu");
+    const characterArticle = document.getElementById("characters");
+
 
     // Fonction pour réinitialiser l'animation des titres
     function resetTitleAnimation(titleElement) {
@@ -33,28 +36,36 @@ document.addEventListener("DOMContentLoaded", function () {
         titleElement.style.transform = "translateY(0)";
     }
 
-    // Fonction pour mettre à jour la position du logo en fonction du défilement de la page
-    function updateLogoPosition() {
-        // Obtient la largeur de l'écran
-        const screenWidth = window.innerWidth;
-        // Obtient la position de défilement de la page
-        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-        // Définit la distance maximale de défilement
-        const maxScrollDistance = 180;
-        // Calcul de la position du logo en fonction de la largeur de l'écran et de la position de défilement
-        let logoPosition;
 
-        if (screenWidth <= 920 && screenWidth > 360) {
-            logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
-        } else if (screenWidth <= 360) {
-            logoPosition = Math.min(scrollPosition, maxScrollDistance / 3);
-        } else {
-            logoPosition = Math.min(scrollPosition, maxScrollDistance);
-        }
 
-        // Définit la position du logo en fonction du défilement de la page
+
+
+// Fonction pour mettre à jour la position du logo en fonction du défilement de la page
+function updateLogoPosition() {
+    const screenWidth = window.innerWidth;
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const maxScrollDistance = 180;
+    let logoPosition;
+
+    if (screenWidth <= 920 && screenWidth > 360) {
+        logoPosition = Math.min(scrollPosition, maxScrollDistance / 3);
+    } else if (screenWidth <= 360) {
+        logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
+    } else {
+        logoPosition = Math.min(scrollPosition, maxScrollDistance);
+    }
+
+    // Vérifie si l'utilisateur fait défiler vers le bas sur un écran de 920px ou moins
+    if (scrollPosition > 0 && screenWidth <= 920) {
+        // Si l'utilisateur fait défiler vers le bas et l'écran est de 920px ou moins
+        logo.style.top = `${window.innerHeight / 300}px`; // Positionne le logo au centre vertical de la fenêtre
+    } else {
+        // Sinon, le logo suit la logique de défilement normale
         logo.style.top = `${150 + logoPosition}px`;
     }
+}
+
+
 
     // Écoute les événements de défilement de la page pour mettre à jour la position du logo
     window.addEventListener('scroll', updateLogoPosition);
@@ -62,28 +73,35 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ajoute une classe 'loaded' à la vidéo après un délai pour activer les styles CSS
     setTimeout(() => videoEl.classList.add('loaded'), 500);
 
-    // Initialise la variable menuToggleClicked à false
-    let menuToggleClicked = false;
+        // Variable pour suivre le clic sur le menu toggle
+        let menuToggleClicked = false;
 
-    // Fonction pour basculer l'affichage du menu hamburger
-    menuToggle.addEventListener('click', function() {
-        burgerMenu.classList.toggle('active'); // Ajoute ou supprime la classe 'active' pour ouvrir ou fermer le menu
-        menuToggleClicked = true; // Définit menuToggleClicked à true lorsque le menu est ouvert par le clic sur le menu toggle
-    });
-
-    // Fonction pour fermer le menu hamburger
-    closeMenu.addEventListener('click', function() {
-        burgerMenu.classList.remove('active'); // Supprime la classe 'active' pour fermer le menu
-        menuToggleClicked = false; // Définit menuToggleClicked à false lorsque le menu est fermé par le clic sur le bouton de fermeture
-    });
-
-    // Fonction pour fermer le menu hamburger lors du clic en dehors du menu
-    window.addEventListener('click', function(event) {
-        if (event.target !== burgerMenu && !menuToggleClicked) {
-            burgerMenu.classList.remove('active'); // Supprime la classe 'active' pour fermer le menu si l'événement de clic se produit en dehors du menu
+        // Fonction pour afficher/masquer le menu burger
+        function toggleBurgerMenu() {
+            const burgerMenuContainer = document.querySelector('.burger-menu-container');
+    
+            if (burgerMenuContainer.style.display === 'none' || burgerMenuContainer.style.display === '') {
+                burgerMenuContainer.style.display = 'block';
+                burgerMenuContainer.classList.add('active');
+                menuToggle.classList.add('active');
+            } else {
+                burgerMenuContainer.style.display = 'none';
+                burgerMenuContainer.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
+            menuToggleClicked = true;
         }
-        menuToggleClicked = false; // Réinitialise menuToggleClicked à false après chaque clic sur la fenêtre
-    });
+    
+        // Gestionnaires d'événements pour le menu burger
+        menuToggle.addEventListener('click', toggleBurgerMenu);
+        closeMenu.addEventListener('click', toggleBurgerMenu);
+        window.addEventListener('click', function(event) {
+            if (event.target !== burgerMenu && !menuToggleClicked) {
+                burgerMenu.style.display = 'none';
+                menuToggle.classList.remove('active');
+            }
+            menuToggleClicked = false;
+        });
 
     // Fonction pour détecter quelle section de la page est visible lors du défilement
     function detectVisibleSection() {
@@ -115,10 +133,27 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Fonction pour détecter la visibilité de la section du lieu
-        const lieuArticle = document.getElementById("lieu");
 
-        function detectVisibleLieuSection() {
+    // Fonction pour détecter la visibilité de la section des personnages
+    function detectVisibleCharacterSection() {
+        const rect = characterArticle.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
+
+        if (isVisible) {
+            characterArticle.classList.add("active");
+            animateTitle(characterTitle);
+        } else {
+            characterArticle.classList.remove("active");
+            resetTitleAnimation(characterTitle);
+        }
+    }
+
+
+
+
+        // Fonction pour détecter la visibilité de la section du lieu
+
+         function detectVisibleLieuSection() {
             const rect = lieuArticle.getBoundingClientRect();
             const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
 
@@ -135,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Écoute les événements de défilement de la page pour détecter la visibilité de la section du lieu
         window.addEventListener('scroll', detectVisibleLieuSection);
+        window.addEventListener('scroll', detectVisibleCharacterSection);
 
         // Supprime la classe 'active' du conteneur du lieu si la section du lieu n'est pas visible
         if (!locationContainer.classList.contains("active")) {
@@ -175,8 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const lieu = document.getElementById("lelieu");
         const rootElement = document.documentElement;
         let scrollPosition = window.scrollY - lieu.offsetTop;
-        let cloudPosition = Math.round(scrollPosition / 2);
-        if (cloudPosition >= 1 && cloudPosition <= 1000) {
+        let cloudPosition = Math.round(scrollPosition / 3);
+        if (cloudPosition >= 1 && cloudPosition <= 1500) {
             rootElement.style.setProperty("--posX", `-${cloudPosition}px`);
         }
     }

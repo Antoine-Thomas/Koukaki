@@ -190,6 +190,434 @@ span#text {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+@keyframes SectionParallax {
+  from {
+    opacity: 0;
+    transform: translateY(180px);
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* CSS pour l'effet de fondu */
+/* fleurs qui tournent*/
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    /* Logo complètement transparent au début */
+  }
+  to {
+    opacity: 1;
+    /* Logo complètement visible à la fin */
+  }
+}
+/* Animation de flottement */
+@keyframes floatAnimation {
+  from {
+    transform: translateY(20px) translateX(-50%) rotate(-5deg);
+    /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+  }
+  to {
+    transform: translateY(-20px) translateX(-50%) rotate(5deg);
+    /* Mouvement de flottement vers le haut */
+  }
+}
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Animation du burger-menu */
+/* Styles pour la navigation dans le thème enfant */
+/* Menu burger */
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotateFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateFlowerSunflower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerBefore {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* le reste des fleurs qui tournent */
+@keyframes rotateRandomFlower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRandomFlowerAfter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Pour l'image Jaakuna-1.png */
+/* Pour l'image Kawaneko.png */
+/* Pour l'image Orenjiiro-1.png */
+@keyframes ChatfloatSwingAnimationJaakuna {
+  0%, 100% {
+    transform: translateY(10px) rotate(10deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+@keyframes ChatfloatSwingAnimationKawaneko {
+  0%, 100% {
+    transform: translateY(5px) rotate(5deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-5px) rotate(-5deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+@keyframes ChatfloatSwingAnimationOrenjiiro {
+  0%, 100% {
+    transform: translateY(15px) rotate(-30deg);
+    /* Ajuster la translation et la rotation de départ */
+  }
+  50% {
+    transform: translateY(-15px) rotate(15deg);
+    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+  }
+}
+#studio.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+#studio.active::before, #studio.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#text.active::before, #text.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.story.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.story.active::before, .story.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#text.active::before, #text.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media only screen and (max-width: 920px) {
+  .story h2::before {
+    top: 5em;
+    z-index: auto;
+    display: none;
+  }
+  .story h2::after {
+    width: 100px;
+    height: 100px;
+    top: 4em;
+    display: none;
+  }
+  .story__article {
+    width: 60%;
+    font-size: 14px;
+    padding-bottom: 1em;
+    margin-top: -20px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .story__article::before {
+    top: auto;
+    left: 24em;
+    display: none;
+  }
+  .story__article::after {
+    left: calc(50% + 214px);
+    top: 9em;
+    width: 50px;
+    height: 50px;
+    display: none;
+  }
+  #lieu > div {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-left: 40px;
+  }
+  .videolog {
+    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -200px;
+    margin-bottom: -350px;
+  }
+  .videolog video {
+    display: none;
+  }
+  .videolog img {
+    width: 30%;
+    top: calc(50% - 100px);
+  }
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 20%;
+    width: 100%;
+  }
+  .menu li {
+    margin: 10px 0;
+  }
+  .burger-menu-container {
+    width: 920px;
+    left: 500px;
+  }
+  h3 {
+    left: 0%;
+  }
+  .oscar-image {
+    max-width: 300px !important;
+    margin-right: 300px;
+    margin-top: 130px !important;
+  }
+  #logo {
+    top: 300px !important;
+  }
+}
+#studio.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+#studio.active h3 {
+  right: auto;
+}
+
+@media (max-width: 360px) {
+  .story__article {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: -1em;
+    margin-top: 500px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  #conte {
+    font-size: 14px; /* Réduire la taille de la police */
+    max-width: 600px; /* Réduire la largeur du conteneur */
+    margin: 0 auto; /* Centrer le contenu */
+    word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
+  }
+  .swiper-slide {
+    transform: scale(0.8) !important; /* Réduire la taille du Swiper */
+  }
+  #masthead .main-navigation {
+    top: auto;
+  }
+  .oscar {
+    background-size: contain;
+    left: 20px;
+    top: 5px;
+    padding-bottom: 200px;
+    display: flex;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    overflow: hidden;
+  }
+  .oscar p {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  .oscar-image {
+    width: 20%;
+    position: relative;
+    align-self: center;
+  }
+  .site-footer::before {
+    left: 2em;
+    top: 1em;
+  }
+  .site-footer::after {
+    right: -6em;
+    bottom: 5em;
+  }
+  .footer ul::after {
+    left: calc(50% - 170px);
+    bottom: -14em;
+  }
+  #new-title {
+    font-size: 24px;
+    padding: 20px;
+    margin-right: 20px;
+  }
+  .main-character {
+    width: 360px;
+  }
+  .swiper-wrapper {
+    width: 300%;
+  }
+  .swiper-slide {
+    flex: 0 0 33.3333333333%;
+  }
+  #lieu {
+    min-height: 0;
+  }
+  #lieu > div {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+  }
+  #lieu > div p {
+    padding-right: 70px;
+    font-size: 14px;
+  }
+  .place--big_cloud {
+    width: 100px;
+    top: 40px;
+    left: calc(100% - 200px);
+  }
+  .place--little_cloud {
+    width: 80px;
+    top: 120px;
+    left: calc(100% - 50px);
+  }
+  .menu-item a {
+    font-size: 38px;
+    z-index: 999;
+  }
+  .studiok {
+    z-index: 999;
+  }
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 20%;
+    width: 100%;
+  }
+  .menu li {
+    margin: 10px 0;
+  }
+  .burger-menu-container {
+    width: 360px;
+    left: 0%;
+  }
+  #studio {
+    margin-top: -50px; /* Déplacer la section de 20 pixels vers le haut */
+  }
+  #story {
+    margin-top: 450px; /* Réduire la marge supérieure de 20px */
+  }
+  #characters {
+    width: 100%;
+    min-height: 700px;
+    position: relative;
+  }
+  #characters > div {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #characters h3 {
+    background-image: url("./assets/images/orange_place_bg.png");
+    margin-bottom: -1em;
+    transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
+  }
+}
 .burger-menu {
   display: none;
   top: 0;
@@ -314,14 +742,15 @@ span#text {
   z-index: 1000;
   background-color: #FFD5A2;
   height: 80px;
+  right: 800px;
 }
 
 .burger-menu-container {
-  position: absolute;
+  position: fixed;
   top: 0px;
-  left: 500px;
+  left: 693px;
   width: 1440px;
-  height: 1320px;
+  height: 1460px;
   background-color: #FFF5E9;
   display: none;
   z-index: 999;

@@ -1,4 +1,7 @@
 @import 'mixins';
+@import 'responsive';
+
+
 
 
 .burger-menu {
@@ -132,21 +135,23 @@
 			z-index: 1000;
 			background-color: $background-color_4;
 			height: 80px;
+			right: 800px;
 		}
 	}
 }
 .burger-menu-container {
-	position: absolute;
+	position: fixed;
 	top: 0px;
-	left: 500px;
+	left: 693px;
 	width: 1440px;
-	height: 1320px;
-	background-color: $background-color_5;
+	height: 1460px;
+	background-color: #FFF5E9;
 	display: none;
 	z-index: 999;
 	overflow: hidden;
 	opacity: 0;
 	transition: opacity 1s ease-in-out;
+
 	.menu-nav {
 		display: flex;
 		flex-direction: column;
@@ -157,6 +162,7 @@
 		opacity: 0;
 		animation: fadeInAnimation 2s ease-in-out forwards;
 		animation-delay: 0.5s;
+
 		&::before {
 			content: url('./assets/images/orchid.png');
 			position: absolute;
@@ -167,6 +173,7 @@
 			animation: rotateRandomFlower 10s linear infinite !important;
 			transform-origin: center;
 		}
+
 		&::after {
 			content: url('./assets/images/Sunflower.png');
 			position: absolute;
@@ -178,6 +185,7 @@
 			transform-origin: center;
 			z-index: 1;
 		}
+
 		.jaakuna {
 			content: url('./assets/images/Jaakuna-1.png');
 			position: absolute;
@@ -188,6 +196,7 @@
 			animation: ChatfloatSwingAnimationJaakuna 2s ease-in-out infinite;
 			transform-origin: center;
 		}
+
 		.kawaneko {
 			content: url('./assets/images/Kawaneko.png');
 			position: absolute;
@@ -198,6 +207,7 @@
 			animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
 			transform-origin: center;
 		}
+
 		.orenjiiro {
 			content: url('./assets/images/Orenjiiro-1.png');
 			position: absolute;
@@ -209,6 +219,7 @@
 			transform-origin: center;
 		}
 	}
+	
 	.studiok {
 		position: absolute;
 		bottom: -400px;
@@ -218,6 +229,7 @@
 		color: $color_3;
 		text-decoration: none;
 	}
+	
 	.hibiscus-footer {
 		position: absolute;
 		right: -300px;
@@ -231,6 +243,7 @@
 		transform-origin: center center;
 		z-index: 2;
 	}
+
 	&::before {
 		content: url('./assets/images/random_flower.png');
 		position: absolute;
@@ -242,6 +255,7 @@
 		z-index: 0;
 		transform: scale(0.5) rotate(0deg);
 	}
+
 	&::after {
 		content: url('./assets/images/flower.png');
 		position: absolute;
@@ -252,10 +266,12 @@
 		animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important;
 		z-index: 0;
 	}
+}
+
 
     
     
-}
+
 #logo-small {
 	width: 148px;
 	position: absolute;

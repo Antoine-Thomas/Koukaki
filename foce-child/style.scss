@@ -9,18 +9,21 @@
  */
 
 
- @import 'mixins';
- @import 'responsive';
- @import 'burger';
+// style.scss
+
+// Import other SCSS files
+@import 'burger.scss';
+@import 'responsive.scss';
+@import 'mixins.scss';
+
+// Add your custom styles here
+
  
-html {
-	-webkit-text-size-adjust: 100%;
-	text-size-adjust: 100%;
-}
+
 section {
 	opacity: 1;
 	transform: translateY(0);
-	animation: SectionParallax 0.3s linear;
+	animation: SectionParallax 1s linear;
 }
 #text {
 	position: relative;
@@ -193,34 +196,34 @@ div#page.site {
 	font-size: 18px;
 }
 .oscar {
-	background-image: url('./assets/images/rectangle.png') !important;
-	background-repeat: no-repeat !important;
-	background-size: 800px 350px !important;
-	position: relative !important;
-	left: 0px !important;
-	top: 10px !important;
-	padding-bottom: 400px !important;
-	z-index: 1 !important;
+	background-image: url('./assets/images/rectangle.png');
+	background-repeat: no-repeat ;
+	background-size: 800px 350px ;
+	position: relative ;
+	left: 0px ;
+	top: 10px ;
+	padding-bottom: 400px ;
+	z-index: 1 ;
 	display: flex;
 	overflow: hidden;
 	p {
-		font-family: $font-family_1 !important;
-		font-size: 42px !important;
-		font-weight: 700 !important;
-		color: $color_1 !important;
-		text-align: left !important;
-		line-height: 1.2 !important;
-		margin-top: 100px !important;
-		margin-left: 60px !important;
+		font-family: $font-family_1 ;
+		font-size: 42px ;
+		font-weight: 700 ;
+		color: $color_1 ;
+		text-align: left ;
+		line-height: 1.2 ;
+		margin-top: 100px ;
+		margin-left: 60px ;
 		position: absolute;
-		z-index: 2 !important;
+		z-index: 2 ;
 	}
 }
 .oscar-image {
-	content: url('./assets/images/oscarwild.png') !important;
-	position: absolute !important;
-	left: 65% !important;
-	top: 50% !important;
+	content: url('./assets/images/oscarwild.png');
+	position: absolute ;
+	left: 65% ;
+	top: 50% ;
 	transform: translate(-50%, -50%);
 	width: 400px;
 	height: auto;
@@ -228,8 +231,8 @@ div#page.site {
 }
 #lieu {
 	>div {
-		margin-top: 20px !important;
-		padding-left: 20px !important;
+		margin-top: 20px ;
+		padding-left: 20px ;
 		max-width: 580px;
 		display: flex;
 		flex-direction: column;
@@ -252,6 +255,36 @@ div#page.site {
 		margin-bottom: -1em;
 	}
 }
+
+
+#characters {
+	width: 100%;
+	min-height: 700px;
+	position: relative;
+	overflow: hidden;
+	display: grid;
+  
+	> div {
+	  max-width: 580px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: flex-start;
+	}
+  
+	h3 {
+	  background-image: url("./assets/images/orange_place_bg.png");
+	  margin-bottom: -1em;
+	  opacity: 0; // Défaut l'opacité à 0
+	  transition: opacity 0.5s ease; // Transition pour l'animation de fade-in
+  
+	  .fade-in & { // Cible les h3 contenus dans .fade-in
+		opacity: 1; // Applique l'opacité maximale pour l'animation
+	  }
+	}
+  }
+ 
+  
 .site-footer {
 	position: relative;
 	display: flex;
@@ -384,6 +417,7 @@ $slide-duration: 0.5s; // Durée de l'animation
 	position: relative;
 	right: 350px;
 	top: 0;
+	
   }
   
 
@@ -435,3 +469,97 @@ $slide-duration: 0.5s; // Durée de l'animation
 .parallax-element.active {
 	transform: translateY(-10%);
 }
+
+
+@media (max-width: 360px) {
+    .videolog {
+        height: calc(100vh - 395px); /* Réduire la hauteur de la div */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+		top: -450px;
+		margin-bottom: -50px;
+    }
+    
+	.oscar {
+		background-size: contain ;
+		left: 20px ;
+		top: 5px ;
+		padding-bottom: 200px ;
+		display: flex;
+		width: calc(100% - 40px);
+		max-width: 320px;
+		overflow: hidden;
+	
+		p {
+		  font-size: 16px ;
+		  margin-top: 30px ;
+		  margin-left: 20px ;
+		}
+	  }
+	
+	  .oscar-image {
+		width: 50%;
+		position: relative;
+		align-self: center;
+	  }
+	  #story {
+		margin-top: -200px; /* Réduire la marge supérieure de 20px */
+		z-index:-1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+		bottom: 50px;
+
+      }
+	  #studio  {
+		margin-bottom:-150px; /* Déplacer la section de 20 pixels vers le haut */
+		z-index: 3 !important; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+
+		 
+	}
+
+	
+        #studio h2::before,
+		#studio h2::after {
+		 
+		  position: absolute;
+
+		 
+		}
+
+
+		#studio h2 {
+			margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
+		}
+		#studio #text {
+			font-size: 26px; /* Réduire la taille de la police selon vos besoins */
+		}
+		
+	
+			#characters {
+				right: 535px !important;
+			}
+		
+		 
+
+		
+}
+
+@media (max-width: 920px) {
+  #characters {
+    right: 250px;
+    width: 100%;
+    min-height: 700px;
+    overflow: visible;
+    position: relative;
+    top: -150px;
+
+    > div {
+      max-width: 580px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+}   
+  
+

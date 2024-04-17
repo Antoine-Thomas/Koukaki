@@ -222,25 +222,9 @@ span#text {
     height: 50px;
     display: none;
   }
-  .oscar-image {
-    width: 50%;
-    max-width: 400px;
-    margin-right: 300px;
-    margin-top: 200px;
-  }
   #lieu > div {
     margin: 0 auto;
     margin-top: 80px;
-    padding-left: 40px;
-  }
-}
-@media (max-width: 360px) {
-  .story__article {
-    width: 100%;
-    font-size: 14px;
-    padding-bottom: -1em;
-    margin-top: -20px;
-    padding-right: 40px;
     padding-left: 40px;
   }
   .videolog {
@@ -248,32 +232,96 @@ span#text {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin-top: -350px;
-    margin-bottom: -380px;
+    margin-top: -200px;
+    margin-bottom: -350px;
+  }
+  .videolog video {
+    display: none;
   }
   .videolog img {
-    width: 40%;
-    top: calc(50% - 50px);
+    width: 30%;
+    top: calc(50% - 100px);
+  }
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    right: 20%;
+    width: 100%;
+  }
+  .menu li {
+    margin: 10px 0;
+  }
+  .burger-menu-container {
+    width: 100%;
+    left: 0px !important;
+  }
+  h3 {
+    left: 0%;
+  }
+  .oscar-image {
+    max-width: 300px !important;
+    margin-right: 300px;
+    margin-top: 130px !important;
+  }
+  #logo {
+    top: 300px !important;
   }
 }
-@media only screen and (max-width: 360px) {
+#studio.active h2 span#text {
+  opacity: 1;
+  transform: translateY(0);
+}
+#studio.active h3 {
+  right: auto;
+}
+
+@media (max-width: 360px) {
+  .story__article {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: -1em;
+    margin-top: 500px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  #conte {
+    font-size: 14px; /* Réduire la taille de la police */
+    max-width: 600px; /* Réduire la largeur du conteneur */
+    margin: 0 auto; /* Centrer le contenu */
+    word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
+  }
+  .swiper-slide {
+    transform: scale(0.8) !important; /* Réduire la taille du Swiper */
+  }
+  #masthead .main-navigation {
+    top: auto;
+  }
   .oscar {
-    background-size: contain !important;
-    left: 20px !important;
-    top: 5px !important;
-    padding-bottom: 200px !important;
+    background-size: contain;
+    left: 20px;
+    top: 5px;
+    padding-bottom: 200px;
     display: flex;
     width: calc(100% - 40px);
     max-width: 320px;
     overflow: hidden;
   }
   .oscar p {
-    font-size: 16px !important;
-    margin-top: 30px !important;
-    margin-left: 20px !important;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 20px;
   }
   .oscar-image {
-    width: 100% !important;
+    width: 20%;
     position: relative;
     align-self: center;
   }
@@ -310,13 +358,11 @@ span#text {
     margin: 0 auto;
     margin-top: 80px;
     padding-left: 20px;
+    padding-bottom: 50px;
   }
   #lieu > div p {
-    padding-left: 0px;
+    padding-right: 70px;
     font-size: 14px;
-  }
-  #lieu h3 {
-    margin-bottom: 0;
   }
   .place--big_cloud {
     width: 100px;
@@ -328,71 +374,6 @@ span#text {
     top: 120px;
     left: calc(100% - 50px);
   }
-}
-@media only screen and (max-width: 471px) {
-  #studio {
-    padding: 0px;
-    background-size: 500px;
-  }
-  #studio h2 {
-    padding: 20px;
-  }
-  #studio h2 span#text {
-    display: inline-block;
-    max-width: 100%;
-    padding: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    font-size: 28px;
-  }
-  #studio.active h2 span#text {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@media (max-width: 920px) {
-  .videolog {
-    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    margin-top: -200px;
-    margin-bottom: -350px;
-  }
-  .videolog video {
-    display: none;
-  }
-  .videolog img {
-    width: 30%;
-    top: calc(50% - 100px);
-  }
-}
-@media screen and (max-width: 920px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-toggle {
-    order: 2;
-    display: block;
-    left: 90%;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    right: 20%;
-    width: 100%;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-  .burger-menu-container {
-    width: 920px;
-    left: 0%;
-  }
-}
-@media screen and (max-width: 360px) {
   .menu-item a {
     font-size: 38px;
     z-index: 999;
@@ -421,5 +402,28 @@ span#text {
   .burger-menu-container {
     width: 360px;
     left: 0%;
+  }
+  #studio {
+    margin-top: -50px; /* Déplacer la section de 20 pixels vers le haut */
+  }
+  #story {
+    margin-top: 450px; /* Réduire la marge supérieure de 20px */
+  }
+  #characters {
+    width: 100%;
+    min-height: 700px;
+    position: relative;
+  }
+  #characters > div {
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #characters h3 {
+    background-image: url("./assets/images/orange_place_bg.png");
+    margin-bottom: -1em;
+    transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
   }
 }/*# sourceMappingURL=responsive.css.map */
