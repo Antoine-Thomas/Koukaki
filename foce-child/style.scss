@@ -473,7 +473,7 @@ $slide-duration: 0.5s; // Durée de l'animation
 
 @media (max-width: 360px) {
     .videolog {
-        height: calc(100vh - 395px); /* Réduire la hauteur de la div */
+        height: calc(100vh - 420px); /* Réduire la hauteur de la div */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -504,7 +504,7 @@ $slide-duration: 0.5s; // Durée de l'animation
 		align-self: center;
 	  }
 	  #story {
-		margin-top: -200px; /* Réduire la marge supérieure de 20px */
+		margin-top: 0px; /* Réduire la marge supérieure de 20px */
 		z-index:-1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
 		bottom: 50px;
 
@@ -562,4 +562,50 @@ $slide-duration: 0.5s; // Durée de l'animation
   }
 }   
   
+// Laptop-M Media Query with device pixel ratio
+@media only screen and (-webkit-min-device-pixel-ratio: 1),
+	only screen and (-min--moz-device-pixel-ratio: 1),
+	only screen and (-o-min-device-pixel-ratio: 1/1),
+	only screen and (min-device-pixel-ratio: 1) {
+	@media only screen and (max-width: 1440px) and (orientation: landscape) {
+		.menu-toggle {
+			position: relative; /* Assurez-vous que le positionnement est fixe ou absolu */
+			left: 1300px; /* Ajustez la valeur selon vos besoins */
+			z-index: 1001;
+		}
 
+		#story {
+			margin-top: 20px; /* Réduire la marge supérieure de 20px */
+			z-index: -1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+			bottom: 50px;
+		}
+		.videolog {
+			video {
+				display: none;
+			}
+
+			background-image: url("./assets/images/banner.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			margin-top: -80px;
+			margin-bottom: 0px;
+			width: 100%;
+
+			img {
+				width: 30%;
+				top: calc(50% - 100px);
+			}
+		}
+
+		.burger-menu-container {
+
+			width: 100%;
+			height: 768px;
+			left: -0px;
+
+
+			
+		}
+	}
+}

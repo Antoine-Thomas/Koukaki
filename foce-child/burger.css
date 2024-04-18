@@ -424,7 +424,7 @@ span#text {
     background-size: contain;
     background-position: center;
     margin-top: -200px;
-    margin-bottom: -350px;
+    margin-bottom: -360px;
   }
   .videolog video {
     display: none;
@@ -452,8 +452,8 @@ span#text {
     margin: 10px 0;
   }
   .burger-menu-container {
-    width: 920px;
-    left: 500px;
+    width: 100%;
+    left: 0px !important;
   }
   h3 {
     left: 0%;

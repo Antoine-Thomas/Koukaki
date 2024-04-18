@@ -54,13 +54,13 @@
     video {
       display: none;
     }
-
+width: 100%;
     background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin-top: -200px;
-    margin-bottom: -350px;
+    margin-top: -220px !important;
+    margin-bottom: -300px !important;
 
     img {
       width: 30%;
@@ -225,11 +225,17 @@
       padding-bottom: 50px;
 
       p {
-        padding-right: 70px;
-        font-size: 14px;
+
+        padding-right: 100px;
+        font-size: 12px;
       }
     }
+  .lieu-container{
+    left: -50px;
 
+    padding-top: 20px;
+
+  }
    
 
   }

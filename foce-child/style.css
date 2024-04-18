@@ -428,12 +428,13 @@ span#text {
     padding-left: 40px;
   }
   .videolog {
+    width: 100%;
     background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin-top: -200px;
-    margin-bottom: -350px;
+    margin-top: -220px !important;
+    margin-bottom: -300px !important;
   }
   .videolog video {
     display: none;
@@ -461,8 +462,8 @@ span#text {
     margin: 10px 0;
   }
   .burger-menu-container {
-    width: 920px;
-    left: 500px;
+    width: 100%;
+    left: 0px !important;
   }
   h3 {
     left: 0%;
@@ -489,7 +490,7 @@ span#text {
     width: 100%;
     font-size: 14px;
     padding-bottom: -1em;
-    margin-top: 500px;
+    margin-top: -150px;
     padding-right: 40px;
     padding-left: 40px;
   }
@@ -1120,12 +1121,13 @@ span#text {
     padding-left: 40px;
   }
   .videolog {
+    width: 100%;
     background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin-top: -200px;
-    margin-bottom: -350px;
+    margin-top: -220px !important;
+    margin-bottom: -300px !important;
   }
   .videolog video {
     display: none;
@@ -1153,8 +1155,8 @@ span#text {
     margin: 10px 0;
   }
   .burger-menu-container {
-    width: 920px;
-    left: 500px;
+    width: 100%;
+    left: 0px !important;
   }
   h3 {
     left: 0%;
@@ -1181,7 +1183,7 @@ span#text {
     width: 100%;
     font-size: 14px;
     padding-bottom: -1em;
-    margin-top: 500px;
+    margin-top: -150px;
     padding-right: 40px;
     padding-left: 40px;
   }
@@ -1956,7 +1958,7 @@ div#page.site {
 
 @media (max-width: 360px) {
   .videolog {
-    height: calc(100vh - 395px); /* Réduire la hauteur de la div */
+    height: calc(100vh - 420px); /* Réduire la hauteur de la div */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1984,7 +1986,7 @@ div#page.site {
     align-self: center;
   }
   #story {
-    margin-top: -200px; /* Réduire la marge supérieure de 20px */
+    margin-top: 0px; /* Réduire la marge supérieure de 20px */
     z-index: -1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
     bottom: 50px;
   }
@@ -2021,5 +2023,38 @@ div#page.site {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 1440px) and (orientation: landscape), only screen and (-min--moz-device-pixel-ratio: 1) and (max-width: 1440px) and (orientation: landscape), only screen and (-o-min-device-pixel-ratio: 1/1) and (max-width: 1440px) and (orientation: landscape), only screen and (min-device-pixel-ratio: 1) and (max-width: 1440px) and (orientation: landscape) {
+  .menu-toggle {
+    position: relative; /* Assurez-vous que le positionnement est fixe ou absolu */
+    left: 1300px; /* Ajustez la valeur selon vos besoins */
+    z-index: 1001;
+  }
+  #story {
+    margin-top: 20px; /* Réduire la marge supérieure de 20px */
+    z-index: -1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+    bottom: 50px;
+  }
+  .videolog {
+    background-image: url("./assets/images/banner.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -80px;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+  .videolog video {
+    display: none;
+  }
+  .videolog img {
+    width: 30%;
+    top: calc(50% - 100px);
+  }
+  .burger-menu-container {
+    width: 100%;
+    height: 768px;
+    left: 0px;
   }
 }/*# sourceMappingURL=style.css.map */

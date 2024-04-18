@@ -17,12 +17,12 @@
         $characters_query = new WP_Query($args);
         ?>
         <article id="characters">
-    <div class="characters-carousel">
-        <div class="character-container">
-            <!-- Div de gauche -->
-        </div>
-        <section id="character-section" class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper fade-in">
-        <h3> <span id="character-title" >Les personnages</span></h3>
+            <div class="characters-carousel">
+                <div class="character-container">
+                    <!-- Div de gauche -->
+                </div>
+                <section id="character-section" class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper fade-in">
+                    <h3><span id="character-title">Les personnages</span></h3>
                     <!-- Carrousel Swiper -->
                     <div class="swiper-wrapper">
                         <?php
@@ -34,28 +34,28 @@
                             "/wp-content/uploads/2022/06/Orenjiiro.png" => "Orenjiiro",
                             "/wp-content/uploads/2022/06/Pinku.png" => "Pinku"
                         );
-                        
+
                         // Boucle à travers les adresses des images avec les noms
                         foreach ($image_paths as $image_path => $image_name) {
                             echo '<div class="swiper-slide">';
                             echo '<figure>';
-                            echo '<img src="' . $image_path . '" />';
+                            echo '<img src="' . $image_path . '" alt="' . $image_name . '" />';
                             echo '<figcaption>' . $image_name . '</figcaption>';
                             echo '</figure>';
                             echo '</div>';
                         }
                         ?>
                     </div>
-        
-                
+
+                </section>
         </article>
-       
-        <article id="lieu" >
+
+        <article id="lieu">
             <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
             <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
             <div class="lieu-container">
                 <div>
-                    <h3> <span class="endroit" id="lelieu">Le Lieu </span></h3>
+                    <h3><span class="endroit" id="lelieu">Le Lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
             </div>
@@ -72,3 +72,4 @@
 </main>
 
 <?php get_footer(); ?>
+

@@ -38,17 +38,16 @@
                         <div class="logo-small">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                                 <img src="http://localhost:10083/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo-small" class="fade-in">
-                                
                             </a>
                         </div>
                         <button class="close-menu ">&#10005;</button>
                     </div>
                     <nav class="menu-nav">
-                              <div class="jaakuna"></div>
-                              <div class="kawaneko"></div>
-                              <div class="orenjiiro"></div>
-                              <div class="hibiscus-footer"></div>
-                              
+                        <div class="jaakuna" aria-hidden="true"></div>
+                        <div class="kawaneko" aria-hidden="true"></div>
+                        <div class="orenjiiro" aria-hidden="true"></div>
+                        <div class="hibiscus-footer" aria-hidden="true"></div>
+
                         <ul>
                             <li class="menu-item"><a href="#story">Histoire</a></li>
                             <li class="menu-item"><a href="#characters">Personnages</a></li>
@@ -64,8 +63,8 @@
 
     <div class="videolog fade-in">
         <video autoplay loop muted id="video-videolog">
-            <source src="http://localhost:10083/wp-content/themes/foce-child/assets/images/video.mp4" type="video/mp4" id="video" class=" fade-in" >
-            <img src="http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png" alt="banner" id="banner" class=" fade-in" >
+            <source src="http://localhost:10083/wp-content/themes/foce-child/assets/images/video.mp4" type="video/mp4" id="video" class="fade-in">
+            <img src="http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png" alt="banner" id="banner" class="fade-in">
         </video>
         <div id="logo-container">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -74,4 +73,5 @@
         </div>
     </div>
 </div>
+
 
