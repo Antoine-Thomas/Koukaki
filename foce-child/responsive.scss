@@ -1,8 +1,7 @@
 @import "mixins";
 
 @media only screen and (max-width: 920px) {
-
-.story {
+  .story {
     h2 {
       &::before {
         top: 5em;
@@ -54,13 +53,13 @@
     video {
       display: none;
     }
-width: 100%;
+    width: 100%;
     background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    margin-top: -220px !important;
-    margin-bottom: -300px !important;
+    margin-top: -220px ;
+    margin-bottom: -300px ;
 
     img {
       width: 30%;
@@ -91,8 +90,8 @@ width: 100%;
   }
 
   .burger-menu-container {
-    width:100%;
-    left: 0px !important;
+    width: 100%;
+    left: 0px ;
   }
 
   h3 {
@@ -100,13 +99,13 @@ width: 100%;
   }
 
   .oscar-image {
-    max-width: 300px !important;
+    max-width: 300px ;
     margin-right: 300px;
-    margin-top: 130px !important;
+    margin-top: 130px ;
   }
 
   #logo {
-    top: 300px !important;
+    top: 250px;
   }
 }
 
@@ -121,25 +120,23 @@ width: 100%;
   h3 {
     right: auto;
   }
-  	
-  
-
-
 }
 
 @media (max-width: 360px) {
+
+
+
   .story__article {
     width: 100%;
     font-size: 14px;
     padding-bottom: -1em;
-    margin-top: 500px;
     padding-right: 40px;
     padding-left: 40px;
   }
 
   #conte {
     font-size: 14px; /* Réduire la taille de la police */
-    max-width: 600px; /* Réduire la largeur du conteneur */
+    max-width: 100%; /* Réduire la largeur du conteneur */
     margin: 0 auto; /* Centrer le contenu */
 
     word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
@@ -217,6 +214,8 @@ width: 100%;
 
   #lieu {
     min-height: 0;
+    bottom: 350px; /* Remonte la section de 200px */
+    margin-top: 100px; /* Remonte la section de 200px */
 
     > div {
       margin: 0 auto;
@@ -225,19 +224,15 @@ width: 100%;
       padding-bottom: 50px;
 
       p {
-
         padding-right: 100px;
         font-size: 12px;
       }
     }
-  .lieu-container{
-    left: -50px;
+    .lieu-container {
+      left: -50px;
 
-    padding-top: 20px;
-
-  }
-   
-
+      padding-top: 20px;
+    }
   }
 
   .place--big_cloud {
@@ -261,6 +256,7 @@ width: 100%;
 
   .studiok {
     z-index: 999;
+
   }
 
   .nav-container {
@@ -294,38 +290,46 @@ width: 100%;
   }
 
   #story {
-    margin-top: 450px; /* Réduire la marge supérieure de 20px */
-  }
+		margin-top: -300px; /* Remonte la section de 200px */
+		z-index:-1; 
+    }
 
   #characters {
-	
-    
     width: 100%;
     min-height: 700px;
-    
+
     position: relative;
-    
-    
-    
+
     > div {
-      
-     
       max-width: 580px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      
-    
-     
     }
-    
+
     h3 {
       background-image: url("./assets/images/orange_place_bg.png");
       margin-bottom: -1em;
       transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
     }
+  }
+
+   .videolog {
+        height: calc(100vh - 400px); /* Réduire la hauteur de la div */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+		top: 200px;
+		
+    position:absolute;
+}
+
+#logo {
+  top: 100px;
+}
 
 
 }
-}
+
+

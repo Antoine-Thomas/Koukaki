@@ -150,7 +150,7 @@
     /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
   }
 }
-#studio.active h2 span#text {
+#studio.active h2 span#studiotext {
   opacity: 1;
   transform: translateY(0);
 }
@@ -159,12 +159,12 @@
   opacity: 1;
 }
 
-#text.active::before, #text.active::after {
+#studiotext.active::before, #studiotext.active::after {
   top: -10px;
   opacity: 1;
 }
 
-span#text {
+span#studiotext {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -188,4 +188,65 @@ span#text {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#character-title.active h3 span#character-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+#character-title.active::before, #character-title.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#character-title.active::before, #character-title.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#character-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#lelieu.active h3 span#lelieu {
+  opacity: 1;
+  transform: translateY(0);
+}
+#lelieu.active::before, #lelieu.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#lelieu.active::before, #lelieu.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#lelieu {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.studio.active h2 span#koukaki {
+  opacity: 1;
+  transform: translateY(0);
+}
+.studio.active::before, .studio.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+#koukaki.active::before, #koukaki.active::after {
+  top: -10px;
+  opacity: 1;
+}
+
+span#koukaki {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: 0.99s;
 }/*# sourceMappingURL=Mixins.css.map */

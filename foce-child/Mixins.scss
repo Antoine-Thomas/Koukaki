@@ -245,18 +245,18 @@ $background-color_5: #FFF5E9;
 // Animation pour la section "Studio"
 #studio.active {
     h2 {
-        span#text {
+        span#studiotext {
             @include fadeInAnimation;
         }
     }
     @include fadeInBeforeAfter;
 }
 
-#text.active {
+#studiotext.active {
     @include fadeInBeforeAfter;
 }
 
-span#text {
+span#studiotext {
     @include fadeOutAnimation;
 }
 
@@ -278,3 +278,69 @@ span#text {
     @include fadeOutAnimation;
 }
 
+
+
+
+
+
+// Animation pour la section "personnages"
+#character-title.active {
+    h3 {
+        span#character-title {
+            @include fadeInAnimation;
+        }
+    }
+    @include fadeInBeforeAfter;
+}
+
+#character-title.active {
+    @include fadeInBeforeAfter;
+}
+
+span#character-title {
+    @include fadeOutAnimation;
+}
+
+// Animation pour la section "lelieu"
+#lelieu.active {
+    h3 {
+        span#lelieu {
+            @include fadeInAnimation;
+        }
+    }
+    @include fadeInBeforeAfter;
+}
+
+#lelieu.active {
+    @include fadeInBeforeAfter;
+}
+
+span#lelieu {
+    @include fadeOutAnimation;
+}
+
+
+@mixin fadeOutAnimationK {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.99s; // Définir un délai spécifique pour #koukaki
+}
+
+// Animation pour la section "koukaki"
+.studio.active {
+    h2 {
+        span#koukaki {
+            @include fadeInAnimation;
+        }
+    }
+    @include fadeInBeforeAfter;
+}
+
+#koukaki.active {
+    @include fadeInBeforeAfter;
+}
+
+span#koukaki {
+    @include fadeOutAnimationK; // Utiliser le mixin fadeOutAnimationK
+}

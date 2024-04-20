@@ -1,24 +1,14 @@
 // Attend que le DOM soit chargé avant d'exécuter le script
 document.addEventListener("DOMContentLoaded", function () {
-    // Sélectionne les différentes sections de la page
     const sections = document.querySelectorAll("section");
-    // Sélectionne le texte de l'histoire
     const histoireText = document.getElementById("text");
-    // Sélectionne la vidéo du court-métrage
     const videoEl = document.querySelector('.videolog');
-    // Sélectionne le bouton de menu hamburger
     const menuToggle = document.querySelector('.menu-toggle');
-    // Sélectionne le menu hamburger
     const burgerMenu = document.querySelector('.burger-menu-container');
-    // Sélectionne le bouton de fermeture du menu
     const closeMenu = document.querySelector('.close-menu');
-    // Sélectionne le logo du site
     const logo = document.getElementById('logo');
-    // Sélectionne le titre des personnages
     const characterTitle = document.getElementById("character-title");
-    // Sélectionne le titre du lieu
     const locationTitle = document.getElementById("lelieu");
-    // Sélectionne le conteneur du lieu
     const locationContainer = document.getElementById("lelieu");
     const lieuArticle = document.getElementById("lieu");
     const characterArticle = document.getElementById("characters");
@@ -61,7 +51,7 @@ function updateLogoPosition() {
         logo.style.top = `${window.innerHeight / 300}px`; // Positionne le logo au centre vertical de la fenêtre
     } else {
         // Sinon, le logo suit la logique de défilement normale
-        logo.style.top = `${150 + logoPosition}px`;
+        logo.style.top = `${50 + logoPosition}px`;
     }
 }
 
@@ -134,7 +124,7 @@ function updateLogoPosition() {
         });
 
 
-    // Fonction pour détecter la visibilité de la section des personnages
+    // Fonction pour détecter la visibilité de la section du titre personnages
     function detectVisibleCharacterSection() {
         const rect = characterArticle.getBoundingClientRect();
         const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
@@ -229,8 +219,7 @@ function updateLogoPosition() {
         }, 500);
     }
 
-    // Anime le logo lors du chargement de la page
-    animateLogoOnLoad();
+   
 });
 
 // Fonction jQuery pour animer les éléments avec la classe 'fade-in'

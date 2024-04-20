@@ -16,20 +16,26 @@
 @import 'responsive.scss';
 @import 'mixins.scss';
 
+
 // Add your custom styles here
 
- 
+ body{  
+	max-width: 1440px;
+    margin: auto;
+
+ }
 
 section {
 	opacity: 1;
 	transform: translateY(0);
 	animation: SectionParallax 1s linear;
 }
-#text {
-	position: relative;
-	display: inline-block;
-	position: relative;
-	display: inline-block;
+
+#logo  {
+
+	top: 50px;
+}
+#text,#studiotext,#character-title,#lelieu {
 	position: relative;
 	display: inline-block;
 	&::before {
@@ -37,7 +43,6 @@ section {
 		position: absolute;
 		top: 100%;
 		opacity: 0;
-		transition: top 0.5s ease, opacity 0.5s ease;
 		left: 0;
 	}
 	&::after {
@@ -45,16 +50,32 @@ section {
 		position: absolute;
 		top: 100%;
 		opacity: 0;
-		transition: top 0.5s ease, opacity 0.5s ease;
 		left: 0;
 	}
 }
+#koukaki {
+    position: relative;
+    display: inline-block;
+
+    &::before,
+    &::after {
+        content: attr(data-content);
+        position: absolute;
+        top: 100%;
+        opacity: 0;
+        left: 0;
+		@include fadeOutAnimationK;
+    
+    }
+}
+
+
+
+
 .main {
 	position: relative;
 }
-div#page.site {
-	overflow: hidden;
-}
+
 .fade-in {
 	opacity: 0;
 	transition: opacity 2s ease;
@@ -86,27 +107,11 @@ div#page.site {
 			width: 155px;
 			height: 155px;
 		}
-		span#text {
-			opacity: 0;
-			transform: translateY(20px);
-			transition: opacity 0.5s ease, transform 0.5s ease;
-		}
+		
 	}
-	&:not(.active) {
-		#text {
-			&::before {
-				opacity: 0 !important;
-				top: 100% !important;
-				transition: none !important;
-			}
-			&::after {
-				opacity: 0 !important;
-				top: 100% !important;
-				transition: none !important;
-			}
-		}
+	
 	}
-}
+
 .story__article {
 	display: flex;
 	flex-direction: column;
@@ -136,23 +141,9 @@ div#page.site {
 	padding: 100px 0;
 	text-align: center;
 	overflow: hidden;
-	bottom: 60px;
 	h2 {
 		margin-bottom: 50px;
-		&::before {
-			transition: opacity 1s ease, transform 1s ease;
-		}
-		&::after {
-			transition: opacity 1s ease, transform 1s ease;
-		}
-	}
-	.story__article {
-		&::before {
-			transition: opacity 1s ease, transform 1s ease;
-		}
-		&::after {
-			transition: opacity 1s ease, transform 1s ease;
-		}
+		
 	}
 }
 #studio {
@@ -162,14 +153,7 @@ div#page.site {
 	bottom: 60px;
 	h2 {
 		margin-bottom: 50px;
-		span#text {
-			opacity: 0;
-			transform: translateY(20px);
-			transition: opacity 0.5s ease, transform 0.5s ease;
-			opacity: 0;
-			transform: translateY(20px);
-			transition: opacity 0.5s ease, transform 0.5s ease;
-		}
+		
 		&::before {
 			content: url('./assets/images/random_flower.png');
 			position: absolute;
@@ -190,11 +174,7 @@ div#page.site {
 		}
 	}
 }
-#story__article {
-	max-width: 800px;
-	margin: 0 auto;
-	font-size: 18px;
-}
+
 .oscar {
 	background-image: url('./assets/images/rectangle.png');
 	background-repeat: no-repeat ;
@@ -272,17 +252,8 @@ div#page.site {
 	  align-items: flex-start;
 	}
   
-	h3 {
-	  background-image: url("./assets/images/orange_place_bg.png");
-	  margin-bottom: -1em;
-	  opacity: 0; // Défaut l'opacité à 0
-	  transition: opacity 0.5s ease; // Transition pour l'animation de fade-in
+}
   
-	  .fade-in & { // Cible les h3 contenus dans .fade-in
-		opacity: 1; // Applique l'opacité maximale pour l'animation
-	  }
-	}
-  }
  
   
 .site-footer {
@@ -346,69 +317,48 @@ div#page.site {
 		}
 	}
 }
-#studio.active {
-	h2 {
-		span#text {
-			opacity: 1;
-			transform: translateY(0);
-			
-		}
-	}
-}
-.story.active {
-	h2 {
-		span#text {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-}
-#text.active {
-	&::before {
-		top: -10px;
-		opacity: 1;
-	}
-	&::after {
-		top: 10px;
-		opacity: 1;
-	}
-}
+
 
 .videolog {
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: calc(100vh - 100px);
-	margin-bottom: -350px;
-	position: sticky;
+	height: calc(100vh - 500px); /* Réduire la hauteur de la div de 50px en bas */
 	video {
 		position: absolute;
 		top: -100%;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: calc(100vh - 500px); /* Réduire la hauteur de la div de 50px en bas */
 		z-index: -1;
 		opacity: 0;
 		transition: opacity 1s ease, top 1s ease;
-		margin-top: -150px;
+		
 	}
 	img {
 		position: absolute;
-		top: calc(60% - 500px);
-		left: 50%;
+		top: calc(50% - 650px);
 		transform: translate(-50%, -50%);
 		width: 50%;
-		opacity: 0;
 		animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate;
 	}
 }
 .videolog.loaded {
-	video {
-		opacity: 1;
-		top: -80px;
-	}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+       
+    }
 }
+
 $slide-duration: 0.5s; // Durée de l'animation
 
 
@@ -472,14 +422,7 @@ $slide-duration: 0.5s; // Durée de l'animation
 
 
 @media (max-width: 360px) {
-    .videolog {
-        height: calc(100vh - 420px); /* Réduire la hauteur de la div */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-		top: -450px;
-		margin-bottom: -50px;
-    }
+  
     
 	.oscar {
 		background-size: contain ;
@@ -503,14 +446,9 @@ $slide-duration: 0.5s; // Durée de l'animation
 		position: relative;
 		align-self: center;
 	  }
-	  #story {
-		margin-top: 0px; /* Réduire la marge supérieure de 20px */
-		z-index:-1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
-		bottom: 50px;
-
-      }
+	  
 	  #studio  {
-		margin-bottom:-150px; /* Déplacer la section de 20 pixels vers le haut */
+		margin-bottom:0; /* Déplacer la section de 20 pixels vers le haut */
 		z-index: 3 !important; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
 
 		 
@@ -529,9 +467,12 @@ $slide-duration: 0.5s; // Durée de l'animation
 		#studio h2 {
 			margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
 		}
-		#studio #text {
-			font-size: 26px; /* Réduire la taille de la police selon vos besoins */
-		}
+		#studio h2,
+#studiotext h2,
+#koukaki h2 {
+    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+}
+
 		
 	
 			#characters {
@@ -562,50 +503,9 @@ $slide-duration: 0.5s; // Durée de l'animation
   }
 }   
   
-// Laptop-M Media Query with device pixel ratio
-@media only screen and (-webkit-min-device-pixel-ratio: 1),
-	only screen and (-min--moz-device-pixel-ratio: 1),
-	only screen and (-o-min-device-pixel-ratio: 1/1),
-	only screen and (min-device-pixel-ratio: 1) {
-	@media only screen and (max-width: 1440px) and (orientation: landscape) {
-		.menu-toggle {
-			position: relative; /* Assurez-vous que le positionnement est fixe ou absolu */
-			left: 1300px; /* Ajustez la valeur selon vos besoins */
-			z-index: 1001;
-		}
 
-		#story {
-			margin-top: 20px; /* Réduire la marge supérieure de 20px */
-			z-index: -1; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
-			bottom: 50px;
-		}
-		.videolog {
-			video {
-				display: none;
-			}
-
-			background-image: url("./assets/images/banner.png");
-			background-repeat: no-repeat;
-			background-size: contain;
-			background-position: center;
-			margin-top: -80px;
-			margin-bottom: 0px;
-			width: 100%;
-
-			img {
-				width: 30%;
-				top: calc(50% - 100px);
-			}
-		}
-
-		.burger-menu-container {
-
-			width: 100%;
-			height: 768px;
-			left: -0px;
-
-
-			
-		}
+@media screen and (max-height: 1000px) {
+	#story {
+	  bottom: -400px !important;
 	}
-}
+  }		

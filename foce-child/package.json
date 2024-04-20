@@ -1,14 +1,33 @@
 {
   "devDependencies": {
-    "serve": "^11.2.0"
+    "serve": "^11.2.0",
+    "sass": "^1.43.0"
   },
   "main": "index.html",
-  "name": "swiper-effect-coverflow",
+  "name": "projet-koukaki",
+  "description": "Site web pour le studio Koukaki",
   "scripts": {
-    "build": "echo This is a static template, there is no bundler or bundling involved!",
+    "build": "echo Ce n'est qu'un modèle statique, il n'y a pas de module ou de regroupement impliqué !",
     "start": "serve"
   },
+  "author": "7om",
+  "license": "MIT",
+  "dependencies": {
+    "swiper": "^7.0.0"
+  },
   "tags": [
-    "swiper"
-  ]
+    "swiper",
+    "koukaki",
+    "studio",
+    "animation",
+    "site web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Antoine-Thomas/Koukaki"
+  },
+  "version": "1.0.0",
+  "homepage": "https://www.koukaki.searching-murphy.com",
+  "keywords": ["web", "animation", "design"]
 }
+
