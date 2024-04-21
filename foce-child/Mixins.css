@@ -246,7 +246,7 @@ span#lelieu {
 
 span#koukaki {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: 0.99s;
+  transform: translateY(19px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.15s;
 }/*# sourceMappingURL=Mixins.css.map */

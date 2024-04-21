@@ -266,14 +266,22 @@
     
     
 
-#logo-small {
-	width: 148px;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	animation: fadeInAnimation 2s ease-in-out forwards;
-	transform: translate(-50%, -50%);
-}
+
+	#logo-small {
+	  content: url('https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png');
+	  width: 10%;
+	  position: absolute;
+	  top: 40%;
+	  left: 50%; /* Positionne le logo au milieu horizontalement */
+	  transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
+	  animation: fadeInAnimation 2s ease-in-out forwards;
+	  z-index: 999;
+	}
+  
+  
+
+
+
 .parallax-element {
 	transform: translateY(0%);
 	transition: transform 0.3s ease-in-out;

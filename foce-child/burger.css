@@ -246,9 +246,9 @@ span#lelieu {
 
 span#koukaki {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: 0.99s;
+  transform: translateY(19px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.15s;
 }
 
 @keyframes SectionParallax {
@@ -498,9 +498,9 @@ span#lelieu {
 
 span#koukaki {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: 0.99s;
+  transform: translateY(19px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.15s;
 }
 
 @media only screen and (max-width: 920px) {
@@ -514,6 +514,16 @@ span#koukaki {
     height: 100px;
     top: 4em;
     display: none;
+  }
+  #story {
+    margin-top: 300px;
+    margin-bottom: 0px;
+  }
+  .videolog.loaded {
+    margin-top: 0px;
+  }
+  characters {
+    margin-bottom: -200px;
   }
   .story__article {
     width: 60%;
@@ -542,15 +552,9 @@ span#koukaki {
   }
   .videolog {
     width: 100%;
-    background-image: url("http://localhost:10083/wp-content/themes/foce-child/assets/images/banner.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    height: 100vh;
     margin-top: -220px;
     margin-bottom: -300px;
-  }
-  .videolog video {
-    display: none;
   }
   .videolog img {
     width: 30%;
@@ -590,12 +594,9 @@ span#koukaki {
     top: 250px;
   }
 }
-#studio.active h2 span#text {
-  opacity: 1;
-  transform: translateY(0);
-}
-#studio.active h3 {
-  right: auto;
+#studio {
+  margin-top: 300px;
+  margin-bottom: -200px;
 }
 
 @media (max-width: 360px) {
@@ -698,6 +699,7 @@ span#koukaki {
     z-index: 999;
   }
   .studiok {
+    top: 680px;
     z-index: 999;
   }
   .nav-container {
@@ -719,11 +721,28 @@ span#koukaki {
     margin: 10px 0;
   }
   .burger-menu-container {
-    width: 360px;
-    left: 0%;
+    width: 100%;
+    height: 160vh;
+    position: absolute;
   }
+  .burger-menu-container .menu-nav::before {
+    top: 100px;
+  }
+}
+@media (max-width: 360px) and (max-width: 360px) {
+  #logo-small {
+    width: 60%; /* Vous avez modifié la largeur, je conserve cette modification */
+    position: absolute; /* Utilisez une position relative pour permettre les déplacements */
+    top: 100px; /* Déplacez le logo vers le bas de 100px si nécessaire */
+    left: auto; /* Réinitialisez la propriété left */
+    right: -40px; /* Déplacez le logo vers la droite de 90px */
+    z-index: 999;
+  }
+}
+@media (max-width: 360px) {
   #studio {
-    margin-top: -50px; /* Déplacer la section de 20 pixels vers le haut */
+    margin-top: -80px; /* Déplacer la section de 20 pixels vers le haut */
+    top: 80px;
   }
   #story {
     margin-top: -300px; /* Remonte la section de 200px */
@@ -751,7 +770,7 @@ span#koukaki {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 200px;
+    top: 0px;
     position: absolute;
   }
   #logo {
@@ -998,12 +1017,14 @@ span#koukaki {
 }
 
 #logo-small {
-  width: 148px;
+  content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
+  width: 10%;
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 50%; /* Positionne le logo au milieu horizontalement */
+  transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
   animation: fadeInAnimation 2s ease-in-out forwards;
-  transform: translate(-50%, -50%);
+  z-index: 999;
 }
 
 .parallax-element {
