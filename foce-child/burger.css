@@ -599,6 +599,32 @@ span#koukaki {
   margin-bottom: -200px;
 }
 
+#masthead .main-navigation .nav-menu {
+  display: flex !important;
+  justify-content: center !important;
+  width: 60% !important;
+}
+
+.burger-menu-container #logo-small {
+  width: 15%;
+  position: absolute;
+  top: 180px;
+  z-index: 999;
+  right: 200px;
+}
+
+.burger-menu-container .menu-nav::before {
+  content: url(./assets/images/orchid.png);
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  width: 173px;
+  height: 169px;
+  animation: rotateRandomFlower 10s linear infinite !important;
+  transform-origin: center;
+  z-index: -10;
+}
+
 @media (max-width: 360px) {
   .story__article {
     width: 100%;
@@ -695,7 +721,7 @@ span#koukaki {
     left: calc(100% - 50px);
   }
   .menu-item a {
-    font-size: 38px;
+    font-size: 28px;
     z-index: 999;
   }
   .studiok {
@@ -728,18 +754,14 @@ span#koukaki {
   .burger-menu-container .menu-nav::before {
     top: 100px;
   }
-}
-@media (max-width: 360px) and (max-width: 360px) {
   #logo-small {
-    width: 60%; /* Vous avez modifié la largeur, je conserve cette modification */
+    width: 40%; /* Vous avez modifié la largeur, je conserve cette modification */
     position: absolute; /* Utilisez une position relative pour permettre les déplacements */
     top: 100px; /* Déplacez le logo vers le bas de 100px si nécessaire */
     left: auto; /* Réinitialisez la propriété left */
-    right: -40px; /* Déplacez le logo vers la droite de 90px */
+    right: 80px; /* Déplacez le logo vers la droite de 90px */
     z-index: 999;
   }
-}
-@media (max-width: 360px) {
   #studio {
     margin-top: -80px; /* Déplacer la section de 20 pixels vers le haut */
     top: 80px;
@@ -770,8 +792,11 @@ span#koukaki {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 0px;
+    top: 200px;
     position: absolute;
+  }
+  .videolog.loaded {
+    margin-top: -200px;
   }
   #logo {
     top: 100px;
@@ -910,6 +935,10 @@ span#koukaki {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+.burger-menu-container.open {
+  display: block;
+  opacity: 1;
+}
 .burger-menu-container .menu-nav {
   display: flex;
   flex-direction: column;
@@ -998,7 +1027,7 @@ span#koukaki {
   content: url("./assets/images/random_flower.png");
   position: absolute;
   left: 92%;
-  top: 40%;
+  top: 30%;
   width: 203px;
   height: 203px;
   animation: rotateRandomFlowerBefore 10s linear infinite, fadeInAnimation 2s ease-in-out forwards;
@@ -1015,10 +1044,9 @@ span#koukaki {
   animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important;
   z-index: 0;
 }
-
-#logo-small {
+.burger-menu-container #logo-small {
   content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
-  width: 10%;
+  width: 30%;
   position: absolute;
   top: 40%;
   left: 50%; /* Positionne le logo au milieu horizontalement */

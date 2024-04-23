@@ -8,22 +8,26 @@
  Version: 0.1
  */
 
-
 // style.scss
 
 // Import other SCSS files
-@import 'burger.scss';
-@import 'responsive.scss';
-@import 'mixins.scss';
+@import "burger.scss";
+@import "responsive.scss";
+@import "mixins.scss";
 
 
 // Add your custom styles here
 
- body{  
+body {
 	max-width: 1440px;
-    margin: auto;
+	margin: auto;
 
- }
+	overflow: auto; // Permet le défilement par défaut
+	
+	&.no-scroll {
+	  overflow: hidden; // Empêche le défilement
+	}
+}
 
 section {
 	opacity: 1;
@@ -31,11 +35,23 @@ section {
 	animation: SectionParallax 1s linear;
 }
 
-#logo  {
-
+#logo {
 	top: 50px;
 }
-#text,#studiotext,#character-title,#lelieu {
+
+#logo-small {
+	content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
+	width: 20%;
+	position: absolute;
+	top: 200px;
+
+	z-index: 999;
+}
+
+#text,
+#studiotext,
+#character-title,
+#lelieu {
 	position: relative;
 	display: inline-block;
 	&::before {
@@ -54,23 +70,19 @@ section {
 	}
 }
 #koukaki {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 
-    &::before,
-    &::after {
-        content: attr(data-content);
-        position: absolute;
-        top: 100%;
-        opacity: 0;
-        left: 0;
+	&::before,
+	&::after {
+		content: attr(data-content);
+		position: absolute;
+		top: 100%;
+		opacity: 0;
+		left: 0;
 		@include fadeOutAnimationK;
-    
-    }
+	}
 }
-
-
-
 
 .main {
 	position: relative;
@@ -90,7 +102,7 @@ section {
 	align-items: center;
 	h2 {
 		&::before {
-			content: url('./assets/images/sunflower_leaves.png');
+			content: url("./assets/images/sunflower_leaves.png");
 			position: absolute;
 			left: 0;
 			top: 3.5em;
@@ -98,7 +110,7 @@ section {
 			text-align: center;
 		}
 		&::after {
-			content: url('./assets/images/Sunflower.png');
+			content: url("./assets/images/Sunflower.png");
 			position: absolute;
 			left: 0.7em;
 			top: 8em;
@@ -107,10 +119,8 @@ section {
 			width: 155px;
 			height: 155px;
 		}
-		
 	}
-	
-	}
+}
 
 .story__article {
 	display: flex;
@@ -123,14 +133,14 @@ section {
 	margin-top: -40px;
 	padding-right: 80px;
 	&::before {
-		content: url('./assets/images/hibiscus_leaves.png');
+		content: url("./assets/images/hibiscus_leaves.png");
 		position: absolute;
 		left: 50%;
 		top: 18em;
 		z-index: -1;
 	}
 	&::after {
-		content: url('./assets/images/Hibiscus.png');
+		content: url("./assets/images/Hibiscus.png");
 		position: absolute;
 		left: calc(50% + 414px);
 		top: 12em;
@@ -141,9 +151,9 @@ section {
 	padding: 100px 0;
 	text-align: center;
 	overflow: hidden;
+	z-index: -999px;
 	h2 {
 		margin-bottom: 50px;
-		
 	}
 }
 #studio {
@@ -153,9 +163,9 @@ section {
 	bottom: 60px;
 	h2 {
 		margin-bottom: 50px;
-		
+
 		&::before {
-			content: url('./assets/images/random_flower.png');
+			content: url("./assets/images/random_flower.png");
 			position: absolute;
 			left: -1em;
 			top: 0;
@@ -164,7 +174,7 @@ section {
 			animation: rotateRandomFlower 10s linear infinite;
 		}
 		&::after {
-			content: url('./assets/images/flower.png');
+			content: url("./assets/images/flower.png");
 			position: absolute;
 			right: 1em;
 			top: 1.2em;
@@ -176,43 +186,43 @@ section {
 }
 
 .oscar {
-	background-image: url('./assets/images/rectangle.png');
-	background-repeat: no-repeat ;
-	background-size: 800px 350px ;
-	position: relative ;
-	left: 0px ;
-	top: 10px ;
-	padding-bottom: 400px ;
-	z-index: 1 ;
+	background-image: url("./assets/images/rectangle.png");
+	background-repeat: no-repeat;
+	background-size: 800px 350px;
+	position: relative;
+	left: 0px;
+	top: 10px;
+	padding-bottom: 400px;
+	z-index: 1;
 	display: flex;
 	overflow: hidden;
 	p {
-		font-family: $font-family_1 ;
-		font-size: 42px ;
-		font-weight: 700 ;
-		color: $color_1 ;
-		text-align: left ;
-		line-height: 1.2 ;
-		margin-top: 100px ;
-		margin-left: 60px ;
+		font-family: $font-family_1;
+		font-size: 42px;
+		font-weight: 700;
+		color: $color_1;
+		text-align: left;
+		line-height: 1.2;
+		margin-top: 100px;
+		margin-left: 60px;
 		position: absolute;
-		z-index: 2 ;
+		z-index: 2;
 	}
 }
 .oscar-image {
-	content: url('./assets/images/oscarwild.png');
-	position: absolute ;
-	left: 65% ;
-	top: 50% ;
+	content: url("./assets/images/oscarwild.png");
+	position: absolute;
+	left: 65%;
+	top: 50%;
 	transform: translate(-50%, -50%);
 	width: 400px;
 	height: auto;
 	z-index: 3;
 }
 #lieu {
-	>div {
-		margin-top: 20px ;
-		padding-left: 20px ;
+	> div {
+		margin-top: 20px;
+		padding-left: 20px;
 		max-width: 580px;
 		display: flex;
 		flex-direction: column;
@@ -236,26 +246,22 @@ section {
 	}
 }
 
-
 #characters {
 	width: 100%;
 	min-height: 700px;
 	position: relative;
 	overflow: hidden;
 	display: grid;
-  
+
 	> div {
-	  max-width: 580px;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: flex-start;
+		max-width: 580px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
 	}
-  
 }
-  
- 
-  
+
 .site-footer {
 	position: relative;
 	display: flex;
@@ -267,7 +273,7 @@ section {
 	width: 100%;
 	height: 200px;
 	&::before {
-		content: url('./assets/images/Sunflower.png');
+		content: url("./assets/images/Sunflower.png");
 		position: absolute;
 		left: 4em;
 		top: 3em;
@@ -275,7 +281,7 @@ section {
 		animation: rotateFlower 10s linear infinite;
 	}
 	&::after {
-		content: url('./assets/images/orchid.png');
+		content: url("./assets/images/orchid.png");
 		position: absolute;
 		right: -4em;
 		bottom: 20px;
@@ -313,11 +319,10 @@ section {
 			bottom: -28.5em;
 			z-index: -1;
 			left: calc(50% - 323px);
-	        animation: rotateFlower 5s linear infinite;
+			animation: rotateFlower 5s linear infinite;
 		}
 	}
 }
-
 
 .videolog {
 	position: relative;
@@ -333,43 +338,42 @@ section {
 		height: calc(100vh - 500px); /* Réduire la hauteur de la div de 50px en bas */
 		z-index: -1;
 		opacity: 0;
-		transition: opacity 1s ease, top 1s ease;
-		
+		transition:
+			opacity 1s ease,
+			top 1s ease;
 	}
 	img {
 		position: absolute;
 		top: calc(50% - 650px);
 		transform: translate(-50%, -50%);
 		width: 50%;
-		animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate;
+		animation:
+			fadeInSlideUp 0.5s ease forwards,
+			floatAnimation 4s ease infinite alternate;
 	}
 }
 .videolog.loaded {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    video {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-       
-    }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	video {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		opacity: 1;
+		position: absolute;
+		top: 0;
+	}
 }
 
 $slide-duration: 0.5s; // Durée de l'animation
-
-
 
 #character-section h3 {
 	position: relative;
 	right: 350px;
 	top: 0;
-	
-  }
-  
+}
 
 .main-character {
 	width: 1440px;
@@ -420,94 +424,85 @@ $slide-duration: 0.5s; // Durée de l'animation
 	transform: translateY(-10%);
 }
 
-
 @media (max-width: 360px) {
-  
-    
 	.oscar {
-		background-size: contain ;
-		left: 20px ;
-		top: 5px ;
-		padding-bottom: 200px ;
+		background-size: contain;
+		left: 20px;
+		top: 5px;
+		padding-bottom: 200px;
 		display: flex;
 		width: calc(100% - 40px);
 		max-width: 320px;
 		overflow: hidden;
-	
+
 		p {
-		  font-size: 16px ;
-		  margin-top: 30px ;
-		  margin-left: 20px ;
+			font-size: 16px;
+			margin-top: 30px;
+			margin-left: 20px;
 		}
-	  }
-	
-	  .oscar-image {
+	}
+
+	.oscar-image {
 		width: 50%;
 		position: relative;
 		align-self: center;
-	  }
-	  
-	  #studio  {
-		margin-bottom:0; /* Déplacer la section de 20 pixels vers le haut */
-		z-index: 3 !important; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
-
-		 
 	}
 
-	
-        #studio h2::before,
-		#studio h2::after {
-		 
-		  position: absolute;
+	#studio {
+		margin-bottom: 0; /* Déplacer la section de 20 pixels vers le haut */
+		z-index: 3 !important; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+	}
 
-		 
-		}
+	#studio h2::before,
+	#studio h2::after {
+		position: absolute;
+	}
 
+	#studio h2 {
+		margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
+	}
+	#studio h2,
+	#studiotext h2,
+	#koukaki h2 {
+		font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+	}
 
-		#studio h2 {
-			margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
-		}
-		#studio h2,
-#studiotext h2,
-#koukaki h2 {
-    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
-}
-
-		
-	
-			#characters {
-				right: 535px !important;
-			}
-		
-		 
-
-		
+	#characters {
+		right: 535px !important;
+	}
 }
 
 @media (max-width: 920px) {
-  #characters {
-    right: 250px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
+	#characters {
+		right: 250px;
+		width: 100%;
+		min-height: 700px;
+		overflow: visible;
+		position: relative;
+		top: -150px;
 
-    > div {
-      max-width: 580px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
+		> div {
+			max-width: 580px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+		}
+	}
+
+	.burger-menu-container #logo-small {
+        width: 20%;
+        position: relative;
+        top: 60px;
+        z-index: 999;
+        right: 200px;
     }
-  }
-}   
-  
+}
 
 @media screen and (max-height: 1000px) {
 	#story {
-	  bottom: -460px !important;
-	  
+		bottom: -500px;
+		z-index: -999px;
 	}
 	.burger-menu-container {
 		position: absolute;
@@ -515,26 +510,27 @@ $slide-duration: 0.5s; // Durée de l'animation
 		left: 0px;
 		width: 100%;
 		height: 150vh;
-		background-color: #FFF5E9;
+		background-color: #fff5e9;
 		display: none;
 		z-index: 999;
 		overflow: hidden;
 		opacity: 0;
 		transition: opacity 1s ease-in-out;
 
+	
 
-		#logo-small {
-			content: url('https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png');
-			width: 10%;
-			position: absolute;
-			top: 40%;
-			left: 50%; /* Positionne le logo au milieu horizontalement */
-			transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
-			animation: fadeInAnimation 2s ease-in-out forwards;
-			z-index: 999;
+		.menu-item {
+			display: flex;
+			flex-direction: column;
+			font-size: 40px !important;
+			top: 200px !important;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+
+		.studiok {
+			top: 630px;
 		}
 	}
-
-
-
-  }		
+}

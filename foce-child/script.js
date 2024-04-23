@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const locationContainer = document.getElementById("lelieu");
     const lieuArticle = document.getElementById("lieu");
     const characterArticle = document.getElementById("characters");
+    const body = document.querySelector('body');
+    const burgerMenuContainer = document.querySelector('.burger-menu-container');
 
 
     // Fonction pour réinitialiser l'animation des titres
@@ -30,30 +32,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Fonction pour mettre à jour la position du logo en fonction du défilement de la page
-function updateLogoPosition() {
-    const screenWidth = window.innerWidth;
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const maxScrollDistance = 180;
-    let logoPosition;
+    // Fonction pour mettre à jour la position du logo en fonction du défilement de la page
+    function updateLogoPosition() {
+        const screenWidth = window.innerWidth;
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const maxScrollDistance = 180;
+        let logoPosition;
 
-    if (screenWidth <= 920 && screenWidth > 360) {
-        logoPosition = Math.min(scrollPosition, maxScrollDistance / 3);
-    } else if (screenWidth <= 360) {
-        logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
-    } else {
-        logoPosition = Math.min(scrollPosition, maxScrollDistance);
-    }
+        if (screenWidth <= 920 && screenWidth > 360) {
+            logoPosition = Math.min(scrollPosition, maxScrollDistance / 3);
+        } else if (screenWidth <= 360) {
+            logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
+        } else {
+            logoPosition = Math.min(scrollPosition, maxScrollDistance);
+        }
 
-    // Vérifie si l'utilisateur fait défiler vers le bas sur un écran de 920px ou moins
-    if (scrollPosition > 0 && screenWidth <= 920) {
-        // Si l'utilisateur fait défiler vers le bas et l'écran est de 920px ou moins
-        logo.style.top = `${window.innerHeight / 300}px`; // Positionne le logo au centre vertical de la fenêtre
-    } else {
-        // Sinon, le logo suit la logique de défilement normale
-        logo.style.top = `${50 + logoPosition}px`;
+        // Vérifie si l'utilisateur fait défiler vers le bas sur un écran de 920px ou moins
+        if (scrollPosition > 0 && screenWidth <= 920) {
+            // Si l'utilisateur fait défiler vers le bas et l'écran est de 920px ou moins
+            logo.style.top = `${window.innerHeight / 300}px`; // Positionne le logo au centre vertical de la fenêtre
+        } else {
+            // Sinon, le logo suit la logique de défilement normale
+            logo.style.top = `${50 + logoPosition}px`;
+        }
     }
-}
 
 
 
@@ -63,8 +65,8 @@ function updateLogoPosition() {
     // Ajoute une classe 'loaded' à la vidéo après un délai pour activer les styles CSS
     setTimeout(() => videoEl.classList.add('loaded'), 500);
 
-        // Variable pour suivre le clic sur le menu toggle
-        let menuToggleClicked = false;
+    // Variable pour suivre le clic sur le menu toggle
+    let menuToggleClicked = false;
 
         // Fonction pour afficher/masquer le menu burger
         function toggleBurgerMenu() {
@@ -74,10 +76,12 @@ function updateLogoPosition() {
                 burgerMenuContainer.style.display = 'block';
                 burgerMenuContainer.classList.add('active');
                 menuToggle.classList.add('active');
+                body.classList.add('no-scroll'); // Ajoute la classe 'no-scroll' au body
             } else {
                 burgerMenuContainer.style.display = 'none';
                 burgerMenuContainer.classList.remove('active');
                 menuToggle.classList.remove('active');
+                body.classList.remove('no-scroll'); // Supprime la classe 'no-scroll' du body
             }
             menuToggleClicked = true;
         }
@@ -89,6 +93,7 @@ function updateLogoPosition() {
             if (event.target !== burgerMenu && !menuToggleClicked) {
                 burgerMenu.style.display = 'none';
                 menuToggle.classList.remove('active');
+                body.classList.remove('no-scroll'); // Supprime la classe 'no-scroll' du body
             }
             menuToggleClicked = false;
         });
@@ -124,26 +129,26 @@ function updateLogoPosition() {
         });
 
 
-    // Fonction pour détecter la visibilité de la section du titre personnages
-    function detectVisibleCharacterSection() {
-        const rect = characterArticle.getBoundingClientRect();
-        const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
+        // Fonction pour détecter la visibilité de la section du titre personnages
+        function detectVisibleCharacterSection() {
+            const rect = characterArticle.getBoundingClientRect();
+            const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
 
-        if (isVisible) {
-            characterArticle.classList.add("active");
-            animateTitle(characterTitle);
-        } else {
-            characterArticle.classList.remove("active");
-            resetTitleAnimation(characterTitle);
+            if (isVisible) {
+                characterArticle.classList.add("active");
+                animateTitle(characterTitle);
+            } else {
+                characterArticle.classList.remove("active");
+                resetTitleAnimation(characterTitle);
+            }
         }
-    }
 
 
 
 
         // Fonction pour détecter la visibilité de la section du lieu
 
-         function detectVisibleLieuSection() {
+        function detectVisibleLieuSection() {
             const rect = lieuArticle.getBoundingClientRect();
             const isVisible = rect.top >= 0 && rect.top <= window.innerHeight;
 
@@ -180,9 +185,9 @@ function updateLogoPosition() {
             centeredSlides: true,
             slidesPerView: "auto",
             coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
+                rotate: 120,
+                stretch: 200,
+                depth: 300,
                 modifier: 1,
                 slideShadows: false,
             },
@@ -219,7 +224,7 @@ function updateLogoPosition() {
         }, 500);
     }
 
-   
+
 });
 
 // Fonction jQuery pour animer les éléments avec la classe 'fade-in'

@@ -134,6 +134,10 @@
 	}
 }
 .burger-menu-container {
+	&.open {
+		display: block;
+		opacity: 1;
+	  }
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -242,7 +246,7 @@
 		content: url('./assets/images/random_flower.png');
 		position: absolute;
 		left: 92%;
-		top: 40%;
+		top: 30%;
 		width: 203px;
 		height: 203px;
 		animation: rotateRandomFlowerBefore 10s linear infinite, fadeInAnimation 2s ease-in-out forwards;
@@ -260,6 +264,21 @@
 		animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important;
 		z-index: 0;
 	}
+
+	#logo-small {
+		content: url('https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png');
+		width: 30%;
+		position: absolute;
+		top: 40%;
+		left: 50%; /* Positionne le logo au milieu horizontalement */
+		transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
+		animation: fadeInAnimation 2s ease-in-out forwards;
+		z-index: 999;
+	  }
+
+
+
+
 }
 
 
@@ -267,17 +286,7 @@
     
 
 
-	#logo-small {
-	  content: url('https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png');
-	  width: 10%;
-	  position: absolute;
-	  top: 40%;
-	  left: 50%; /* Positionne le logo au milieu horizontalement */
-	  transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
-	  animation: fadeInAnimation 2s ease-in-out forwards;
-	  z-index: 999;
-	}
-  
+
   
 
 
