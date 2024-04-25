@@ -61,14 +61,14 @@
         </nav>
     </div>
 
-    <div class="videolog">
+    <div class="videolog fade-in">
         <video autoplay loop muted id="video-videolog">
             <source src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce-child/assets/images/video.mp4" type="video/mp4" id="video" class="fade-in">
             <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce-child/assets/images/banner.png" alt="banner" id="banner" class="fade-in">
         </video>
-        <div id="logo-container">
+        <div id="logo-container" class="fade-in">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo" class="parallax-element fade-in">
+                <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo" class="parallax-element">
             </a>
         </div>
     </div>

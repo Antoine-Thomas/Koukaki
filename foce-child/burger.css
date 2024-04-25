@@ -522,7 +522,7 @@ span#koukaki {
   .videolog.loaded {
     margin-top: 0px;
   }
-  characters {
+  #characters {
     margin-bottom: -200px;
   }
   .story__article {
@@ -608,7 +608,7 @@ span#koukaki {
 .burger-menu-container #logo-small {
   width: 15%;
   position: absolute;
-  top: 180px;
+  top: 200px;
   z-index: 999;
   right: 200px;
 }
@@ -683,7 +683,7 @@ span#koukaki {
     margin-right: 20px;
   }
   .main-character {
-    width: 360px;
+    width: 100%;
   }
   .swiper-wrapper {
     width: 300%;
@@ -725,7 +725,7 @@ span#koukaki {
     z-index: 999;
   }
   .studiok {
-    top: 680px;
+    top: 600px;
     z-index: 999;
   }
   .nav-container {
@@ -800,6 +800,95 @@ span#koukaki {
   }
   #logo {
     top: 100px;
+  }
+}
+/* Styles pour les écrans de 361px jusqu'à 919px */
+@media screen and (min-width: 361px) and (max-width: 919px) {
+  /* Ajustement de la taille de la police pour la section #characters */
+  #characters {
+    right: 550px;
+    width: 100%;
+    min-height: 700px;
+    overflow: visible;
+    position: relative;
+    top: -150px;
+  }
+  /* Styles pour les écrans de 361px jusqu'à 919px */
+}
+@media screen and (min-width: 361px) and (max-width: 919px) and (min-width: 361px) and (max-width: 919px) {
+  /* Ajustement de la taille de la police pour la section #characters */
+  #characters {
+    right: 550px;
+    width: 100%;
+    min-height: 700px;
+    overflow: visible;
+    position: relative;
+    top: -150px;
+  }
+  /* Ajustement des styles pour la section .story #characters */
+  .story #characters {
+    margin: 6em;
+    display: flex;
+    text-align: center;
+    right: 425px;
+    transform: scale(0.8);
+  }
+  #story {
+    top: -20px;
+  }
+  .lieu-container {
+    top: -50px;
+  }
+  #studio {
+    top: -300px;
+    margin-bottom: -300px;
+  }
+  h2 {
+    font-size: xx-large;
+  }
+  #oscar.oscar {
+    background-image: url(./assets/images/rectangle.png);
+    background-repeat: no-repeat;
+    background-size: 380px 400px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    padding-bottom: 400px;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+  }
+  #oscar.oscar p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.2;
+    margin-top: 100px;
+    margin-left: 60px;
+    position: absolute;
+    z-index: 2;
+  }
+  .menu-item a {
+    top: 250px;
+    font-size: 28px;
+    z-index: 999;
+  }
+  .burger-menu-container #logo-small {
+    width: 30%;
+    position: absolute;
+    top: 60px;
+    z-index: 999;
+    right: 250px;
+  }
+  #lieu > div p {
+    padding-left: 2em;
+  }
+  #lieu .lieu-container {
+    position: relative;
+    overflow: hidden;
+    left: -50px;
   }
 }
 .burger-menu {
@@ -1046,7 +1135,7 @@ span#koukaki {
 }
 .burger-menu-container #logo-small {
   content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
-  width: 30%;
+  width: 20%;
   position: absolute;
   top: 40%;
   left: 50%; /* Positionne le logo au milieu horizontalement */

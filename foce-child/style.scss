@@ -37,15 +37,17 @@ section {
 
 #logo {
 	top: 50px;
+	
+
+	 
 }
 
 #logo-small {
 	content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
 	width: 20%;
 	position: absolute;
-	top: 200px;
-
-	z-index: 999;
+	top: 220px;
+    z-index: 999;
 }
 
 #text,
@@ -222,7 +224,7 @@ section {
 #lieu {
 	> div {
 		margin-top: 20px;
-		padding-left: 20px;
+		padding-left: 5px;
 		max-width: 580px;
 		display: flex;
 		flex-direction: column;
@@ -234,7 +236,7 @@ section {
 		}
 	}
 	display: flex;
-	background-image: url("./assets/images/bg.png") !important;
+	background-image: url("./assets/images/bg.png") ;
 	width: 100%;
 	min-height: 699px;
 	background-size: cover;
@@ -243,6 +245,11 @@ section {
 	h3 {
 		background-image: url("./assets/images/orange_place_bg.png");
 		margin-bottom: -1em;
+	}
+
+	.lieu-container {
+		position: relative;
+		overflow: hidden;
 	}
 }
 
@@ -387,10 +394,7 @@ $slide-duration: 0.5s; // Durée de l'animation
 .swiper-slide {
 	flex: 0 0 calc(1440px / 3);
 }
-.lieu-container {
-	position: relative;
-	overflow: hidden;
-}
+
 .place--big_cloud {
 	position: absolute;
 	filter: blur(10px);

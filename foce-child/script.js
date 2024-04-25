@@ -1,12 +1,12 @@
 // Attend que le DOM soit chargé avant d'exécuter le script
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
-    const histoireText = document.getElementById("text");
     const videoEl = document.querySelector('.videolog');
     const menuToggle = document.querySelector('.menu-toggle');
     const burgerMenu = document.querySelector('.burger-menu-container');
     const closeMenu = document.querySelector('.close-menu');
     const logo = document.getElementById('logo');
+    const histoireText = document.getElementById("text");
     const characterTitle = document.getElementById("character-title");
     const locationTitle = document.getElementById("lelieu");
     const locationContainer = document.getElementById("lelieu");
@@ -215,14 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Écoute les événements de défilement de la page pour déplacer les nuages
     window.addEventListener('scroll', moveCloudsByScroll);
 
-    // Fonction pour animer le logo lors du chargement de la page
-    function animateLogoOnLoad() {
-        logo.style.transform = 'translateY(100vh)';
-        setTimeout(() => {
-            logo.style.transition = 'transform 1s ease-out';
-            logo.style.transform = 'translateY(0)';
-        }, 500);
-    }
+  
 
 
 });
@@ -230,9 +223,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Fonction jQuery pour animer les éléments avec la classe 'fade-in'
 jQuery(document).ready(function ($) {
     $('.fade-in').each(function () {
-        $(this).css('opacity', 1).delay(8000).animate({
-            opacity: 1
-        }, 1000);
+        $(this).css('opacity', 0) // Définit l'opacité initiale à 0 pour masquer les éléments
+            .delay(250) // Délai de 2 secondes avant le début du fade-in
+            .animate({
+                opacity: 1 // Fait apparaître progressivement les éléments
+            }, 800); // Durée du fade-in sur 2 secondes
     });
 });
 
