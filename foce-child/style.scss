@@ -12,8 +12,8 @@
 
 // Import other SCSS files
 @import "burger.scss";
-@import "responsive.scss";
 @import "mixins.scss";
+
 
 
 // Add your custom styles here
@@ -23,9 +23,9 @@ body {
 	margin: auto;
 
 	overflow: auto; // Permet le défilement par défaut
-	
+
 	&.no-scroll {
-	  overflow: hidden; // Empêche le défilement
+		overflow: hidden; // Empêche le défilement
 	}
 }
 
@@ -37,18 +37,8 @@ section {
 
 #logo {
 	top: 50px;
-	
-
-	 
 }
 
-#logo-small {
-	content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
-	width: 20%;
-	position: absolute;
-	top: 220px;
-    z-index: 999;
-}
 
 #text,
 #studiotext,
@@ -98,6 +88,8 @@ section {
 	opacity: 1;
 }
 .story {
+	width: 100%;
+	height: 100%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -149,20 +141,32 @@ section {
 		animation: rotateFlower 5s linear infinite;
 	}
 }
+
 #story {
+	margin-top: 620px; /* Remonte la section de 200px */
+	display: flex;
+	width: 100%;
+	height: 100%;
 	padding: 100px 0;
 	text-align: center;
 	overflow: hidden;
-	z-index: -999px;
+	
 	h2 {
 		margin-bottom: 50px;
 	}
 }
+
+#story {
+	height: 100%;
+	width: 100%;
+	bottom: -150px; /* Remonte la section de 200px */
+	z-index: -1;
+  }
 #studio {
 	padding: 100px 0;
 	text-align: center;
 	overflow: hidden;
-	bottom: 60px;
+	margin-top: 50px;
 	h2 {
 		margin-bottom: 50px;
 
@@ -190,37 +194,34 @@ section {
 .oscar {
 	background-image: url("./assets/images/rectangle.png");
 	background-repeat: no-repeat;
-	background-size: 800px 350px;
 	position: relative;
-	left: 0px;
-	top: 10px;
-	padding-bottom: 400px;
+	
 	z-index: 1;
 	display: flex;
 	overflow: hidden;
-	p {
-		font-family: $font-family_1;
-		font-size: 42px;
-		font-weight: 700;
-		color: $color_1;
-		text-align: left;
-		line-height: 1.2;
-		margin-top: 100px;
-		margin-left: 60px;
-		position: absolute;
-		z-index: 2;
-	}
 }
+
+.oscar p {
+	font-family: $font-family_1;
+	font-size: 42px;
+	font-weight: 700;
+	color: $color_1;
+	text-align: left;
+	line-height: 1.2;
+	margin-top: 80px;
+	margin-left: 60px;
+	position: relative;
+	z-index: 2;
+}
+
 .oscar-image {
-	content: url("./assets/images/oscarwild.png");
-	position: absolute;
-	left: 65%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 400px;
-	height: auto;
-	z-index: 3;
+    content: url(./assets/images/oscarwild.png);
+    position: relative;
+    width: 30%;
+    height: 30%;
+    z-index: 3;
 }
+
 #lieu {
 	> div {
 		margin-top: 20px;
@@ -236,7 +237,7 @@ section {
 		}
 	}
 	display: flex;
-	background-image: url("./assets/images/bg.png") ;
+	background-image: url("./assets/images/bg.png");
 	width: 100%;
 	min-height: 699px;
 	background-size: cover;
@@ -253,21 +254,8 @@ section {
 	}
 }
 
-#characters {
-	width: 100%;
-	min-height: 700px;
-	position: relative;
-	overflow: hidden;
-	display: grid;
 
-	> div {
-		max-width: 580px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-	}
-}
+	
 
 .site-footer {
 	position: relative;
@@ -336,7 +324,7 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: calc(100vh - 500px); /* Réduire la hauteur de la div de 50px en bas */
+	height: 100%; /* Réduire la hauteur de la div de 50px en bas */
 	video {
 		position: absolute;
 		top: -100%;
@@ -374,14 +362,16 @@ section {
 	}
 }
 
-$slide-duration: 0.5s; // Durée de l'animation
+
 
 #character-section h3 {
 	position: relative;
 	right: 350px;
 	top: 0;
 }
-
+#characters{
+width: 100%;	
+}
 .main-character {
 	width: 1440px;
 	overflow: hidden;
@@ -394,6 +384,10 @@ $slide-duration: 0.5s; // Durée de l'animation
 .swiper-slide {
 	flex: 0 0 calc(1440px / 3);
 }
+
+
+
+
 
 .place--big_cloud {
 	position: absolute;
@@ -428,113 +422,4 @@ $slide-duration: 0.5s; // Durée de l'animation
 	transform: translateY(-10%);
 }
 
-@media (max-width: 360px) {
-	.oscar {
-		background-size: contain;
-		left: 20px;
-		top: 5px;
-		padding-bottom: 200px;
-		display: flex;
-		width: calc(100% - 40px);
-		max-width: 320px;
-		overflow: hidden;
 
-		p {
-			font-size: 16px;
-			margin-top: 30px;
-			margin-left: 20px;
-		}
-	}
-
-	.oscar-image {
-		width: 50%;
-		position: relative;
-		align-self: center;
-	}
-
-	#studio {
-		margin-bottom: 0; /* Déplacer la section de 20 pixels vers le haut */
-		z-index: 3 !important; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
-	}
-
-	#studio h2::before,
-	#studio h2::after {
-		position: absolute;
-	}
-
-	#studio h2 {
-		margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
-	}
-	#studio h2,
-	#studiotext h2,
-	#koukaki h2 {
-		font-size: 24px; /* Réduire la taille de la police selon vos besoins */
-	}
-
-	#characters {
-		right: 535px !important;
-	}
-}
-
-@media (max-width: 920px) {
-	#characters {
-		right: 250px;
-		width: 100%;
-		min-height: 700px;
-		overflow: visible;
-		position: relative;
-		top: -150px;
-
-		> div {
-			max-width: 580px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: flex-start;
-		}
-	}
-
-	.burger-menu-container #logo-small {
-        width: 20%;
-        position: relative;
-        top: 60px;
-        z-index: 999;
-        right: 200px;
-    }
-}
-
-@media screen and (max-height: 1000px) {
-	#story {
-		bottom: -500px;
-		z-index: -999px;
-	}
-	.burger-menu-container {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		width: 100%;
-		height: 150vh;
-		background-color: #fff5e9;
-		display: none;
-		z-index: 999;
-		overflow: hidden;
-		opacity: 0;
-		transition: opacity 1s ease-in-out;
-
-	
-
-		.menu-item {
-			display: flex;
-			flex-direction: column;
-			font-size: 40px !important;
-			top: 200px !important;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 10px;
-		}
-
-		.studiok {
-			top: 630px;
-		}
-	}
-}

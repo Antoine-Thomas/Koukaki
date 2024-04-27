@@ -1,0 +1,249 @@
+@import "mixins";
+
+@media (min-width: 870px) and (max-width: 1100px) {
+
+   
+
+   
+
+    /* Ajustement de la taille de la police pour la section #characters */
+    #characters {
+        right: 30%;
+        width: 100%;
+        
+        overflow: visible;
+        position: relative;
+        
+    }
+
+    /* Ajustement des styles pour la section .story #characters */
+
+    .story__article {
+        margin-top: 0px;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+   
+        .story #characters {
+          
+          justify-content: center; // Centrer les éléments horizontalement
+          align-items: left; // Centrer les éléments verticalement
+          
+        }
+      
+      
+
+    #story {
+
+        top: 0px; // Ajustement de la position
+        bottom: 0px;
+        margin-top: 0px;
+    }
+
+    .lieu-container {
+        top: -50px; // Ajustement de la position
+    }
+
+    #studio {
+        top: -300px; // Ajustement de la position
+        margin-bottom: -300px;
+    }
+
+    h2 {
+        font-size: xx-large; // Ajustement de la taille de la police pour les h2
+    }
+
+    #oscar.oscar {
+        background-image: url(./assets/images/rectangle.png);
+        background-repeat: no-repeat;
+        background-size: 500px 250px;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        padding-bottom: 400px;
+        z-index: 1;
+        display: flex;
+        overflow: hidden;
+    }
+    #oscar.oscar p {
+        font-family: "Quicksand", sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+        text-align: left;
+        line-height: 1.2;
+        margin-top: 80px;
+        margin-left: 60px;
+        position: absolute;
+        z-index: 2;
+    }
+
+  .oscar-image{
+    top: 20%;
+    left: 50%;
+  } 
+
+
+    .menu-item {
+        a {
+            top: 250px;
+            font-size: 28px;
+            z-index: 999;
+        }
+    }
+
+   
+    #lieu > div p {
+        padding-left: 2em;
+    }
+
+    #lieu .lieu-container {
+        position: relative;
+        overflow: hidden;
+        left: -50px;
+
+        .videolog {
+            height: 230px;
+        }
+    }
+
+    .story {
+        h2 {
+            &::before {
+                top: 5em;
+                z-index: auto;
+                display: none;
+            }
+
+            &::after {
+                width: 100px;
+                height: 100px;
+                top: 4em;
+                display: none;
+            }
+        }
+    }
+
+    #story {
+        margin-top: 300px;
+        margin-bottom: 0px;
+    }
+   
+  
+
+    .story__article {
+        width: 60%;
+        font-size: 14px;
+        padding-bottom: 1em;
+        margin-top: -20px;
+        padding-right: 40px;
+        padding-left: 40px;
+
+        &::before {
+            top: auto;
+            left: 24em;
+            display: none;
+        }
+
+        &::after {
+            left: calc(50% + 214px);
+            top: 9em;
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+    }
+
+    #lieu > div {
+        margin: 0 auto;
+        margin-top: 80px;
+        padding-left: 40px;
+    }
+
+    .videolog {
+        width: 100%;
+        height: 230px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        img {
+            width: 30%;
+            top: calc(50% - 100px);
+        }
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        order: 2;
+        display: block;
+        left: 90%;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        right: 0%;
+        width: 100%;
+
+        li {
+            margin: 10px 0;
+        }
+    }
+
+    .burger-menu-container {
+        width: 100%;
+       
+    }
+
+    h3 {
+        left: 0%;
+    }
+
+    .oscar-image {
+        max-width: 300px;
+        margin-right: 300px;
+        margin-top: 130px;
+    }
+
+    #logo {
+        top: 250px;
+    }
+
+    #studio {
+        margin-top: 300px;
+        margin-bottom: -200px;
+    }
+
+    #masthead .main-navigation .nav-menu {
+        display: flex ;
+        justify-content: center ;
+        width: 60% ;
+    }
+
+  
+    .burger-menu-container .menu-nav::before {
+        content: url(./assets/images/orchid.png);
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        width: 173px;
+        height: 169px;
+        animation: rotateRandomFlower 10s linear infinite !important;
+        transform-origin: center;
+        z-index: -10;
+    }
+
+
+   
+}
+
+  

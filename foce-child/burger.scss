@@ -1,8 +1,4 @@
-@import 'mixins';
-@import 'responsive';
-
-
-
+@import "mixins";
 
 .burger-menu {
 	display: none;
@@ -17,7 +13,9 @@
 	z-index: 999;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.3s ease, visibility 0.3s ease;
+	transition:
+		opacity 0.3s ease,
+		visibility 0.3s ease;
 	ul {
 		list-style: none;
 		padding: 0;
@@ -92,7 +90,7 @@
 }
 #masthead {
 	.main-navigation {
-		/*position: fixed;*/
+		
 		z-index: 1000;
 		background-color: $background-color_4;
 		display: flex;
@@ -116,41 +114,55 @@
 				a {
 					&:hover {
 						color: $color_3;
-						text-shadow: 0 0 10px #FF5733;
+						text-shadow: 0 0 10px #ff5733;
 					}
 				}
 			}
 		}
 		.menu-item {
+			position: relative; /* ou position: absolute; selon vos besoins */
 			display: flex;
 			flex-direction: column;
 			font-size: 64px;
-			top: 300px;
+			top: 200px;
 			justify-content: center;
 			align-items: center;
 			margin-bottom: 10px;
 		}
-	
 	}
 }
 .burger-menu-container {
 	&.open {
 		display: block;
 		opacity: 1;
-	  }
+	}
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	height: 100vh;
-	background-color: #FFF5E9;
+	background-color: #fff5e9;
 	display: none;
 	z-index: 999;
 	overflow: hidden;
 	opacity: 0;
 	transition: opacity 1s ease-in-out;
 
+	#logo-small {
+		content: url($logo-image-url);
+		max-width: $logo-max-width;
+		width: $logo-max-width;
+		position: absolute;
+		top: $logo-start-top;
+		left: $logo-start-left;
+		transform: translate(-50%, -50%);
+		z-index: 999;
+	  
+		@include fadeInAnimation; // Utilisation du mixin pour l'animation
+	  }
+
 	.menu-nav {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		font-size: 64px;
@@ -162,7 +174,7 @@
 		animation-delay: 0.5s;
 
 		&::before {
-			content: url('./assets/images/orchid.png');
+			content: url("./assets/images/orchid.png");
 			position: absolute;
 			left: -60px;
 			top: 15%;
@@ -173,7 +185,7 @@
 		}
 
 		&::after {
-			content: url('./assets/images/Sunflower.png');
+			content: url("./assets/images/Sunflower.png");
 			position: absolute;
 			left: 70%;
 			top: 30%;
@@ -185,7 +197,7 @@
 		}
 
 		.jaakuna {
-			content: url('./assets/images/Jaakuna-1.png');
+			content: url("./assets/images/Jaakuna-1.png");
 			position: absolute;
 			left: 1000px;
 			top: 550px;
@@ -207,7 +219,7 @@
 		}
 
 		.orenjiiro {
-			content: url('./assets/images/Orenjiiro-1.png');
+			content: url("./assets/images/Orenjiiro-1.png");
 			position: absolute;
 			left: 5%;
 			top: 1000px;
@@ -217,7 +229,7 @@
 			transform-origin: center;
 		}
 	}
-	
+
 	.studiok {
 		position: absolute;
 		bottom: -400px;
@@ -227,7 +239,7 @@
 		color: $color_3;
 		text-decoration: none;
 	}
-	
+
 	.hibiscus-footer {
 		position: absolute;
 		right: -300px;
@@ -243,52 +255,36 @@
 	}
 
 	&::before {
-		content: url('./assets/images/random_flower.png');
+		content: url("./assets/images/random_flower.png");
 		position: absolute;
 		left: 92%;
 		top: 30%;
 		width: 203px;
 		height: 203px;
-		animation: rotateRandomFlowerBefore 10s linear infinite, fadeInAnimation 2s ease-in-out forwards;
+		animation:
+			rotateRandomFlowerBefore 10s linear infinite,
+			fadeInAnimation 2s ease-in-out forwards;
 		z-index: 0;
 		transform: scale(0.5) rotate(0deg);
 	}
 
 	&::after {
-		content: url('./assets/images/flower.png');
+		content: url("./assets/images/flower.png");
 		position: absolute;
 		right: 77%;
 		bottom: 30%;
 		width: 109px;
 		height: 109px;
-		animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important;
+		animation:
+			rotateRandomFlowerAfter 10s linear infinite,
+			fadeInAnimation 2s ease-in-out forwards !important;
 		z-index: 0;
 	}
 
-	#logo-small {
-		content: url('https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png');
-		width: 20%;
-		position: absolute;
-		top: 40%;
-		left: 50%; /* Positionne le logo au milieu horizontalement */
-		transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
-		animation: fadeInAnimation 2s ease-in-out forwards;
-		z-index: 999;
-	  }
 
-
-
-
-}
-
-
-    
-    
-
-
-
-  
-
+	}
+	
+	
 
 
 .parallax-element {
@@ -298,3 +294,29 @@
 .parallax-element.active {
 	transform: translateY(-10%);
 }
+
+@media (max-height: 1000px) {
+	#masthead .main-navigation .menu-item {
+		display: flex;
+		font-size: 24px;
+		top: 100px;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 10px;
+
+	}
+	.burger-menu-container .studiok {
+		position: absolute;
+		bottom: -300px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 14px;
+		color: #000000;
+		text-decoration: none;
+	}
+	#masthead .main-navigation #logo-small {
+
+	top:30%
+}
+
+	}

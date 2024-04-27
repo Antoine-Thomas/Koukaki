@@ -37,7 +37,7 @@
                     <div class="menu-header menu nav-menu site-title">
                         <div class="logo-small">
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <img src="http://localhost:10083/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo-small" class="fade-in">
+                                <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce-child/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo-small" class="fade-in">
                             </a>
                         </div>
                         <button class="close-menu ">&#10005;</button>
@@ -68,7 +68,7 @@
         </video>
         <div id="logo-container" class="fade-in">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo" class="parallax-element">
+                <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce-child/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo" class="parallax-element">
             </a>
         </div>
     </div>

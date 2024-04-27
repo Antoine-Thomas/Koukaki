@@ -10,15 +10,15 @@
  */
 
 ?>  
-<div id="colophon" class="site-footer"></div>
-<section id="oscar" class="oscar">
+<div id="colophon" class="site-footer fade-in"></div>
+<section id="oscar" class="oscar " >
   <div>
     <p>Fleurs d’oranger & chats errants <br> est nominé aux Oscars <br> Short Film Animated de 2022 !</p>
   </div>
   <div class="oscar-image" alt="Oscar Wild Image"></div>
 </section>
 
-<footer class="footer" id="footer">
+<footer class="footer fade-in" id="footer ">
   <ul>
     <li><a href="#">Mentions Légales</a></li>
     <li><a href="#">STUDIO KOUKAKI</a></li>

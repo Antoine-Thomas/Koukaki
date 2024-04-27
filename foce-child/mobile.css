@@ -251,129 +251,77 @@ span#koukaki {
   transition-delay: 0.15s;
 }
 
-@media only screen and (max-width: 920px) {
-  .story h2::before {
-    top: 5em;
-    z-index: auto;
-    display: none;
-  }
-  .story h2::after {
-    width: 100px;
-    height: 100px;
-    top: 4em;
-    display: none;
-  }
-  #story {
-    margin-top: 300px;
-    margin-bottom: 0px;
-  }
-  .videolog.loaded {
-    margin-top: 0px;
-  }
-  #characters {
-    margin-bottom: -200px;
-  }
-  .story__article {
-    width: 60%;
-    font-size: 14px;
-    padding-bottom: 1em;
-    margin-top: -20px;
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  .story__article::before {
-    top: auto;
-    left: 24em;
-    display: none;
-  }
-  .story__article::after {
-    left: calc(50% + 214px);
-    top: 9em;
-    width: 50px;
-    height: 50px;
-    display: none;
-  }
-  #lieu > div {
-    margin: 0 auto;
-    margin-top: 80px;
-    padding-left: 40px;
-  }
-  .videolog {
-    width: 100%;
-    height: 100vh;
-    margin-top: -220px;
-    margin-bottom: -300px;
-  }
-  .videolog img {
-    width: 30%;
-    top: calc(50% - 100px);
-  }
-  .nav-container {
+@media (min-width: 320px) and (max-width: 869px) {
+  .oscar {
+    background-size: contain;
+    left: 20px;
+    top: 5px;
+    padding-bottom: 200px;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    overflow: hidden;
   }
-  .menu-toggle {
-    order: 2;
-    display: block;
-    left: 90%;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    right: 20%;
-    width: 100%;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-  .burger-menu-container {
-    width: 100%;
-    left: 0px;
-  }
-  h3 {
-    left: 0%;
+  .oscar p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px !important;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.2;
+    margin-top: 18px !important;
+    margin-left: 10px !important;
+    position: relative;
+    z-index: 2;
   }
   .oscar-image {
-    max-width: 300px;
-    margin-right: 300px;
-    margin-top: 130px;
+    width: 50%;
+    position: relative;
+    align-self: center;
+    margin-top: 20px;
   }
-  #logo {
-    top: 250px;
+  #studio h2::before,
+  #studio h2::after {
+    position: absolute;
   }
-}
-#studio {
-  margin-top: 300px;
-  margin-bottom: -200px;
-}
-
-#masthead .main-navigation .nav-menu {
-  display: flex !important;
-  justify-content: center !important;
-  width: 60% !important;
-}
-
-.burger-menu-container #logo-small {
-  width: 15%;
-  position: absolute;
-  top: 200px;
-  z-index: 999;
-  right: 200px;
-}
-
-.burger-menu-container .menu-nav::before {
-  content: url(./assets/images/orchid.png);
-  position: absolute;
-  left: -60px;
-  top: 50%;
-  width: 173px;
-  height: 169px;
-  animation: rotateRandomFlower 10s linear infinite !important;
-  transform-origin: center;
-  z-index: -10;
-}
-
-@media (max-width: 360px) {
+  #studio h2 {
+    margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
+  }
+  #studio h2,
+  #studiotext h2,
+  #koukaki h2 {
+    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+  }
+  #studio {
+    top: -600px; /* Déplacer la section de 20 pixels vers le haut */
+    z-index: 3; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+  }
+  #story h2::before,
+  #story h2::after {
+    display: none;
+  }
+  .story__article::before,
+  .story__article::after {
+    display: none;
+  }
+  #studio h2::before,
+  #studio h2::after {
+    position: absolute;
+  }
+  #studio h2 {
+    margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
+  }
+  #studio h2,
+  #studiotext h2,
+  #koukaki h2 {
+    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+  }
+  #story {
+    top: -220px;
+  }
   .story__article {
     width: 100%;
     font-size: 14px;
@@ -388,30 +336,13 @@ span#koukaki {
     word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
   }
   .swiper-slide {
-    transform: scale(0.8) !important; /* Réduire la taille du Swiper */
+    transform: scale(0.8); /* Réduire la taille du Swiper */
   }
   #masthead .main-navigation {
     top: auto;
   }
-  .oscar {
-    background-size: contain;
-    left: 20px;
-    top: 5px;
-    padding-bottom: 200px;
-    display: flex;
-    width: calc(100% - 40px);
-    max-width: 320px;
-    overflow: hidden;
-  }
-  .oscar p {
-    font-size: 16px;
-    margin-top: 30px;
-    margin-left: 20px;
-  }
-  .oscar-image {
-    width: 20%;
-    position: relative;
-    align-self: center;
+  .site-footer {
+    margin-bottom: -700px;
   }
   .site-footer::before {
     left: 2em;
@@ -433,16 +364,8 @@ span#koukaki {
   .main-character {
     width: 100%;
   }
-  .swiper-wrapper {
-    width: 300%;
-  }
-  .swiper-slide {
-    flex: 0 0 33.3333333333%;
-  }
   #lieu {
-    min-height: 0;
-    bottom: 350px; /* Remonte la section de 200px */
-    margin-top: 100px; /* Remonte la section de 200px */
+    top: -250px; /* Remonte la section de 200px */
   }
   #lieu > div {
     margin: 0 auto;
@@ -468,10 +391,6 @@ span#koukaki {
     top: 120px;
     left: calc(100% - 50px);
   }
-  .menu-item a {
-    font-size: 28px;
-    z-index: 999;
-  }
   .studiok {
     top: 600px;
     z-index: 999;
@@ -488,7 +407,7 @@ span#koukaki {
   .menu {
     display: none;
     position: absolute;
-    right: 20%;
+    right: 0%;
     width: 100%;
   }
   .menu li {
@@ -502,35 +421,7 @@ span#koukaki {
   .burger-menu-container .menu-nav::before {
     top: 100px;
   }
-  #logo-small {
-    width: 40%; /* Vous avez modifié la largeur, je conserve cette modification */
-    position: absolute; /* Utilisez une position relative pour permettre les déplacements */
-    top: 100px; /* Déplacez le logo vers le bas de 100px si nécessaire */
-    left: auto; /* Réinitialisez la propriété left */
-    right: 80px; /* Déplacez le logo vers la droite de 90px */
-    z-index: 999;
-  }
-  #studio {
-    margin-top: -80px; /* Déplacer la section de 20 pixels vers le haut */
-    top: 80px;
-  }
-  #story {
-    margin-top: -300px; /* Remonte la section de 200px */
-    z-index: -1;
-  }
-  #characters {
-    width: 100%;
-    min-height: 700px;
-    position: relative;
-  }
-  #characters > div {
-    max-width: 580px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  #characters h3 {
+  h3 {
     background-image: url("./assets/images/orange_place_bg.png");
     margin-bottom: -1em;
     transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
@@ -549,93 +440,52 @@ span#koukaki {
   #logo {
     top: 100px;
   }
-}
-/* Styles pour les écrans de 361px jusqu'à 919px */
-@media screen and (min-width: 361px) and (max-width: 919px) {
-  /* Ajustement de la taille de la police pour la section #characters */
+  #character-section h3 {
+    left: 10px;
+  }
   #characters {
-    right: 550px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
     position: relative;
-    top: -150px;
+    transform: scale(0.7);
+    right: 390px;
+    bottom: 150px;
   }
-  /* Styles pour les écrans de 361px jusqu'à 919px */
-}
-@media screen and (min-width: 361px) and (max-width: 919px) and (min-width: 361px) and (max-width: 919px) {
-  /* Ajustement de la taille de la police pour la section #characters */
-  #characters {
-    right: 550px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-  }
-  /* Ajustement des styles pour la section .story #characters */
-  .story #characters {
-    margin: 6em;
+  .swiper-wrapper {
     display: flex;
-    text-align: center;
-    right: 425px;
-    transform: scale(0.8);
+    width: 100%;
+    transition: transform 0.3s ease;
+    justify-content: center; /* Centrer les diapositives horizontalement */
   }
-  #story {
-    top: -20px;
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 80%;
   }
-  .lieu-container {
-    top: -50px;
-  }
-  #studio {
-    top: -300px;
-    margin-bottom: -300px;
-  }
-  h2 {
-    font-size: xx-large;
-  }
-  #oscar.oscar {
-    background-image: url(./assets/images/rectangle.png);
-    background-repeat: no-repeat;
-    background-size: 380px 400px;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    padding-bottom: 400px;
-    z-index: 1;
-    display: flex;
-    overflow: hidden;
-  }
-  #oscar.oscar p {
-    font-family: "Quicksand", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: left;
-    line-height: 1.2;
-    margin-top: 100px;
-    margin-left: 60px;
-    position: absolute;
-    z-index: 2;
+  .menu-item {
+    margin-top: 40px;
   }
   .menu-item a {
-    top: 250px;
-    font-size: 28px;
+    display: block;
+    padding-top: 20px;
+    font-size: 18px;
     z-index: 999;
   }
-  .burger-menu-container #logo-small {
-    width: 30%;
-    position: absolute;
-    top: 60px;
-    z-index: 999;
-    right: 250px;
+  ul {
+    text-align: center;
+    width: 100%;
+    display: block;
   }
-  #lieu > div p {
-    padding-left: 2em;
+  #colophon {
+    top: -700px;
   }
-  #lieu .lieu-container {
+  .burger-menu-container .menu-nav::before {
+    margin-top: 80px;
+  }
+  .burger-menu-container .menu-nav .kawaneko {
     position: relative;
-    overflow: hidden;
-    left: -50px;
+    top: 30px;
+    width: 110px;
+    height: 110px;
+    animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
+    transform-origin: center;
   }
-}/*# sourceMappingURL=responsive.css.map */
+}/*# sourceMappingURL=mobile.css.map */

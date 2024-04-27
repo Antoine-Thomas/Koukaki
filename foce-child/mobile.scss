@@ -1,0 +1,301 @@
+@import "mixins";
+
+@media (min-width: 320px) and (max-width: 869px) {
+  .oscar {
+    background-size: contain;
+    left: 20px;
+    top: 5px;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    overflow: hidden;
+  }
+
+  .oscar p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px !important;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.2;
+    margin-top: 18px !important;
+    margin-left: 10px !important;
+    position: relative;
+    z-index: 2;
+  }
+
+  .oscar-image {
+    width: 50%;
+    position: relative;
+    align-self: center;
+    margin-top: 20px;
+  }
+
+  #studio h2::before,
+  #studio h2::after {
+    position: absolute;
+  }
+
+  #studio h2 {
+    margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
+  }
+  #studio h2,
+  #studiotext h2,
+  #koukaki h2 {
+    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+  }
+
+  #studio {
+    top: -600px; /* Déplacer la section de 20 pixels vers le haut */
+    z-index: 3; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
+  }
+
+  #story h2::before,
+  #story h2::after {
+    display: none;
+  }
+
+  .story__article::before,
+  .story__article::after {
+    display: none;
+  }
+
+  #studio h2::before,
+  #studio h2::after {
+    position: absolute;
+  }
+
+  #studio h2 {
+    margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
+  }
+  #studio h2,
+  #studiotext h2,
+  #koukaki h2 {
+    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+  }
+
+  #story {
+    top: -220px;
+  }
+
+  .story__article {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: -1em;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  #conte {
+    font-size: 14px; /* Réduire la taille de la police */
+    max-width: 100%; /* Réduire la largeur du conteneur */
+    margin: 0 auto; /* Centrer le contenu */
+
+    word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
+  }
+
+  .swiper-slide {
+    transform: scale(0.8); /* Réduire la taille du Swiper */
+  }
+
+  #masthead .main-navigation {
+    top: auto;
+  }
+
+  .site-footer {
+    margin-bottom: -700px;
+
+    &::before {
+      left: 2em;
+      top: 1em;
+    }
+
+    &::after {
+      right: -6em;
+      bottom: 5em;
+    }
+  }
+
+  .footer {
+    ul {
+      &::after {
+        left: calc(50% - 170px);
+        bottom: -14em;
+      }
+    }
+  }
+
+  #new-title {
+    font-size: 24px;
+    padding: 20px;
+    margin-right: 20px;
+  }
+
+  .main-character {
+    width: 100%;
+  }
+
+ 
+
+ 
+
+  #lieu {
+    top: -250px; /* Remonte la section de 200px */
+
+    > div {
+      margin: 0 auto;
+      margin-top: 80px;
+      padding-left: 20px;
+      padding-bottom: 50px;
+
+      p {
+        padding-right: 100px;
+        font-size: 12px;
+      }
+    }
+    .lieu-container {
+      left: -50px;
+      padding-top: 20px;
+    }
+  }
+
+  .place--big_cloud {
+    width: 100px;
+    top: 40px;
+    left: calc(100% - 200px);
+  }
+
+  .place--little_cloud {
+    width: 80px;
+    top: 120px;
+    left: calc(100% - 50px);
+  }
+
+ 
+
+  .studiok {
+    top: 600px;
+    z-index: 999;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 90%;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    right: 0%;
+    width: 100%;
+
+    li {
+      margin: 10px 0;
+    }
+  }
+
+  .burger-menu-container {
+    width: 100%;
+    height: 160vh;
+    position: absolute;
+  }
+
+  .burger-menu-container .menu-nav::before {
+    top: 100px;
+  }
+
+
+
+  h3 {
+    background-image: url("./assets/images/orange_place_bg.png");
+    margin-bottom: -1em;
+    transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
+  }
+
+  .videolog {
+    height: calc(100vh - 400px); /* Réduire la hauteur de la div */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 200px;
+    position: absolute;
+  }
+  .videolog.loaded {
+    margin-top: -200px;
+  }
+  #logo {
+    top: 100px;
+  }
+
+  #character-section h3 {
+    left: 10px;
+  }
+
+  #characters {
+    position: relative;
+    transform: scale(0.7);
+    right: 390px;
+    bottom: 150px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease;
+    justify-content: center; /* Centrer les diapositives horizontalement */
+  }
+
+  .menu-toggle {
+    order: 2;
+    display: block;
+    left: 80%;
+  }
+
+  .menu-item {
+    margin-top: 40px;
+    a {
+      display: block; // Afficher les liens en tant que blocs
+      padding-top: 20px; // Ajouter un padding pour compenser le déplacement vers le haut
+      font-size: 18px;
+      z-index: 999;
+    }
+  }
+  
+  ul {
+    text-align: center; // Centrer les éléments horizontalement
+    width: 100%; // Faire en sorte que chaque élément occupe toute la largeur
+    display: block; // Afficher chaque élément sur une ligne
+  }
+
+  #colophon {
+    top: -700px;
+  }
+
+  .burger-menu-container .menu-nav::before {
+
+   margin-top: 80px;
+    
+  }
+
+  .burger-menu-container .menu-nav .kawaneko {
+   
+    position: relative;
+   
+    top: 30px;
+    width: 110px;
+    height: 110px;
+    animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
+    transform-origin: center;
+}
+
+}

@@ -7,7 +7,7 @@
   "name": "projet-koukaki",
   "description": "Site web pour le studio Koukaki",
   "scripts": {
-    "build": "echo Ce n'est qu'un modèle statique, il n'y a pas de module ou de regroupement impliqué !",
+    "build": "echo \"Ce n'est qu'un modèle statique, il n'y a pas de module ou de regroupement impliqué !\"",
     "start": "serve"
   },
   "author": "7om",
@@ -15,19 +15,17 @@
   "dependencies": {
     "swiper": "^7.0.0"
   },
-  "tags": [
-    "swiper",
-    "koukaki",
-    "studio",
+  "keywords": [
+    "web",
     "animation",
-    "site web"
+    "design"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Antoine-Thomas/Koukaki"
   },
   "version": "1.0.0",
-  "homepage": "https://www.koukaki.searching-murphy.com",
-  "keywords": ["web", "animation", "design"]
+  "homepage": "https://www.koukaki.searching-murphy.com"
 }
+
 

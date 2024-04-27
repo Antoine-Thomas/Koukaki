@@ -260,646 +260,6 @@ span#koukaki {
   transition-delay: 0.15s;
 }
 
-@keyframes SectionParallax {
-  from {
-    opacity: 0;
-    transform: translateY(180px);
-    transition: opacity 0.5s ease, transform 1s ease;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* CSS pour l'effet de fondu */
-/* fleurs qui tournent*/
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    /* Logo complètement transparent au début */
-  }
-  to {
-    opacity: 1;
-    /* Logo complètement visible à la fin */
-  }
-}
-/* Animation de flottement */
-@keyframes floatAnimation {
-  from {
-    transform: translateY(20px) translateX(-50%) rotate(-5deg);
-    /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
-  }
-  to {
-    transform: translateY(-20px) translateX(-50%) rotate(5deg);
-    /* Mouvement de flottement vers le haut */
-  }
-}
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* Animation du burger-menu */
-/* Styles pour la navigation dans le thème enfant */
-/* Menu burger */
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes rotateFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateFlowerSunflower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlowerBefore {
-  0% {
-    transform: scale(0.5) rotate(0deg);
-  }
-  100% {
-    transform: scale(0.5) rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlowerAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* le reste des fleurs qui tournent */
-@keyframes rotateRandomFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlowerAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* Pour l'image Jaakuna-1.png */
-/* Pour l'image Kawaneko.png */
-/* Pour l'image Orenjiiro-1.png */
-@keyframes ChatfloatSwingAnimationJaakuna {
-  0%, 100% {
-    transform: translateY(10px) rotate(10deg);
-    /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-10px) rotate(15deg);
-    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-@keyframes ChatfloatSwingAnimationKawaneko {
-  0%, 100% {
-    transform: translateY(5px) rotate(5deg);
-    /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-5px) rotate(-5deg);
-    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-@keyframes ChatfloatSwingAnimationOrenjiiro {
-  0%, 100% {
-    transform: translateY(15px) rotate(-30deg);
-    /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-15px) rotate(15deg);
-    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-#studio.active h2 span#studiotext {
-  opacity: 1;
-  transform: translateY(0);
-}
-#studio.active::before, #studio.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#studiotext.active::before, #studiotext.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#studiotext {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.story.active h2 span#text {
-  opacity: 1;
-  transform: translateY(0);
-}
-.story.active::before, .story.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#text.active::before, #text.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#text {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#character-title.active h3 span#character-title {
-  opacity: 1;
-  transform: translateY(0);
-}
-#character-title.active::before, #character-title.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#character-title.active::before, #character-title.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#character-title {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#lelieu.active h3 span#lelieu {
-  opacity: 1;
-  transform: translateY(0);
-}
-#lelieu.active::before, #lelieu.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#lelieu.active::before, #lelieu.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#lelieu {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.studio.active h2 span#koukaki {
-  opacity: 1;
-  transform: translateY(0);
-}
-.studio.active::before, .studio.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#koukaki.active::before, #koukaki.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#koukaki {
-  opacity: 0;
-  transform: translateY(19px);
-  transition: opacity 1s ease, transform 1s ease;
-  transition-delay: 0.15s;
-}
-
-@media only screen and (max-width: 920px) {
-  .story h2::before {
-    top: 5em;
-    z-index: auto;
-    display: none;
-  }
-  .story h2::after {
-    width: 100px;
-    height: 100px;
-    top: 4em;
-    display: none;
-  }
-  #story {
-    margin-top: 300px;
-    margin-bottom: 0px;
-  }
-  .videolog.loaded {
-    margin-top: 0px;
-  }
-  #characters {
-    margin-bottom: -200px;
-  }
-  .story__article {
-    width: 60%;
-    font-size: 14px;
-    padding-bottom: 1em;
-    margin-top: -20px;
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  .story__article::before {
-    top: auto;
-    left: 24em;
-    display: none;
-  }
-  .story__article::after {
-    left: calc(50% + 214px);
-    top: 9em;
-    width: 50px;
-    height: 50px;
-    display: none;
-  }
-  #lieu > div {
-    margin: 0 auto;
-    margin-top: 80px;
-    padding-left: 40px;
-  }
-  .videolog {
-    width: 100%;
-    height: 100vh;
-    margin-top: -220px;
-    margin-bottom: -300px;
-  }
-  .videolog img {
-    width: 30%;
-    top: calc(50% - 100px);
-  }
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-toggle {
-    order: 2;
-    display: block;
-    left: 90%;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    right: 20%;
-    width: 100%;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-  .burger-menu-container {
-    width: 100%;
-    left: 0px;
-  }
-  h3 {
-    left: 0%;
-  }
-  .oscar-image {
-    max-width: 300px;
-    margin-right: 300px;
-    margin-top: 130px;
-  }
-  #logo {
-    top: 250px;
-  }
-}
-#studio {
-  margin-top: 300px;
-  margin-bottom: -200px;
-}
-
-#masthead .main-navigation .nav-menu {
-  display: flex !important;
-  justify-content: center !important;
-  width: 60% !important;
-}
-
-.burger-menu-container #logo-small {
-  width: 15%;
-  position: absolute;
-  top: 200px;
-  z-index: 999;
-  right: 200px;
-}
-
-.burger-menu-container .menu-nav::before {
-  content: url(./assets/images/orchid.png);
-  position: absolute;
-  left: -60px;
-  top: 50%;
-  width: 173px;
-  height: 169px;
-  animation: rotateRandomFlower 10s linear infinite !important;
-  transform-origin: center;
-  z-index: -10;
-}
-
-@media (max-width: 360px) {
-  .story__article {
-    width: 100%;
-    font-size: 14px;
-    padding-bottom: -1em;
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  #conte {
-    font-size: 14px; /* Réduire la taille de la police */
-    max-width: 100%; /* Réduire la largeur du conteneur */
-    margin: 0 auto; /* Centrer le contenu */
-    word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
-  }
-  .swiper-slide {
-    transform: scale(0.8) !important; /* Réduire la taille du Swiper */
-  }
-  #masthead .main-navigation {
-    top: auto;
-  }
-  .oscar {
-    background-size: contain;
-    left: 20px;
-    top: 5px;
-    padding-bottom: 200px;
-    display: flex;
-    width: calc(100% - 40px);
-    max-width: 320px;
-    overflow: hidden;
-  }
-  .oscar p {
-    font-size: 16px;
-    margin-top: 30px;
-    margin-left: 20px;
-  }
-  .oscar-image {
-    width: 20%;
-    position: relative;
-    align-self: center;
-  }
-  .site-footer::before {
-    left: 2em;
-    top: 1em;
-  }
-  .site-footer::after {
-    right: -6em;
-    bottom: 5em;
-  }
-  .footer ul::after {
-    left: calc(50% - 170px);
-    bottom: -14em;
-  }
-  #new-title {
-    font-size: 24px;
-    padding: 20px;
-    margin-right: 20px;
-  }
-  .main-character {
-    width: 100%;
-  }
-  .swiper-wrapper {
-    width: 300%;
-  }
-  .swiper-slide {
-    flex: 0 0 33.3333333333%;
-  }
-  #lieu {
-    min-height: 0;
-    bottom: 350px; /* Remonte la section de 200px */
-    margin-top: 100px; /* Remonte la section de 200px */
-  }
-  #lieu > div {
-    margin: 0 auto;
-    margin-top: 80px;
-    padding-left: 20px;
-    padding-bottom: 50px;
-  }
-  #lieu > div p {
-    padding-right: 100px;
-    font-size: 12px;
-  }
-  #lieu .lieu-container {
-    left: -50px;
-    padding-top: 20px;
-  }
-  .place--big_cloud {
-    width: 100px;
-    top: 40px;
-    left: calc(100% - 200px);
-  }
-  .place--little_cloud {
-    width: 80px;
-    top: 120px;
-    left: calc(100% - 50px);
-  }
-  .menu-item a {
-    font-size: 28px;
-    z-index: 999;
-  }
-  .studiok {
-    top: 600px;
-    z-index: 999;
-  }
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-toggle {
-    order: 2;
-    display: block;
-    left: 90%;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    right: 20%;
-    width: 100%;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-  .burger-menu-container {
-    width: 100%;
-    height: 160vh;
-    position: absolute;
-  }
-  .burger-menu-container .menu-nav::before {
-    top: 100px;
-  }
-  #logo-small {
-    width: 40%; /* Vous avez modifié la largeur, je conserve cette modification */
-    position: absolute; /* Utilisez une position relative pour permettre les déplacements */
-    top: 100px; /* Déplacez le logo vers le bas de 100px si nécessaire */
-    left: auto; /* Réinitialisez la propriété left */
-    right: 80px; /* Déplacez le logo vers la droite de 90px */
-    z-index: 999;
-  }
-  #studio {
-    margin-top: -80px; /* Déplacer la section de 20 pixels vers le haut */
-    top: 80px;
-  }
-  #story {
-    margin-top: -300px; /* Remonte la section de 200px */
-    z-index: -1;
-  }
-  #characters {
-    width: 100%;
-    min-height: 700px;
-    position: relative;
-  }
-  #characters > div {
-    max-width: 580px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  #characters h3 {
-    background-image: url("./assets/images/orange_place_bg.png");
-    margin-bottom: -1em;
-    transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
-  }
-  .videolog {
-    height: calc(100vh - 400px); /* Réduire la hauteur de la div */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 200px;
-    position: absolute;
-  }
-  .videolog.loaded {
-    margin-top: -200px;
-  }
-  #logo {
-    top: 100px;
-  }
-}
-/* Styles pour les écrans de 361px jusqu'à 919px */
-@media screen and (min-width: 361px) and (max-width: 919px) {
-  /* Ajustement de la taille de la police pour la section #characters */
-  #characters {
-    right: 550px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-  }
-  /* Styles pour les écrans de 361px jusqu'à 919px */
-}
-@media screen and (min-width: 361px) and (max-width: 919px) and (min-width: 361px) and (max-width: 919px) {
-  /* Ajustement de la taille de la police pour la section #characters */
-  #characters {
-    right: 550px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-  }
-  /* Ajustement des styles pour la section .story #characters */
-  .story #characters {
-    margin: 6em;
-    display: flex;
-    text-align: center;
-    right: 425px;
-    transform: scale(0.8);
-  }
-  #story {
-    top: -20px;
-  }
-  .lieu-container {
-    top: -50px;
-  }
-  #studio {
-    top: -300px;
-    margin-bottom: -300px;
-  }
-  h2 {
-    font-size: xx-large;
-  }
-  #oscar.oscar {
-    background-image: url(./assets/images/rectangle.png);
-    background-repeat: no-repeat;
-    background-size: 380px 400px;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    padding-bottom: 400px;
-    z-index: 1;
-    display: flex;
-    overflow: hidden;
-  }
-  #oscar.oscar p {
-    font-family: "Quicksand", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: left;
-    line-height: 1.2;
-    margin-top: 100px;
-    margin-left: 60px;
-    position: absolute;
-    z-index: 2;
-  }
-  .menu-item a {
-    top: 250px;
-    font-size: 28px;
-    z-index: 999;
-  }
-  .burger-menu-container #logo-small {
-    width: 30%;
-    position: absolute;
-    top: 60px;
-    z-index: 999;
-    right: 250px;
-  }
-  #lieu > div p {
-    padding-left: 2em;
-  }
-  #lieu .lieu-container {
-    position: relative;
-    overflow: hidden;
-    left: -50px;
-  }
-}
 .burger-menu {
   display: none;
   top: 0;
@@ -986,7 +346,6 @@ span#koukaki {
 }
 
 #masthead .main-navigation {
-  /*position: fixed;*/
   z-index: 1000;
   background-color: #FFD5A2;
   display: flex;
@@ -1008,13 +367,14 @@ span#koukaki {
 }
 #masthead .main-navigation ul li a:hover {
   color: #000000;
-  text-shadow: 0 0 10px #FF5733;
+  text-shadow: 0 0 10px #ff5733;
 }
 #masthead .main-navigation .menu-item {
+  position: relative; /* ou position: absolute; selon vos besoins */
   display: flex;
   flex-direction: column;
   font-size: 64px;
-  top: 300px;
+  top: 200px;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
@@ -1026,7 +386,7 @@ span#koukaki {
   left: 0px;
   width: 100%;
   height: 100vh;
-  background-color: #FFF5E9;
+  background-color: #fff5e9;
   display: none;
   z-index: 999;
   overflow: hidden;
@@ -1037,7 +397,20 @@ span#koukaki {
   display: block;
   opacity: 1;
 }
+.burger-menu-container #logo-small {
+  content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
+  max-width: 10%;
+  width: 10%;
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  opacity: 1;
+  transform: translateY(0);
+}
 .burger-menu-container .menu-nav {
+  position: relative;
   display: flex;
   flex-direction: column;
   font-size: 64px;
@@ -1142,16 +515,6 @@ span#koukaki {
   animation: rotateRandomFlowerAfter 10s linear infinite, fadeInAnimation 2s ease-in-out forwards !important;
   z-index: 0;
 }
-.burger-menu-container #logo-small {
-  content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
-  width: 20%;
-  position: absolute;
-  top: 40%;
-  left: 50%; /* Positionne le logo au milieu horizontalement */
-  transform: translateX(-50%) translateY(-50%); /* Ajuste le positionnement pour le centrer */
-  animation: fadeInAnimation 2s ease-in-out forwards;
-  z-index: 999;
-}
 
 .parallax-element {
   transform: translateY(0%);
@@ -1162,644 +525,26 @@ span#koukaki {
   transform: translateY(-10%);
 }
 
-@keyframes SectionParallax {
-  from {
-    opacity: 0;
-    transform: translateY(180px);
-    transition: opacity 0.5s ease, transform 1s ease;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* CSS pour l'effet de fondu */
-/* fleurs qui tournent*/
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    /* Logo complètement transparent au début */
-  }
-  to {
-    opacity: 1;
-    /* Logo complètement visible à la fin */
-  }
-}
-/* Animation de flottement */
-@keyframes floatAnimation {
-  from {
-    transform: translateY(20px) translateX(-50%) rotate(-5deg);
-    /* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
-  }
-  to {
-    transform: translateY(-20px) translateX(-50%) rotate(5deg);
-    /* Mouvement de flottement vers le haut */
-  }
-}
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/* Animation du burger-menu */
-/* Styles pour la navigation dans le thème enfant */
-/* Menu burger */
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes rotateFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateFlowerSunflower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlowerBefore {
-  0% {
-    transform: scale(0.5) rotate(0deg);
-  }
-  100% {
-    transform: scale(0.5) rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlowerAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* le reste des fleurs qui tournent */
-@keyframes rotateRandomFlower {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateRandomFlowerAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* Pour l'image Jaakuna-1.png */
-/* Pour l'image Kawaneko.png */
-/* Pour l'image Orenjiiro-1.png */
-@keyframes ChatfloatSwingAnimationJaakuna {
-  0%, 100% {
-    transform: translateY(10px) rotate(10deg);
-    /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-10px) rotate(15deg);
-    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-@keyframes ChatfloatSwingAnimationKawaneko {
-  0%, 100% {
-    transform: translateY(5px) rotate(5deg);
-    /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-5px) rotate(-5deg);
-    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-@keyframes ChatfloatSwingAnimationOrenjiiro {
-  0%, 100% {
-    transform: translateY(15px) rotate(-30deg);
-    /* Ajuster la translation et la rotation de départ */
-  }
-  50% {
-    transform: translateY(-15px) rotate(15deg);
-    /* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
-  }
-}
-#studio.active h2 span#studiotext {
-  opacity: 1;
-  transform: translateY(0);
-}
-#studio.active::before, #studio.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#studiotext.active::before, #studiotext.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#studiotext {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.story.active h2 span#text {
-  opacity: 1;
-  transform: translateY(0);
-}
-.story.active::before, .story.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#text.active::before, #text.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#text {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#character-title.active h3 span#character-title {
-  opacity: 1;
-  transform: translateY(0);
-}
-#character-title.active::before, #character-title.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#character-title.active::before, #character-title.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#character-title {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#lelieu.active h3 span#lelieu {
-  opacity: 1;
-  transform: translateY(0);
-}
-#lelieu.active::before, #lelieu.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#lelieu.active::before, #lelieu.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#lelieu {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.studio.active h2 span#koukaki {
-  opacity: 1;
-  transform: translateY(0);
-}
-.studio.active::before, .studio.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-#koukaki.active::before, #koukaki.active::after {
-  top: -10px;
-  opacity: 1;
-}
-
-span#koukaki {
-  opacity: 0;
-  transform: translateY(19px);
-  transition: opacity 1s ease, transform 1s ease;
-  transition-delay: 0.15s;
-}
-
-@media only screen and (max-width: 920px) {
-  .story h2::before {
-    top: 5em;
-    z-index: auto;
-    display: none;
-  }
-  .story h2::after {
-    width: 100px;
-    height: 100px;
-    top: 4em;
-    display: none;
-  }
-  #story {
-    margin-top: 300px;
-    margin-bottom: 0px;
-  }
-  .videolog.loaded {
-    margin-top: 0px;
-  }
-  #characters {
-    margin-bottom: -200px;
-  }
-  .story__article {
-    width: 60%;
-    font-size: 14px;
-    padding-bottom: 1em;
-    margin-top: -20px;
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  .story__article::before {
-    top: auto;
-    left: 24em;
-    display: none;
-  }
-  .story__article::after {
-    left: calc(50% + 214px);
-    top: 9em;
-    width: 50px;
-    height: 50px;
-    display: none;
-  }
-  #lieu > div {
-    margin: 0 auto;
-    margin-top: 80px;
-    padding-left: 40px;
-  }
-  .videolog {
-    width: 100%;
-    height: 100vh;
-    margin-top: -220px;
-    margin-bottom: -300px;
-  }
-  .videolog img {
-    width: 30%;
-    top: calc(50% - 100px);
-  }
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-toggle {
-    order: 2;
-    display: block;
-    left: 90%;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    right: 20%;
-    width: 100%;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-  .burger-menu-container {
-    width: 100%;
-    left: 0px;
-  }
-  h3 {
-    left: 0%;
-  }
-  .oscar-image {
-    max-width: 300px;
-    margin-right: 300px;
-    margin-top: 130px;
-  }
-  #logo {
-    top: 250px;
-  }
-}
-#studio {
-  margin-top: 300px;
-  margin-bottom: -200px;
-}
-
-#masthead .main-navigation .nav-menu {
-  display: flex !important;
-  justify-content: center !important;
-  width: 60% !important;
-}
-
-.burger-menu-container #logo-small {
-  width: 15%;
-  position: absolute;
-  top: 200px;
-  z-index: 999;
-  right: 200px;
-}
-
-.burger-menu-container .menu-nav::before {
-  content: url(./assets/images/orchid.png);
-  position: absolute;
-  left: -60px;
-  top: 50%;
-  width: 173px;
-  height: 169px;
-  animation: rotateRandomFlower 10s linear infinite !important;
-  transform-origin: center;
-  z-index: -10;
-}
-
-@media (max-width: 360px) {
-  .story__article {
-    width: 100%;
-    font-size: 14px;
-    padding-bottom: -1em;
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  #conte {
-    font-size: 14px; /* Réduire la taille de la police */
-    max-width: 100%; /* Réduire la largeur du conteneur */
-    margin: 0 auto; /* Centrer le contenu */
-    word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
-  }
-  .swiper-slide {
-    transform: scale(0.8) !important; /* Réduire la taille du Swiper */
-  }
-  #masthead .main-navigation {
-    top: auto;
-  }
-  .oscar {
-    background-size: contain;
-    left: 20px;
-    top: 5px;
-    padding-bottom: 200px;
+@media (max-height: 1000px) {
+  #masthead .main-navigation .menu-item {
     display: flex;
-    width: calc(100% - 40px);
-    max-width: 320px;
-    overflow: hidden;
-  }
-  .oscar p {
-    font-size: 16px;
-    margin-top: 30px;
-    margin-left: 20px;
-  }
-  .oscar-image {
-    width: 20%;
-    position: relative;
-    align-self: center;
-  }
-  .site-footer::before {
-    left: 2em;
-    top: 1em;
-  }
-  .site-footer::after {
-    right: -6em;
-    bottom: 5em;
-  }
-  .footer ul::after {
-    left: calc(50% - 170px);
-    bottom: -14em;
-  }
-  #new-title {
     font-size: 24px;
-    padding: 20px;
-    margin-right: 20px;
-  }
-  .main-character {
-    width: 100%;
-  }
-  .swiper-wrapper {
-    width: 300%;
-  }
-  .swiper-slide {
-    flex: 0 0 33.3333333333%;
-  }
-  #lieu {
-    min-height: 0;
-    bottom: 350px; /* Remonte la section de 200px */
-    margin-top: 100px; /* Remonte la section de 200px */
-  }
-  #lieu > div {
-    margin: 0 auto;
-    margin-top: 80px;
-    padding-left: 20px;
-    padding-bottom: 50px;
-  }
-  #lieu > div p {
-    padding-right: 100px;
-    font-size: 12px;
-  }
-  #lieu .lieu-container {
-    left: -50px;
-    padding-top: 20px;
-  }
-  .place--big_cloud {
-    width: 100px;
-    top: 40px;
-    left: calc(100% - 200px);
-  }
-  .place--little_cloud {
-    width: 80px;
-    top: 120px;
-    left: calc(100% - 50px);
-  }
-  .menu-item a {
-    font-size: 28px;
-    z-index: 999;
-  }
-  .studiok {
-    top: 600px;
-    z-index: 999;
-  }
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-toggle {
-    order: 2;
-    display: block;
-    left: 90%;
-  }
-  .menu {
-    display: none;
-    position: absolute;
-    right: 20%;
-    width: 100%;
-  }
-  .menu li {
-    margin: 10px 0;
-  }
-  .burger-menu-container {
-    width: 100%;
-    height: 160vh;
-    position: absolute;
-  }
-  .burger-menu-container .menu-nav::before {
     top: 100px;
-  }
-  #logo-small {
-    width: 40%; /* Vous avez modifié la largeur, je conserve cette modification */
-    position: absolute; /* Utilisez une position relative pour permettre les déplacements */
-    top: 100px; /* Déplacez le logo vers le bas de 100px si nécessaire */
-    left: auto; /* Réinitialisez la propriété left */
-    right: 80px; /* Déplacez le logo vers la droite de 90px */
-    z-index: 999;
-  }
-  #studio {
-    margin-top: -80px; /* Déplacer la section de 20 pixels vers le haut */
-    top: 80px;
-  }
-  #story {
-    margin-top: -300px; /* Remonte la section de 200px */
-    z-index: -1;
-  }
-  #characters {
-    width: 100%;
-    min-height: 700px;
-    position: relative;
-  }
-  #characters > div {
-    max-width: 580px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-  }
-  #characters h3 {
-    background-image: url("./assets/images/orange_place_bg.png");
-    margin-bottom: -1em;
-    transition: opacity 0.5s ease; /* Ajout de la transition pour lisser le changement d'opacité */
-  }
-  .videolog {
-    height: calc(100vh - 400px); /* Réduire la hauteur de la div */
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    top: 200px;
+    margin-bottom: 10px;
+  }
+  .burger-menu-container .studiok {
     position: absolute;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #000000;
+    text-decoration: none;
   }
-  .videolog.loaded {
-    margin-top: -200px;
-  }
-  #logo {
-    top: 100px;
-  }
-}
-/* Styles pour les écrans de 361px jusqu'à 919px */
-@media screen and (min-width: 361px) and (max-width: 919px) {
-  /* Ajustement de la taille de la police pour la section #characters */
-  #characters {
-    right: 550px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-  }
-  /* Styles pour les écrans de 361px jusqu'à 919px */
-}
-@media screen and (min-width: 361px) and (max-width: 919px) and (min-width: 361px) and (max-width: 919px) {
-  /* Ajustement de la taille de la police pour la section #characters */
-  #characters {
-    right: 550px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-  }
-  /* Ajustement des styles pour la section .story #characters */
-  .story #characters {
-    margin: 6em;
-    display: flex;
-    text-align: center;
-    right: 425px;
-    transform: scale(0.8);
-  }
-  #story {
-    top: -20px;
-  }
-  .lieu-container {
-    top: -50px;
-  }
-  #studio {
-    top: -300px;
-    margin-bottom: -300px;
-  }
-  h2 {
-    font-size: xx-large;
-  }
-  #oscar.oscar {
-    background-image: url(./assets/images/rectangle.png);
-    background-repeat: no-repeat;
-    background-size: 380px 400px;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    padding-bottom: 400px;
-    z-index: 1;
-    display: flex;
-    overflow: hidden;
-  }
-  #oscar.oscar p {
-    font-family: "Quicksand", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: left;
-    line-height: 1.2;
-    margin-top: 100px;
-    margin-left: 60px;
-    position: absolute;
-    z-index: 2;
-  }
-  .menu-item a {
-    top: 250px;
-    font-size: 28px;
-    z-index: 999;
-  }
-  .burger-menu-container #logo-small {
-    width: 30%;
-    position: absolute;
-    top: 60px;
-    z-index: 999;
-    right: 250px;
-  }
-  #lieu > div p {
-    padding-left: 2em;
-  }
-  #lieu .lieu-container {
-    position: relative;
-    overflow: hidden;
-    left: -50px;
+  #masthead .main-navigation #logo-small {
+    top: 30%;
   }
 }
 @keyframes SectionParallax {
@@ -2073,14 +818,6 @@ section {
   top: 50px;
 }
 
-#logo-small {
-  content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
-  width: 20%;
-  position: absolute;
-  top: 220px;
-  z-index: 999;
-}
-
 #text,
 #studiotext,
 #character-title,
@@ -2139,6 +876,8 @@ section {
 }
 
 .story {
+  width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2190,20 +929,30 @@ section {
 }
 
 #story {
+  margin-top: 620px; /* Remonte la section de 200px */
+  display: flex;
+  width: 100%;
+  height: 100%;
   padding: 100px 0;
   text-align: center;
   overflow: hidden;
-  z-index: -999px;
 }
 #story h2 {
   margin-bottom: 50px;
+}
+
+#story {
+  height: 100%;
+  width: 100%;
+  bottom: -150px; /* Remonte la section de 200px */
+  z-index: -1;
 }
 
 #studio {
   padding: 100px 0;
   text-align: center;
   overflow: hidden;
-  bottom: 60px;
+  margin-top: 50px;
 }
 #studio h2 {
   margin-bottom: 50px;
@@ -2230,15 +979,12 @@ section {
 .oscar {
   background-image: url("./assets/images/rectangle.png");
   background-repeat: no-repeat;
-  background-size: 800px 350px;
   position: relative;
-  left: 0px;
-  top: 10px;
-  padding-bottom: 400px;
   z-index: 1;
   display: flex;
   overflow: hidden;
 }
+
 .oscar p {
   font-family: "Quicksand", sans-serif;
   font-size: 42px;
@@ -2246,20 +992,17 @@ section {
   color: #ffffff;
   text-align: left;
   line-height: 1.2;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-left: 60px;
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
 .oscar-image {
-  content: url("./assets/images/oscarwild.png");
-  position: absolute;
-  left: 65%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  height: auto;
+  content: url(./assets/images/oscarwild.png);
+  position: relative;
+  width: 30%;
+  height: 30%;
   z-index: 3;
 }
 
@@ -2292,21 +1035,6 @@ section {
 #lieu .lieu-container {
   position: relative;
   overflow: hidden;
-}
-
-#characters {
-  width: 100%;
-  min-height: 700px;
-  position: relative;
-  overflow: hidden;
-  display: grid;
-}
-#characters > div {
-  max-width: 580px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .site-footer {
@@ -2378,7 +1106,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 500px); /* Réduire la hauteur de la div de 50px en bas */
+  height: 100%; /* Réduire la hauteur de la div de 50px en bas */
 }
 .videolog video {
   position: absolute;
@@ -2417,6 +1145,10 @@ section {
   position: relative;
   right: 350px;
   top: 0;
+}
+
+#characters {
+  width: 100%;
 }
 
 .main-character {
@@ -2467,101 +1199,4 @@ section {
 
 .parallax-element.active {
   transform: translateY(-10%);
-}
-
-@media (max-width: 360px) {
-  .oscar {
-    background-size: contain;
-    left: 20px;
-    top: 5px;
-    padding-bottom: 200px;
-    display: flex;
-    width: calc(100% - 40px);
-    max-width: 320px;
-    overflow: hidden;
-  }
-  .oscar p {
-    font-size: 16px;
-    margin-top: 30px;
-    margin-left: 20px;
-  }
-  .oscar-image {
-    width: 50%;
-    position: relative;
-    align-self: center;
-  }
-  #studio {
-    margin-bottom: 0; /* Déplacer la section de 20 pixels vers le haut */
-    z-index: 3 !important; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
-  }
-  #studio h2::before,
-  #studio h2::after {
-    position: absolute;
-  }
-  #studio h2 {
-    margin-top: 150px; /* Ajustez cette valeur selon vos besoins */
-  }
-  #studio h2,
-  #studiotext h2,
-  #koukaki h2 {
-    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
-  }
-  #characters {
-    right: 535px !important;
-  }
-}
-@media (max-width: 920px) {
-  #characters {
-    right: 250px;
-    width: 100%;
-    min-height: 700px;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-  }
-  #characters > div {
-    max-width: 580px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .burger-menu-container #logo-small {
-    width: 20%;
-    position: relative;
-    top: 60px;
-    z-index: 999;
-    right: 200px;
-  }
-}
-@media screen and (max-height: 1000px) {
-  #story {
-    bottom: -500px;
-    z-index: -999px;
-  }
-  .burger-menu-container {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 150vh;
-    background-color: #fff5e9;
-    display: none;
-    z-index: 999;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  .burger-menu-container .menu-item {
-    display: flex;
-    flex-direction: column;
-    font-size: 40px !important;
-    top: 200px !important;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .burger-menu-container .studiok {
-    top: 630px;
-  }
 }/*# sourceMappingURL=style.css.map */
