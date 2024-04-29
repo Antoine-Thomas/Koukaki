@@ -437,8 +437,13 @@ span#koukaki {
   .videolog.loaded {
     margin-top: -200px;
   }
-  #logo {
-    top: 100px;
+  .videolog img#logo {
+    position: absolute;
+    top: calc(50% - 55px) !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate;
   }
   #character-section h3 {
     left: 10px;
