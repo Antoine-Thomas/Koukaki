@@ -273,11 +273,6 @@ span#koukaki {
     justify-content: center;
     align-items: left;
   }
-  #story {
-    top: 0px;
-    bottom: 0px;
-    margin-top: 0px;
-  }
   .lieu-container {
     top: -50px;
   }
@@ -287,30 +282,6 @@ span#koukaki {
   }
   h2 {
     font-size: xx-large;
-  }
-  #oscar.oscar {
-    background-image: url(./assets/images/rectangle.png);
-    background-repeat: no-repeat;
-    background-size: 500px 250px;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    padding-bottom: 400px;
-    z-index: 1;
-    display: flex;
-    overflow: hidden;
-  }
-  #oscar.oscar p {
-    font-family: "Quicksand", sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: left;
-    line-height: 1.2;
-    margin-top: 80px;
-    margin-left: 60px;
-    position: absolute;
-    z-index: 2;
   }
   .oscar-image {
     top: 20%;
@@ -346,6 +317,10 @@ span#koukaki {
   #story {
     margin-top: 300px;
     margin-bottom: 0px;
+  }
+  .story #characters {
+    justify-content: center;
+    align-items: left;
   }
   .story__article {
     width: 60%;
@@ -407,9 +382,32 @@ span#koukaki {
     left: 0%;
   }
   .oscar-image {
-    max-width: 300px;
-    margin-right: 300px;
-    margin-top: 130px;
+    top: 20%;
+    left: 50%;
+  }
+  #oscar.oscar {
+    background-image: url(./assets/images/rectangle.png);
+    background-repeat: no-repeat;
+    background-size: 500px 250px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    padding-bottom: 120px;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+  }
+  #oscar.oscar p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.2;
+    margin-top: 80px;
+    margin-left: 60px;
+    position: absolute;
+    z-index: 2;
   }
   #logo {
     top: 250px;

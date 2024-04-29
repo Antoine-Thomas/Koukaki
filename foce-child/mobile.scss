@@ -5,7 +5,7 @@
     background-size: contain;
     left: 20px;
     top: 5px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +50,7 @@
   }
 
   #studio {
-    top: -600px; /* Déplacer la section de 20 pixels vers le haut */
+    top: -200px; /* Déplacer la section de 20 pixels vers le haut */
     z-index: 3; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
   }
 
@@ -79,7 +79,7 @@
   }
 
   #story {
-    top: -220px;
+    top: 100px;
   }
 
   .story__article {
@@ -94,7 +94,6 @@
     font-size: 14px; /* Réduire la taille de la police */
     max-width: 100%; /* Réduire la largeur du conteneur */
     margin: 0 auto; /* Centrer le contenu */
-
     word-spacing: -0.001em; /* Réduire l'espacement entre les mots */
   }
 
@@ -107,7 +106,7 @@
   }
 
   .site-footer {
-    margin-bottom: -700px;
+    margin-bottom: -200px;
 
     &::before {
       left: 2em;
@@ -138,10 +137,6 @@
   .main-character {
     width: 100%;
   }
-
- 
-
- 
 
   #lieu {
     top: -250px; /* Remonte la section de 200px */
@@ -174,8 +169,6 @@
     top: 120px;
     left: calc(100% - 50px);
   }
-
- 
 
   .studiok {
     top: 600px;
@@ -213,8 +206,6 @@
   .burger-menu-container .menu-nav::before {
     top: 100px;
   }
-
-
 
   h3 {
     background-image: url("./assets/images/orange_place_bg.png");
@@ -262,15 +253,14 @@
   }
 
   .menu-item {
-    margin-top: 40px;
     a {
       display: block; // Afficher les liens en tant que blocs
-      padding-top: 20px; // Ajouter un padding pour compenser le déplacement vers le haut
+      padding-top: 0px; // Ajouter un padding pour compenser le déplacement vers le haut
       font-size: 18px;
       z-index: 999;
     }
   }
-  
+
   ul {
     text-align: center; // Centrer les éléments horizontalement
     width: 100%; // Faire en sorte que chaque élément occupe toute la largeur
@@ -278,24 +268,20 @@
   }
 
   #colophon {
-    top: -700px;
+    top: -200px;
   }
 
   .burger-menu-container .menu-nav::before {
-
-   margin-top: 80px;
-    
+    margin-top: 80px;
   }
 
   .burger-menu-container .menu-nav .kawaneko {
-   
     position: relative;
-   
+
     top: 30px;
     width: 110px;
     height: 110px;
     animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
     transform-origin: center;
-}
-
+  }
 }

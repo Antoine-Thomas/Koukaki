@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="primary" class="site-main navigation-active">
+<main id="primary" class="site-main navigation-active fade-in">
 
     <section id="story" class="story fade-in">
         <h2><span id="text">L'histoire</span></h2>
@@ -18,10 +18,10 @@
         ?>
         <article id="characters">
             <div class="characters-carousel">
-                <div class="character-container">
+                <div class="character-container ">
                     <!-- Div de gauche -->
                 </div>
-                <section id="character-section" class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper fade-in">
+                <section id="character-section" class="main-character swiper-container swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-watch-progress mySwiper " >
                     <h3><span id="character-title">Les personnages</span></h3>
                     <!-- Carrousel Swiper -->
                     <div class="swiper-wrapper">
@@ -50,7 +50,7 @@
                 </section>
         </article>
 
-        <article id="lieu">
+        <article id="lieu" class ="fade-in">
             <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
             <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
             <div class="lieu-container">
@@ -62,7 +62,7 @@
         </article>
     </section>
 
-    <section id="studio" class="studio fade-in  ">
+    <section id="studio" class="studio fade-in">
         <h2><span id="studiotext">Studio</span> <span id="koukaki">Koukaki</span></h2>
         <div>
             <p>Acteur majeur de l'animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>

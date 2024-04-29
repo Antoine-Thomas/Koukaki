@@ -11,7 +11,7 @@
 
 ?>  
 <div id="colophon" class="site-footer fade-in"></div>
-<section id="oscar" class="oscar " >
+<section id="oscar" class="oscar fade-in"  >
   <div>
     <p>Fleurs d’oranger & chats errants <br> est nominé aux Oscars <br> Short Film Animated de 2022 !</p>
   </div>

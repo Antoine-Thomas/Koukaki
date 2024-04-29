@@ -1,69 +1,66 @@
 // Mixins
 @mixin keyframes($name) {
-  @keyframes #{$name} {
-    @content;
-  }
+	@keyframes #{$name} {
+		@content;
+	}
 }
 
 @mixin animation($name, $duration, $iteration, $timing-function) {
-  animation: $name $duration $iteration $timing-function;
+	animation: $name $duration $iteration $timing-function;
 }
 
 @mixin transform-origin($x, $y) {
-  transform-origin: $x $y;
+	transform-origin: $x $y;
 }
 
 @mixin background-image($url, $repeat, $size) {
-  background-image: url($url);
-  background-repeat: $repeat;
-  background-size: $size;
+	background-image: url($url);
+	background-repeat: $repeat;
+	background-size: $size;
 }
 
 @mixin position($position, $top, $right, $bottom, $left, $z-index) {
-  position: $position;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  z-index: $z-index;
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	z-index: $z-index;
 }
 
 @mixin parallax-element($translateY) {
-  transform: translateY($translateY);
-  transition: transform 0.3s ease-in-out;
+	transform: translateY($translateY);
+	transition: transform 0.3s ease-in-out;
 
-  &.active {
-    transform: translateY(-10%);
-  }
+	&.active {
+		transform: translateY(-10%);
+	}
 }
 
 // Variables
 $color_1: #ffffff;
 $color_2: white;
 $color_3: #000000;
-$font-family_1: 'Quicksand', sans-serif;
+$font-family_1: "Quicksand", sans-serif;
 $background-color_1: transparent;
 $background-color_2: #000;
 $background-color_3: rgba(0, 0, 0, 0.8);
-$background-color_4: #FFD5A2;
-$background-color_5: #FFF5E9;
+$background-color_4: #ffd5a2;
+$background-color_5: #fff5e9;
 
 $logo-image-url: "https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png";
 $logo-max-width: 10%;
 $logo-start-top: 25%;
 $logo-start-left: 45%;
 
-
-
-
-
-
 // Keyframes
 @keyframes SectionParallax {
 	from {
 		opacity: 0;
 		transform: translateY(180px);
-		transition: opacity 0.5s ease, transform 1s ease;
+		transition:
+			opacity 0.5s ease,
+			transform 1s ease;
 	}
 	to {
 		opacity: 1;
@@ -84,22 +81,22 @@ $logo-start-left: 45%;
 @keyframes fadeInSlideUp {
 	from {
 		opacity: 0;
-/* Logo complètement transparent au début */
+		/* Logo complètement transparent au début */
 	}
 	to {
 		opacity: 1;
-/* Logo complètement visible à la fin */
+		/* Logo complètement visible à la fin */
 	}
 }
 /* Animation de flottement */
 @keyframes floatAnimation {
 	from {
 		transform: translateY(20px) translateX(-50%) rotate(-5deg);
-/* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
+		/* Déplacer légèrement le logo vers le bas et le faire pivoter de -10 degrés */
 	}
 	to {
 		transform: translateY(-20px) translateX(-50%) rotate(5deg);
-/* Mouvement de flottement vers le haut */
+		/* Mouvement de flottement vers le haut */
 	}
 }
 
@@ -183,167 +180,167 @@ $logo-start-left: 45%;
 /* Pour l'image Kawaneko.png */
 /* Pour l'image Orenjiiro-1.png */
 @keyframes ChatfloatSwingAnimationJaakuna {
-	0%,100% {
+	0%,
+	100% {
 		transform: translateY(10px) rotate(10deg);
-/* Ajuster la translation et la rotation de départ */
+		/* Ajuster la translation et la rotation de départ */
 	}
 	50% {
 		transform: translateY(-10px) rotate(15deg);
-/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+		/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
 	}
 }
 @keyframes ChatfloatSwingAnimationKawaneko {
-	0%,100% {
+	0%,
+	100% {
 		transform: translateY(5px) rotate(5deg);
-/* Ajuster la translation et la rotation de départ */
+		/* Ajuster la translation et la rotation de départ */
 	}
 	50% {
 		transform: translateY(-5px) rotate(-5deg);
-/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+		/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
 	}
 }
 @keyframes ChatfloatSwingAnimationOrenjiiro {
-	0%,100% {
+	0%,
+	100% {
 		transform: translateY(15px) rotate(-30deg);
-/* Ajuster la translation et la rotation de départ */
+		/* Ajuster la translation et la rotation de départ */
 	}
 	50% {
 		transform: translateY(-15px) rotate(15deg);
-/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
+		/* Déplacer vers le haut et rotation dans l'autre sens à mi-chemin */
 	}
 }
 
-
-
 @mixin fadeInAnimation {
-    opacity: 1;
-    transform: translateY(0);
+	opacity: 1;
+	transform: translateY(0);
 }
 
 @mixin fadeInBeforeAfter {
-    &::before, &::after {
-        top: -10px;
-        opacity: 1;
-    }
+	&::before,
+	&::after {
+		top: -10px;
+		opacity: 1;
+	}
 }
 
 @mixin fadeOutAnimation {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+	opacity: 0;
+	transform: translateY(20px);
+	transition:
+		opacity 0.5s ease,
+		transform 0.5s ease;
 }
 @mixin slideInFromBottom {
-    @keyframes slideInFromBottom {
-        0% {
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
+	@keyframes slideInFromBottom {
+		0% {
+			transform: translateY(20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 }
 
 // Animation pour la section "Studio"
 #studio.active {
-    h2 {
-        span#studiotext {
-            @include fadeInAnimation;
-        }
-    }
-    @include fadeInBeforeAfter;
+	h2 {
+		span#studiotext {
+			@include fadeInAnimation;
+		}
+	}
+	@include fadeInBeforeAfter;
 }
 
 #studiotext.active {
-    @include fadeInBeforeAfter;
+	@include fadeInBeforeAfter;
 }
 
 span#studiotext {
-    @include fadeOutAnimation;
+	@include fadeOutAnimation;
 }
 
 // Animation pour la section "Story"
 .story.active {
-    h2 {
-        span#text {
-            @include fadeInAnimation;
-        }
-    }
-    @include fadeInBeforeAfter;
+	h2 {
+		span#text {
+			@include fadeInAnimation;
+		}
+	}
+	@include fadeInBeforeAfter;
 }
 
 #text.active {
-    @include fadeInBeforeAfter;
+	@include fadeInBeforeAfter;
 }
 
 span#text {
-    @include fadeOutAnimation;
+	@include fadeOutAnimation;
 }
-
-
-
-
-
 
 // Animation pour la section "personnages"
 #character-title.active {
-    h3 {
-        span#character-title {
-            @include fadeInAnimation;
-        }
-    }
-    @include fadeInBeforeAfter;
+	h3 {
+		span#character-title {
+			@include fadeInAnimation;
+		}
+	}
+	@include fadeInBeforeAfter;
 }
 
 #character-title.active {
-    @include fadeInBeforeAfter;
+	@include fadeInBeforeAfter;
 }
 
 span#character-title {
-    @include fadeOutAnimation;
+	@include fadeOutAnimation;
 }
 
 // Animation pour la section "lelieu"
 #lelieu.active {
-    h3 {
-        span#lelieu {
-            @include fadeInAnimation;
-        }
-    }
-    @include fadeInBeforeAfter;
+	h3 {
+		span#lelieu {
+			@include fadeInAnimation;
+		}
+	}
+	@include fadeInBeforeAfter;
 }
 
 #lelieu.active {
-    @include fadeInBeforeAfter;
+	@include fadeInBeforeAfter;
 }
 
 span#lelieu {
-    @include fadeOutAnimation;
+	@include fadeOutAnimation;
 }
 
-
 @mixin fadeOutAnimationK {
-    opacity: 0;
-    transform: translateY(19px);
-    transition: opacity 1s ease, transform 1s ease;
-    transition-delay: 0.15s; // Définir un délai spécifique pour #koukaki
+	opacity: 0;
+	transform: translateY(19px);
+	transition:
+		opacity 1s ease,
+		transform 1s ease;
+	transition-delay: 0.15s; // Définir un délai spécifique pour #koukaki
 }
 
 // Animation pour la section "koukaki"
 .studio.active {
-    h2 {
-        span#koukaki {
-            @include fadeInAnimation;
-        }
-    }
-    @include fadeInBeforeAfter;
+	h2 {
+		span#koukaki {
+			@include fadeInAnimation;
+		}
+	}
+	@include fadeInBeforeAfter;
 }
 
 #koukaki.active {
-    @include fadeInBeforeAfter;
+	@include fadeInBeforeAfter;
 }
 
 span#koukaki {
-    @include fadeOutAnimationK; // Utiliser le mixin fadeOutAnimationK
+	@include fadeOutAnimationK; // Utiliser le mixin fadeOutAnimationK
 }

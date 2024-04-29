@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggleClicked = false;
     });
 
-    setTimeout(() => videoEl.classList.add('loaded'), 500);
+    setTimeout(() => videoEl.classList.add('loaded'), 0);
 
     let menuToggleClicked = false;
 

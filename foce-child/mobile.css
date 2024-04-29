@@ -256,7 +256,7 @@ span#koukaki {
     background-size: contain;
     left: 20px;
     top: 5px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,7 +296,7 @@ span#koukaki {
     font-size: 24px; /* Réduire la taille de la police selon vos besoins */
   }
   #studio {
-    top: -600px; /* Déplacer la section de 20 pixels vers le haut */
+    top: -200px; /* Déplacer la section de 20 pixels vers le haut */
     z-index: 3; /* Assurez-vous que la section studio a un index z plus élevé que la section story */
   }
   #story h2::before,
@@ -320,7 +320,7 @@ span#koukaki {
     font-size: 24px; /* Réduire la taille de la police selon vos besoins */
   }
   #story {
-    top: -220px;
+    top: 100px;
   }
   .story__article {
     width: 100%;
@@ -342,7 +342,7 @@ span#koukaki {
     top: auto;
   }
   .site-footer {
-    margin-bottom: -700px;
+    margin-bottom: -200px;
   }
   .site-footer::before {
     left: 2em;
@@ -460,12 +460,9 @@ span#koukaki {
     display: block;
     left: 80%;
   }
-  .menu-item {
-    margin-top: 40px;
-  }
   .menu-item a {
     display: block;
-    padding-top: 20px;
+    padding-top: 0px;
     font-size: 18px;
     z-index: 999;
   }
@@ -475,7 +472,7 @@ span#koukaki {
     display: block;
   }
   #colophon {
-    top: -700px;
+    top: -200px;
   }
   .burger-menu-container .menu-nav::before {
     margin-top: 80px;

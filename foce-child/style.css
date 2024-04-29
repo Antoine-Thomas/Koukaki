@@ -374,10 +374,19 @@ span#koukaki {
   display: flex;
   flex-direction: column;
   font-size: 64px;
-  top: 200px;
+  top: 350px;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+}
+#masthead .main-navigation .burger-menu-container .studiok {
+  position: absolute;
+  bottom: -600px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
 }
 
 .burger-menu-container {
@@ -516,27 +525,18 @@ span#koukaki {
   z-index: 0;
 }
 
-.parallax-element {
-  transform: translateY(0%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.parallax-element.active {
-  transform: translateY(-10%);
-}
-
 @media (max-height: 1000px) {
   #masthead .main-navigation .menu-item {
     display: flex;
-    font-size: 24px;
-    top: 100px;
+    font-size: 28px;
+    top: 200px;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
   }
   .burger-menu-container .studiok {
     position: absolute;
-    bottom: -300px;
+    bottom: -150px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
@@ -802,6 +802,7 @@ span#koukaki {
 body {
   max-width: 1440px;
   margin: auto;
+  height: 100%;
   overflow: auto;
 }
 body.no-scroll {
@@ -929,23 +930,17 @@ section {
 }
 
 #story {
-  margin-top: 620px; /* Remonte la section de 200px */
+  margin-top: 0vh; /* Ajuste la marge supérieure pour être égale à 10% de la hauteur de la fenêtre */
+  bottom: -15px;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100%; /* Hauteur de 100% de la hauteur de la fenêtre */
   padding: 100px 0;
   text-align: center;
   overflow: hidden;
 }
 #story h2 {
   margin-bottom: 50px;
-}
-
-#story {
-  height: 100%;
-  width: 100%;
-  bottom: -150px; /* Remonte la section de 200px */
-  z-index: -1;
 }
 
 #studio {
@@ -1108,19 +1103,10 @@ section {
   justify-content: center;
   height: 100%; /* Réduire la hauteur de la div de 50px en bas */
 }
-.videolog video {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 500px); /* Réduire la hauteur de la div de 50px en bas */
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 1s ease, top 1s ease;
-}
 .videolog img {
   position: absolute;
   top: calc(50% - 650px);
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
   animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate;
@@ -1134,11 +1120,8 @@ section {
 }
 .videolog.loaded video {
   width: 100%;
-  max-width: 100%;
   height: auto;
   opacity: 1;
-  position: absolute;
-  top: 0;
 }
 
 #character-section h3 {
