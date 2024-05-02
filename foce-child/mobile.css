@@ -317,7 +317,7 @@ span#koukaki {
   #studio h2,
   #studiotext h2,
   #koukaki h2 {
-    font-size: 24px; /* Réduire la taille de la police selon vos besoins */
+    font-size: 28px; /* Réduire la taille de la police selon vos besoins */
   }
   #story {
     top: 100px;
@@ -355,11 +355,6 @@ span#koukaki {
   .footer ul::after {
     left: calc(50% - 170px);
     bottom: -14em;
-  }
-  #new-title {
-    font-size: 24px;
-    padding: 20px;
-    margin-right: 20px;
   }
   .main-character {
     width: 100%;
@@ -446,7 +441,8 @@ span#koukaki {
     animation: fadeInSlideUp 0.5s ease forwards, floatAnimation 4s ease infinite alternate;
   }
   #character-section h3 {
-    left: 10px;
+    left: 0px;
+    font-size: 48px;
   }
   #characters {
     position: relative;
@@ -484,10 +480,43 @@ span#koukaki {
   }
   .burger-menu-container .menu-nav .kawaneko {
     position: relative;
-    top: 30px;
+    top: 28px !important;
     width: 110px;
     height: 110px;
     animation: ChatfloatSwingAnimationKawaneko 2s ease-in-out infinite;
     transform-origin: center;
+  }
+  .burger-menu-container .menu-nav .orenjiiro {
+    content: url(./assets/images/Orenjiiro-1.png);
+    position: relative;
+    right: 30%;
+    top: 400px !important;
+    width: 110px;
+    height: 110px;
+    animation: ChatfloatSwingAnimationOrenjiiro 2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .burger-menu-container .menu-nav .jaakuna {
+    content: url(./assets/images/Jaakuna-1.png);
+    position: absolute;
+    left: 50% !important;
+    top: 400px !important;
+    width: 150px;
+    height: 150px;
+    animation: ChatfloatSwingAnimationJaakuna 2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .hibiscus-footer {
+    position: absolute;
+    right: -300px;
+    bottom: -800px !important;
+    width: 600px;
+    height: 600px;
+    background-image: url("./assets/images/hibiscus_footer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotateFlower 5s linear infinite;
+    transform-origin: center center;
+    z-index: -2 !important;
   }
 }/*# sourceMappingURL=mobile.css.map */

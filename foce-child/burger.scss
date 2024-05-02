@@ -250,7 +250,7 @@
 		background-repeat: no-repeat;
 		animation: rotateFlower 5s linear infinite;
 		transform-origin: center center;
-		z-index: 2;
+		z-index: -2;
 	}
 
 	&::before {
