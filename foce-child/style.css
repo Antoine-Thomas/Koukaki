@@ -398,14 +398,16 @@ span#koukaki {
   opacity: 1;
 }
 .burger-menu-container #logo-small {
-  content: url("https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png");
+  content: url(https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png);
   max-width: 10%;
   width: 10%;
   position: absolute;
-  top: 25%;
+  top: 10%;
   left: 45%;
   transform: translate(-50%, -50%);
   z-index: 999;
+  opacity: 1;
+  transform: translateY(0);
   opacity: 1;
   transform: translateY(0);
 }
@@ -536,7 +538,7 @@ span#koukaki {
     text-decoration: none;
   }
   #masthead .main-navigation #logo-small {
-    top: 30%;
+    top: 40%;
   }
 }
 @keyframes SectionParallax {

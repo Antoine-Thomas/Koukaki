@@ -148,14 +148,18 @@
 	transition: opacity 1s ease-in-out;
 
 	#logo-small {
-		content: url($logo-image-url);
-		max-width: $logo-max-width;
-		width: $logo-max-width;
-		position: absolute;
-		top: $logo-start-top;
-		left: $logo-start-left;
-		transform: translate(-50%, -50%);
-		z-index: 999;
+	    content: url(https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png);
+    
+    width: 10%;
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    opacity: 1;
+    transform: translateY(0);
+
+		
 
 		@include fadeInAnimation; // Utilisation du mixin pour l'animation
 	}
@@ -301,6 +305,33 @@
 		text-decoration: none;
 	}
 	#masthead .main-navigation #logo-small {
-		top: 30%;
+		top: 15% !important;
+		width: 50% !important;
 	}
+
+	.orenjiiro {
+		content: url("./assets/images/Orenjiiro-1.png");
+		position: absolute;
+		left: 5%;
+		top: 400px !important;
+		width: 110px;
+		height: 110px;
+		animation: ChatfloatSwingAnimationOrenjiiro 2s ease-in-out infinite;
+		transform-origin: center;
+	}
+
+	.hibiscus-footer {
+		position: absolute;
+		right: -300px;
+		bottom: -800px !important;
+		width: 600px;
+		height: 600px;
+		background-image: url("./assets/images/hibiscus_footer.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		animation: rotateFlower 5s linear infinite;
+		transform-origin: center center;
+		z-index: -2 !important;
+	  }
+
 }

@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const histoireText = document.getElementById("text");
     const characterTitle = document.getElementById("character-title");
     const locationTitle = document.getElementById("lelieu");
-    const locationContainer = document.getElementById("lelieu");
     const lieuArticle = document.getElementById("lieu");
     const characterArticle = document.getElementById("characters");
     const body = document.querySelector('body');
@@ -34,15 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const maxScrollDistance = 180;
         let logoPosition;
 
-        if (screenWidth <= 920 && screenWidth > 360) {
+        if (screenWidth <= 1100 && screenWidth > 320) {
             logoPosition = Math.min(scrollPosition, maxScrollDistance / 3);
-        } else if (screenWidth <= 360) {
+        } else if (screenWidth <= 320) {
             logoPosition = Math.min(scrollPosition, maxScrollDistance / 2);
         } else {
             logoPosition = Math.min(scrollPosition, maxScrollDistance);
         }
 
-        if (scrollPosition > 0 && screenWidth <= 920) {
+        if (scrollPosition > 0 && screenWidth <= 1100) {
             logo.style.top = `${window.innerHeight / 300}px`;
         } else {
             logo.style.top = `${50 + logoPosition}px`;
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     animateTitle(characterTitle);
                 } else if (section.id === "lelieu") {
                     animateTitle(locationTitle);
-                    locationContainer.classList.add("active");
+                    
                 } else if (section.id === "story") {
                     animateTitle(histoireText);
                 }
@@ -116,11 +115,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isVisible) {
             lieuArticle.classList.add("active");
             animateTitle(locationTitle);
-            locationContainer.classList.add("active");
+            
         } else {
             lieuArticle.classList.remove("active");
             resetTitleAnimation(locationTitle);
-            locationContainer.classList.remove("active");
+            
         }
     }
 
@@ -153,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuToggleClicked = false;
     });
 
-    setTimeout(() => videoEl.classList.add('loaded'), 500);
+    setTimeout(() => videoEl.classList.add('loaded'), 100);
 
     let menuToggleClicked = false;
 
@@ -181,19 +180,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (!locationContainer.classList.contains("active")) {
-        locationContainer.classList.remove("active");
-    }
+   
 });
 
 // Fonction jQuery pour animer les éléments avec la classe 'fade-in'
 jQuery(document).ready(function ($) {
     $('.fade-in').each(function () {
-        $(this).css('opacity', 0)
-            .delay(250)
+        $(this).css('opacity', 1)
+            .delay(8000)
             .animate({
                 opacity: 1
-            }, 800);
+            }, 1000);
     });
 });
 

@@ -27,14 +27,13 @@
                 </ul>
 
                 <!-- Burger menu container to hold all navigation items -->
-                <div class="burger-menu-container fade-in">
-                    <header id="masthead" class="site-header">
+                <div class="burger-menu-container fade-in site-header masthead">
+                    
                         <nav id="site-navigation" class="main-navigation">
                             <ul class="menu nav-menu">
                                 <li class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home">Fleurs d'oranger &amp; chats errants</a></li>
                             </ul>
                         </nav>
-
                         <div class="menu-header menu nav-menu site-title">
                             <div class="logo-small">
                                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
