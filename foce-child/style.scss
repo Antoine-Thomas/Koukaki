@@ -78,14 +78,14 @@ section {
 .main {
 	position: relative;
 }
-
 .fade-in {
 	opacity: 0;
 	transition: opacity 2s ease;
-}
-.fade-in.active {
+  }
+  .fade-in.active {
 	opacity: 1;
-}
+  }
+
 .story {
 	width: 100%;
 	height: 100%;
@@ -184,15 +184,18 @@ section {
 	}
 }
 
-.oscar {
-	background-image: url("./assets/images/rectangle.png");
-	background-repeat: no-repeat;
-	position: relative;
 
-	z-index: 1;
-	display: flex;
-	overflow: hidden;
+.oscar  {
+    background-image: url("./assets/images/rectangle.png");
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+    opacity: 0 ;
+  
 }
+
 
 .oscar p {
 	font-family: $font-family_1;

@@ -40,7 +40,7 @@
                                     <img src="https://www.koukaki.searching-murphy.com/wp-content/themes/foce-child/assets/images/logo.png" alt="logo Fleurs d'oranger & chats errants" id="logo-small" class="fade-in">
                                 </a>
                             </div>
-                            <button class="close-menu ">&#10005;</button>
+                            <button class="close-menu "></button>
                         </div>
                         <nav class="menu-nav">
                             <div class="jaakuna" aria-hidden="true"></div>

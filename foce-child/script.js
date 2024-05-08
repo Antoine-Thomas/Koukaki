@@ -2,18 +2,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Sélecteurs
     const sections = document.querySelectorAll("section");
+    const locationTitle = document.getElementById("lelieu");
     const videoEl = document.querySelector('.videolog');
     const menuToggle = document.querySelector('.menu-toggle');
     const burgerMenu = document.querySelector('.burger-menu-container');
+    const burgerMenuContainer = document.querySelector('.burger-menu-container');
     const closeMenu = document.querySelector('.close-menu');
     const logo = document.getElementById('logo');
     const histoireText = document.getElementById("text");
     const characterTitle = document.getElementById("character-title");
-    const locationTitle = document.getElementById("lelieu");
     const lieuArticle = document.getElementById("lieu");
     const characterArticle = document.getElementById("characters");
     const body = document.querySelector('body');
-    const burgerMenuContainer = document.querySelector('.burger-menu-container');
+    
 
     // Fonctions pour animer les titres
     function resetTitleAnimation(titleElement) {
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const screenWidth = window.innerWidth;
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         const maxScrollDistance = 180;
+
         let logoPosition;
 
         if (screenWidth <= 1100 && screenWidth > 320) {
@@ -40,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             logoPosition = Math.min(scrollPosition, maxScrollDistance);
         }
-
-        if (scrollPosition > 0 && screenWidth <= 1100) {
-            logo.style.top = `${window.innerHeight / 300}px`;
+    // Fonction pour fixer le logo les petits ecrans
+        if (scrollPosition > 0 && screenWidth <= 867) {
+            logo.style.top = `${window.innerHeight / 320}px`;
         } else {
-            logo.style.top = `${50 + logoPosition}px`;
+            logo.style.top = `${0 + logoPosition}px`;
         }
     }
 
@@ -141,6 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', detectVisibleCharacterSection);
     window.addEventListener('scroll', moveCloudsByScroll);
 
+
+     // clicks burger
     menuToggle.addEventListener('click', toggleBurgerMenu);
     closeMenu.addEventListener('click', toggleBurgerMenu);
     window.addEventListener('click', function (event) {
@@ -186,11 +190,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Fonction jQuery pour animer les éléments avec la classe 'fade-in'
 jQuery(document).ready(function ($) {
     $('.fade-in').each(function () {
-        $(this).css('opacity', 1)
-            .delay(8000)
+        $(this).css('opacity', 0)
+            .delay(500)
             .animate({
                 opacity: 1
-            }, 1000);
+            }, 500);
     });
 });
 

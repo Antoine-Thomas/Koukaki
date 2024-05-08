@@ -260,36 +260,6 @@ span#koukaki {
   transition-delay: 0.15s;
 }
 
-.burger-menu {
-  display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.burger-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-.burger-menu ul li {
-  margin-bottom: 1rem;
-}
-.burger-menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-}
-
 .menu-toggle {
   display: block;
   position: absolute !important;
@@ -314,11 +284,6 @@ span#koukaki {
   display: block;
   margin: 6px auto;
   transition: all 0.3s ease;
-}
-
-.burger-menu.hidden {
-  opacity: 0;
-  visibility: hidden;
 }
 
 .menu-toggle.active .line:nth-child(1) {
@@ -352,7 +317,7 @@ span#koukaki {
   justify-content: space-around;
   align-items: center;
   height: 80px;
-  width: calc(100% + 1px);
+  width: 100%;
 }
 #masthead .main-navigation .nav-menu {
   display: flex;
@@ -399,7 +364,7 @@ span#koukaki {
 }
 .burger-menu-container #logo-small {
   content: url(https://www.koukaki.searching-murphy.com/wp-content/themes/foce/assets/images/logo.png);
-  max-width: 10%;
+  filter: drop-shadow(0 0 10px #ff5733); /* Utilisation de filter pour créer une ombre qui contourne l'image */
   width: 10%;
   position: absolute;
   top: 10%;
@@ -410,6 +375,9 @@ span#koukaki {
   transform: translateY(0);
   opacity: 1;
   transform: translateY(0);
+}
+.burger-menu-container .burger-menu-container .close-menu {
+  display: none !important; /* Masquer le bouton de fermeture */
 }
 .burger-menu-container .menu-nav {
   position: relative;
@@ -538,7 +506,31 @@ span#koukaki {
     text-decoration: none;
   }
   #masthead .main-navigation #logo-small {
-    top: 40%;
+    top: 15% !important;
+    width: 10% !important;
+  }
+  .orenjiiro {
+    content: url("./assets/images/Orenjiiro-1.png");
+    position: absolute;
+    left: 5%;
+    top: 400px !important;
+    width: 110px;
+    height: 110px;
+    animation: ChatfloatSwingAnimationOrenjiiro 2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .hibiscus-footer {
+    position: absolute;
+    right: -300px;
+    bottom: -800px !important;
+    width: 600px;
+    height: 600px;
+    background-image: url("./assets/images/hibiscus_footer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotateFlower 5s linear infinite;
+    transform-origin: center center;
+    z-index: -2 !important;
   }
 }
 @keyframes SectionParallax {
@@ -972,6 +964,7 @@ section {
   z-index: 1;
   display: flex;
   overflow: hidden;
+  opacity: 0;
 }
 
 .oscar p {
