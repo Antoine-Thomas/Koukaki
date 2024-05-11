@@ -19,6 +19,17 @@
     transform: translateY(0);
   }
 }
+@keyframes SectionParallaxV {
+  from {
+    opacity: 0;
+    transform: translateY(-180px); /* Modifier la valeur pour aller de haut en bas */
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Revenir à la position initiale */
+  }
+}
 /* CSS pour l'effet de fondu */
 /* fleurs qui tournent*/
 @keyframes rotateFlower {
@@ -542,6 +553,17 @@ span#koukaki {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes SectionParallaxV {
+  from {
+    opacity: 0;
+    transform: translateY(-180px); /* Modifier la valeur pour aller de haut en bas */
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Revenir à la position initiale */
   }
 }
 /* CSS pour l'effet de fondu */
@@ -1089,6 +1111,9 @@ section {
   align-items: center;
   justify-content: center;
   height: 100%; /* Réduire la hauteur de la div de 50px en bas */
+  opacity: 1;
+  transform: translateY(0);
+  animation: SectionParallaxV 1s linear;
 }
 .videolog img#logo {
   position: absolute;

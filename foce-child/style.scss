@@ -318,6 +318,9 @@ section {
 	align-items: center;
 	justify-content: center;
 	height: 100%; /* Réduire la hauteur de la div de 50px en bas */
+	opacity: 1;
+	transform: translateY(0);
+	animation: SectionParallaxV 1s linear;
 
 	img#logo {
 		position: absolute;

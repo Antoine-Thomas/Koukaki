@@ -10,6 +10,17 @@
     transform: translateY(0);
   }
 }
+@keyframes SectionParallaxV {
+  from {
+    opacity: 0;
+    transform: translateY(-180px); /* Modifier la valeur pour aller de haut en bas */
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Revenir à la position initiale */
+  }
+}
 /* CSS pour l'effet de fondu */
 /* fleurs qui tournent*/
 @keyframes rotateFlower {
